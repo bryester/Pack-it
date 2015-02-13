@@ -1,3 +1,3 @@
-### Pack-it
+# Pack-it
 
-.This is our project Pack-it.
+This is our project Pack-it.
