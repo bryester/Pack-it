@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Pack-it_seeker/Pack-it_seeker.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pack-it_solver/Pack-it_solver.xcodeproj">
+   </FileRef>
+</Workspace>
