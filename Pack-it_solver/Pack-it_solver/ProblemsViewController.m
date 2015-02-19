@@ -1,18 +1,18 @@
 //
 //  FirstViewController.m
-//  Pack-it_seeker
+//  Pack-it_solver
 //
 //  Created by Jiyang on 2/18/15.
 //  Copyright (c) 2015 Jiyang. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "ProblemsViewController.h"
 
-@interface FirstViewController ()
+@interface ProblemsViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation ProblemsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
