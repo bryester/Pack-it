@@ -31,13 +31,38 @@
 - (IBAction)addImage:(id)sender {
     
     //拍照或者选择的图片
-    UIImage *chosedImage = nil;
-    [_imageButton setImage:chosedImage forState:UIControlStateNormal];
+    UIImagePickerController *pickerImage = [[UIImagePickerController alloc] init];
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        pickerImage.sourceType = UIImagePickerControllerSourceTypeCamera;
+        pickerImage.mediaTypes = [UIImagePickerController
+                                  availableMediaTypesForSourceType:pickerImage.sourceType];
+    }
+    
+    pickerImage.delegate = self;
+    [self presentViewController:pickerImage animated:YES completion:nil];
+
+    //UIImage *chosedImage = nil;
+    //[_imageButton setImage:chosedImage forState:UIControlStateNormal];
 }
 
 - (IBAction)confirm:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
 }
+
+
+//点击添加图片按钮调用相机
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    UIImage *image= [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    NSData *compressImage = UIImageJPEGRepresentation(image,0.01);
+    image = [UIImage imageWithData: compressImage];
+    
+    [_imageButton setImage:image forState:UIControlStateNormal ];
+    [self dismissViewControllerAnimated:picker completion:nil];
+}
+
+
 
 #pragma mark - TableView Delegate
 
