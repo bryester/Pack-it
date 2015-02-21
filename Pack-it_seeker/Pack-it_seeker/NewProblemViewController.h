@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewProblemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
+@interface NewProblemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
     __weak IBOutlet UIButton *_imageButton;
 }
