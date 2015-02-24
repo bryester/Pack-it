@@ -20,4 +20,26 @@
     // Configure the view for the selected state
 }
 
+- (void)setImageURL:(NSString *)imageURL {
+    _imageURL = imageURL;
+    
+    //Download image from _imageURL
+    _imageView = nil;
+}
+
+- (void)setDuration:(int)duration {
+    _labelDuration.text = [NSString stringWithFormat:@"有效时间：%d", duration];
+}
+
+- (void)setDesc:(NSString *)desc {
+    _labelDesc.text = desc;
+}
+
+- (void)setLocation:(NSString *)location {
+    _labelLocation.text = location;
+}
+
+- (void)setStatus:(NSString *)status {
+    _labelStatus.text = status;
+}
 @end

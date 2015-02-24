@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44FBCB11A9C6C5800AFB3AC /* PXAccountHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */; };
+		B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B44FBCB21A9C6D6D00AFB3AC /* bg.png */; };
+		B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */ = {isa = PBXBuildFile; fileRef = B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */; };
+		B44FBD331A9C73A900AFB3AC /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B44FBD2E1A9C739500AFB3AC /* libOAuth2Client.a */; };
+		B44FBD351A9C740C00AFB3AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44FBD341A9C740C00AFB3AC /* Security.framework */; };
+		B44FBD391A9C76FF00AFB3AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */; };
+		B44FBD3A1A9C76FF00AFB3AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD381A9C76FF00AFB3AC /* LoginViewController.xib */; };
+		B44FBD411A9C771B00AFB3AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */; };
+		B44FBD421A9C771B00AFB3AC /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */; };
+		B44FBD431A9C771B00AFB3AC /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */; };
+		B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */; };
 		B47C3DA21A9452A400F41A9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA11A9452A400F41A9D /* main.m */; };
 		B47C3DA51A9452A400F41A9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA41A9452A400F41A9D /* AppDelegate.m */; };
 		B47C3DA81A9452A400F41A9D /* ProblemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA71A9452A400F41A9D /* ProblemsViewController.m */; };
@@ -34,7 +45,6 @@
 		B4D77D6B1A9618AE00C4ACA5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D77D6A1A9618AE00C4ACA5 /* SystemConfiguration.framework */; };
 		B4D77D6E1A961E6E00C4ACA5 /* PXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D6D1A961E6E00C4ACA5 /* PXNetworkManager.m */; };
 		B4D77D731A96245300C4ACA5 /* PXProblemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D711A96245300C4ACA5 /* PXProblemTableViewCell.m */; };
-		B4D77D741A96245300C4ACA5 /* PXProblemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77D721A96245300C4ACA5 /* PXProblemTableViewCell.xib */; };
 		B4D77D781A9625ED00C4ACA5 /* PXSolutionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D761A9625ED00C4ACA5 /* PXSolutionTableViewCell.m */; };
 		B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77D771A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib */; };
 		B4D77D7C1A9626CE00C4ACA5 /* SolutionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D7B1A9626CE00C4ACA5 /* SolutionsTableViewController.m */; };
@@ -44,6 +54,34 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B44FBD2B1A9C739500AFB3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 942FFCD612315E0A00E6C65E;
+			remoteInfo = OAuth2Client.framework;
+		};
+		B44FBD2D1A9C739500AFB3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
+		B44FBD2F1A9C739500AFB3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 94B6CE6619C1D0A200AA859B;
+			remoteInfo = OAuth2ClientTests;
+		};
+		B44FBD311A9C73A600AFB3AC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
 		B47C3DB91A9452A400F41A9D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B47C3D941A9452A400F41A9D /* Project object */;
@@ -54,6 +92,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B44FBCAF1A9C6C5800AFB3AC /* PXAccountHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAccountHolder.h; sourceTree = "<group>"; };
+		B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAccountHolder.m; sourceTree = "<group>"; };
+		B44FBCB21A9C6D6D00AFB3AC /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defult_portraiture.png; sourceTree = "<group>"; };
+		B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
+		B44FBD341A9C740C00AFB3AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		B44FBD361A9C76FF00AFB3AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B44FBD381A9C76FF00AFB3AC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B44FBD3B1A9C771B00AFB3AC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		B44FBD3E1A9C771B00AFB3AC /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
+		B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
+		B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPasswordViewController.xib; sourceTree = "<group>"; };
+		B44FBD4A1A9C790300AFB3AC /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		B47C3D9C1A9452A400F41A9D /* Pack-it_seeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pack-it_seeker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47C3DA01A9452A400F41A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47C3DA11A9452A400F41A9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,7 +158,6 @@
 		B4D77D6D1A961E6E00C4ACA5 /* PXNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXNetworkManager.m; sourceTree = "<group>"; };
 		B4D77D701A96245300C4ACA5 /* PXProblemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXProblemTableViewCell.h; sourceTree = "<group>"; };
 		B4D77D711A96245300C4ACA5 /* PXProblemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXProblemTableViewCell.m; sourceTree = "<group>"; };
-		B4D77D721A96245300C4ACA5 /* PXProblemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXProblemTableViewCell.xib; sourceTree = "<group>"; };
 		B4D77D751A9625ED00C4ACA5 /* PXSolutionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXSolutionTableViewCell.h; sourceTree = "<group>"; };
 		B4D77D761A9625ED00C4ACA5 /* PXSolutionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXSolutionTableViewCell.m; sourceTree = "<group>"; };
 		B4D77D771A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PXSolutionTableViewCell.xib; sourceTree = "<group>"; };
@@ -122,6 +175,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B44FBD351A9C740C00AFB3AC /* Security.framework in Frameworks */,
+				B44FBD331A9C73A900AFB3AC /* libOAuth2Client.a in Frameworks */,
 				B4D77D6B1A9618AE00C4ACA5 /* SystemConfiguration.framework in Frameworks */,
 				B4D77D441A96161F00C4ACA5 /* UIKit.framework in Frameworks */,
 				B4D77D421A96161A00C4ACA5 /* Foundation.framework in Frameworks */,
@@ -139,9 +194,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B44FBCAD1A9C6B9A00AFB3AC /* Problem&Solution */ = {
+			isa = PBXGroup;
+			children = (
+				B47C3DA61A9452A400F41A9D /* ProblemsViewController.h */,
+				B47C3DA71A9452A400F41A9D /* ProblemsViewController.m */,
+				B4D77D7A1A9626CE00C4ACA5 /* SolutionsTableViewController.h */,
+				B4D77D7B1A9626CE00C4ACA5 /* SolutionsTableViewController.m */,
+				B4D77D7D1A96270F00C4ACA5 /* SolutionDetailViewController.h */,
+				B4D77D7E1A96270F00C4ACA5 /* SolutionDetailViewController.m */,
+				B4D77D8A1A96438500C4ACA5 /* NewProblemViewController.h */,
+				B4D77D8B1A96438500C4ACA5 /* NewProblemViewController.m */,
+			);
+			name = "Problem&Solution";
+			sourceTree = "<group>";
+		};
+		B44FBCAE1A9C6BAD00AFB3AC /* User */ = {
+			isa = PBXGroup;
+			children = (
+				B47C3DA91A9452A400F41A9D /* SecondViewController.h */,
+				B47C3DAA1A9452A400F41A9D /* SecondViewController.m */,
+				B44FBD451A9C772B00AFB3AC /* Login */,
+				B44FBD461A9C776700AFB3AC /* Signup */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		B44FBD261A9C739500AFB3AC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B44FBD2C1A9C739500AFB3AC /* OAuth2Client.framework */,
+				B44FBD2E1A9C739500AFB3AC /* libOAuth2Client.a */,
+				B44FBD301A9C739500AFB3AC /* OAuth2ClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B44FBD451A9C772B00AFB3AC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B44FBD361A9C76FF00AFB3AC /* LoginViewController.h */,
+				B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */,
+				B44FBD381A9C76FF00AFB3AC /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		B44FBD461A9C776700AFB3AC /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				B44FBD3B1A9C771B00AFB3AC /* RegisterViewController.h */,
+				B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */,
+				B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */,
+				B44FBD3E1A9C771B00AFB3AC /* SetPasswordViewController.h */,
+				B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */,
+				B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */,
+			);
+			name = Signup;
+			sourceTree = "<group>";
+		};
 		B47C3D931A9452A400F41A9D = {
 			isa = PBXGroup;
 			children = (
+				B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */,
 				B4D77D461A9618A000C4ACA5 /* JSONModel */,
 				B4D77D451A96163500C4ACA5 /* Framework */,
 				B47C3D9E1A9452A400F41A9D /* Pack-it_seeker */,
@@ -206,16 +321,8 @@
 		B4D77D331A96126E00C4ACA5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B47C3DA61A9452A400F41A9D /* ProblemsViewController.h */,
-				B47C3DA71A9452A400F41A9D /* ProblemsViewController.m */,
-				B47C3DA91A9452A400F41A9D /* SecondViewController.h */,
-				B47C3DAA1A9452A400F41A9D /* SecondViewController.m */,
-				B4D77D7A1A9626CE00C4ACA5 /* SolutionsTableViewController.h */,
-				B4D77D7B1A9626CE00C4ACA5 /* SolutionsTableViewController.m */,
-				B4D77D7D1A96270F00C4ACA5 /* SolutionDetailViewController.h */,
-				B4D77D7E1A96270F00C4ACA5 /* SolutionDetailViewController.m */,
-				B4D77D8A1A96438500C4ACA5 /* NewProblemViewController.h */,
-				B4D77D8B1A96438500C4ACA5 /* NewProblemViewController.m */,
+				B44FBCAD1A9C6B9A00AFB3AC /* Problem&Solution */,
+				B44FBCAE1A9C6BAD00AFB3AC /* User */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -236,8 +343,11 @@
 		B4D77D351A9613C700C4ACA5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B44FBCAF1A9C6C5800AFB3AC /* PXAccountHolder.h */,
+				B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */,
 				B4D77D6C1A961E6E00C4ACA5 /* PXNetworkManager.h */,
 				B4D77D6D1A961E6E00C4ACA5 /* PXNetworkManager.m */,
+				B44FBD4A1A9C790300AFB3AC /* Config.h */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -245,6 +355,7 @@
 		B4D77D451A96163500C4ACA5 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B44FBD341A9C740C00AFB3AC /* Security.framework */,
 				B4D77D6A1A9618AE00C4ACA5 /* SystemConfiguration.framework */,
 				B4D77D431A96161F00C4ACA5 /* UIKit.framework */,
 				B4D77D411A96161A00C4ACA5 /* Foundation.framework */,
@@ -318,7 +429,6 @@
 			children = (
 				B4D77D701A96245300C4ACA5 /* PXProblemTableViewCell.h */,
 				B4D77D711A96245300C4ACA5 /* PXProblemTableViewCell.m */,
-				B4D77D721A96245300C4ACA5 /* PXProblemTableViewCell.xib */,
 				B4D77D751A9625ED00C4ACA5 /* PXSolutionTableViewCell.h */,
 				B4D77D761A9625ED00C4ACA5 /* PXSolutionTableViewCell.m */,
 				B4D77D771A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib */,
@@ -337,6 +447,8 @@
 		B4D77D821A96420900C4ACA5 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */,
+				B44FBCB21A9C6D6D00AFB3AC /* bg.png */,
 				B4D77D861A96422000C4ACA5 /* add_image_default.png */,
 			);
 			name = Image;
@@ -356,6 +468,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B44FBD321A9C73A600AFB3AC /* PBXTargetDependency */,
 			);
 			name = "Pack-it_seeker";
 			productName = "Pack-it_seeker";
@@ -409,6 +522,12 @@
 			mainGroup = B47C3D931A9452A400F41A9D;
 			productRefGroup = B47C3D9D1A9452A400F41A9D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B44FBD261A9C739500AFB3AC /* Products */;
+					ProjectRef = B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				B47C3D9B1A9452A400F41A9D /* Pack-it_seeker */,
@@ -417,17 +536,45 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		B44FBD2C1A9C739500AFB3AC /* OAuth2Client.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2Client.framework;
+			remoteRef = B44FBD2B1A9C739500AFB3AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B44FBD2E1A9C739500AFB3AC /* libOAuth2Client.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuth2Client.a;
+			remoteRef = B44FBD2D1A9C739500AFB3AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B44FBD301A9C739500AFB3AC /* OAuth2ClientTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = OAuth2ClientTests.xctest;
+			remoteRef = B44FBD2F1A9C739500AFB3AC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		B47C3D9A1A9452A400F41A9D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B47C3DAE1A9452A400F41A9D /* Main.storyboard in Resources */,
+				B44FBD421A9C771B00AFB3AC /* RegisterViewController.xib in Resources */,
 				B4D77D871A96422000C4ACA5 /* add_image_default.png in Resources */,
 				B47C3DB31A9452A400F41A9D /* LaunchScreen.xib in Resources */,
 				B47C3DB01A9452A400F41A9D /* Images.xcassets in Resources */,
+				B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */,
+				B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */,
+				B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */,
 				B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */,
-				B4D77D741A96245300C4ACA5 /* PXProblemTableViewCell.xib in Resources */,
+				B44FBD3A1A9C76FF00AFB3AC /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,11 +594,15 @@
 			files = (
 				B4D77D691A9618A000C4ACA5 /* JSONValueTransformer.m in Sources */,
 				B4D77D661A9618A000C4ACA5 /* JSONHTTPClient.m in Sources */,
+				B44FBD431A9C771B00AFB3AC /* SetPasswordViewController.m in Sources */,
 				B4D77D3B1A96144000C4ACA5 /* PXSolution.m in Sources */,
 				B4D77D681A9618A000C4ACA5 /* JSONKeyMapper.m in Sources */,
+				B44FBD391A9C76FF00AFB3AC /* LoginViewController.m in Sources */,
 				B4D77D781A9625ED00C4ACA5 /* PXSolutionTableViewCell.m in Sources */,
+				B44FBCB11A9C6C5800AFB3AC /* PXAccountHolder.m in Sources */,
 				B4D77D6E1A961E6E00C4ACA5 /* PXNetworkManager.m in Sources */,
 				B4D77D601A9618A000C4ACA5 /* JSONModel.m in Sources */,
+				B44FBD411A9C771B00AFB3AC /* RegisterViewController.m in Sources */,
 				B47C3DAB1A9452A400F41A9D /* SecondViewController.m in Sources */,
 				B4D77D611A9618A000C4ACA5 /* JSONModelArray.m in Sources */,
 				B4D77D731A96245300C4ACA5 /* PXProblemTableViewCell.m in Sources */,
@@ -482,6 +633,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B44FBD321A9C73A600AFB3AC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2Client;
+			targetProxy = B44FBD311A9C73A600AFB3AC /* PBXContainerItemProxy */;
+		};
 		B47C3DBA1A9452A400F41A9D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B47C3D9B1A9452A400F41A9D /* Pack-it_seeker */;
@@ -589,8 +745,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/OAuth2Client/**",
+				);
 				INFOPLIST_FILE = "Pack-it_seeker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -599,8 +761,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/OAuth2Client/**",
+				);
 				INFOPLIST_FILE = "Pack-it_seeker/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

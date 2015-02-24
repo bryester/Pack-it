@@ -8,12 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PXProblemTableViewCell : UITableViewCell
+@interface PXProblemTableViewCell : UITableViewCell {
+    
+    __weak IBOutlet UIImageView *_imageView;
+    __weak IBOutlet UILabel *_labelDuration;
+    __weak IBOutlet UILabel *_labelStatus;
+    __weak IBOutlet UILabel *_labelDesc;
+    __weak IBOutlet UILabel *_labelLocation;
+    
+}
 
-@property (weak, nonatomic) IBOutlet UILabel *duration;
-
-@property (weak, nonatomic) IBOutlet UILabel *status;
-@property (weak, nonatomic) IBOutlet UILabel *desc;
-@property (weak, nonatomic) IBOutlet UILabel *location;
+@property (strong, nonatomic) NSString *imageURL;
+@property (strong, nonatomic) NSString *image;
+@property (assign, nonatomic) int duration;
+@property (strong, nonatomic) NSString *status;
+@property (strong, nonatomic) NSString *desc;
+@property (strong, nonatomic) NSString *location;
 
 @end

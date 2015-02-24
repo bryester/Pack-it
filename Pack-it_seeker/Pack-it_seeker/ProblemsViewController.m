@@ -42,26 +42,38 @@
     return 1;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PXProblemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProblemCell"];
+    PXProblemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PXProblemTableViewCell"];
     
     if (!cell) {
-        cell = [[PXProblemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ProblemCell"];
+        cell = [[PXProblemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PXProblemTableViewCell"];
     }
     
     if (_problems.count > 0) {
         PXProblem *problem = [_problems objectAtIndex:indexPath.row];
         
-        [cell.status setText: problem.status];
-        [cell.duration setText:[NSString stringWithFormat:@"%d", problem.duration]];
+        cell.status = problem.status;
+        cell.duration = problem.duration;
+        cell.imageURL = problem.pictureURL;
+        cell.desc = problem.desc;
         
     } else {
-        [cell.status setText: @"yyy"];
-        [cell.duration setText:@"2"];
-        [cell.textLabel setText:@"gg"];
+        cell.status = @"未解决";
+        cell.duration = 30;
+        cell.desc = @"这是一件T恤，我想要找到一件白色的";
+        cell.location = @"宝琳新都城";
+        //[cell.textLabel setText:@"gg"];
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 #pragma mark - Network Methods
 
