@@ -183,21 +183,21 @@
                     <exclude reference="HZU-FW-9yy"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="9Sp-10-JH1"/>
-                    <exclude reference="Inf-cC-sTY"/>
-                    <exclude reference="cVg-3q-Xnd"/>
-                    <exclude reference="dS3-Uo-RPs"/>
-                    <exclude reference="sqe-gv-IB6"/>
-                    <exclude reference="swb-He-kGq"/>
                     <exclude reference="19Q-Pl-tBe"/>
                     <exclude reference="1gE-am-Dbw"/>
                     <exclude reference="Kcq-18-qTU"/>
                     <exclude reference="TmV-Ey-OoR"/>
                     <exclude reference="xGz-Dh-EGs"/>
+                    <exclude reference="dS3-Uo-RPs"/>
+                    <exclude reference="sqe-gv-IB6"/>
+                    <exclude reference="swb-He-kGq"/>
                     <exclude reference="3Lu-fG-pSv"/>
                     <exclude reference="3nA-t7-S1V"/>
                     <exclude reference="yxJ-fc-RqB"/>
                     <exclude reference="gDH-L3-rye"/>
+                    <exclude reference="9Sp-10-JH1"/>
+                    <exclude reference="Inf-cC-sTY"/>
+                    <exclude reference="cVg-3q-Xnd"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -209,21 +209,21 @@
                     <include reference="HZU-FW-9yy"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="9Sp-10-JH1"/>
-                    <include reference="Inf-cC-sTY"/>
-                    <include reference="cVg-3q-Xnd"/>
-                    <include reference="dS3-Uo-RPs"/>
-                    <include reference="sqe-gv-IB6"/>
-                    <include reference="swb-He-kGq"/>
                     <include reference="19Q-Pl-tBe"/>
                     <include reference="1gE-am-Dbw"/>
                     <include reference="Kcq-18-qTU"/>
                     <include reference="TmV-Ey-OoR"/>
                     <exclude reference="xGz-Dh-EGs"/>
+                    <include reference="dS3-Uo-RPs"/>
+                    <include reference="sqe-gv-IB6"/>
+                    <include reference="swb-He-kGq"/>
                     <include reference="3Lu-fG-pSv"/>
                     <include reference="3nA-t7-S1V"/>
                     <include reference="yxJ-fc-RqB"/>
                     <include reference="gDH-L3-rye"/>
+                    <include reference="9Sp-10-JH1"/>
+                    <include reference="Inf-cC-sTY"/>
+                    <include reference="cVg-3q-Xnd"/>
                 </mask>
             </variation>
             <connections>

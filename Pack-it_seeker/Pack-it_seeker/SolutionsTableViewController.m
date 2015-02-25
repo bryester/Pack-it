@@ -42,14 +42,35 @@
     if (_solutions) {
         return _solutions.count;
     }
-    return 1;
+    return 2;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 120;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SolutionCell" forIndexPath:indexPath];
     
-    [cell.textLabel setText:@"ha"];
+    PXSolutionTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PXSolutionTableViewCell"];
+    
+    if (!cell) {
+        cell = [[PXSolutionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PXSolutionTableViewCell"];
+    }
+    
+    if (_solutions.count > 0) {
+        PXSolution *solution = [_solutions objectAtIndex:indexPath.row];
+        
+        //cell.shop = solution.shop;
+        cell.price = solution.price;
+        cell.imageURL = solution.pictureURL;
+        //cell.location = solution.location;
+        
+    } else {
+        cell.shop = @"优衣库（新都城店）";
+        cell.price = 300;
+        //cell.imageURL = solution.pictureURL;
+        cell.location = @"新界將軍澳坑口東港城178-179 & 191-192店";
+    }
     
     return cell;
 }

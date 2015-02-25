@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PXSolutionTableViewCell.h"
+#import "PXSolution.h"
 
 @interface SolutionsTableViewController : UITableViewController
 

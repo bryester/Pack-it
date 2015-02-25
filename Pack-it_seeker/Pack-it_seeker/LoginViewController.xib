@@ -145,7 +145,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rJN-MZ-uJo" firstAttribute="leading" secondItem="BiG-cL-vOO" secondAttribute="leading" id="1KP-M4-RpY"/>
                 <constraint firstItem="teG-jk-f66" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="2Ia-UA-13o"/>
@@ -207,14 +207,16 @@
                     <exclude reference="ONk-H7-kGR"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="2Ia-UA-13o"/>
-                    <exclude reference="4rl-rd-gLC"/>
-                    <exclude reference="PIS-cW-0Gi"/>
                     <exclude reference="Hq6-kL-xIP"/>
                     <exclude reference="YcD-ob-jat"/>
                     <exclude reference="kEw-E5-4HK"/>
                     <exclude reference="sWC-Wd-4mQ"/>
                     <exclude reference="uDR-0B-ppx"/>
+                    <exclude reference="2mT-6d-xlM"/>
+                    <exclude reference="Qrr-B0-yo5"/>
+                    <exclude reference="d4U-W0-vES"/>
+                    <exclude reference="dnZ-js-AQA"/>
+                    <exclude reference="tRn-rT-yKC"/>
                     <exclude reference="5cr-hp-ez5"/>
                     <exclude reference="OwO-xP-L3H"/>
                     <exclude reference="SDu-2i-By5"/>
@@ -223,11 +225,9 @@
                     <exclude reference="8ky-uq-mY3"/>
                     <exclude reference="I6o-FD-ROa"/>
                     <exclude reference="gXB-Rb-dN9"/>
-                    <exclude reference="2mT-6d-xlM"/>
-                    <exclude reference="Qrr-B0-yo5"/>
-                    <exclude reference="d4U-W0-vES"/>
-                    <exclude reference="dnZ-js-AQA"/>
-                    <exclude reference="tRn-rT-yKC"/>
+                    <exclude reference="2Ia-UA-13o"/>
+                    <exclude reference="4rl-rd-gLC"/>
+                    <exclude reference="PIS-cW-0Gi"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -240,14 +240,16 @@
                     <include reference="ONk-H7-kGR"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="2Ia-UA-13o"/>
-                    <include reference="4rl-rd-gLC"/>
-                    <include reference="PIS-cW-0Gi"/>
                     <include reference="Hq6-kL-xIP"/>
                     <exclude reference="YcD-ob-jat"/>
                     <exclude reference="kEw-E5-4HK"/>
                     <exclude reference="sWC-Wd-4mQ"/>
                     <include reference="uDR-0B-ppx"/>
+                    <include reference="2mT-6d-xlM"/>
+                    <include reference="Qrr-B0-yo5"/>
+                    <include reference="d4U-W0-vES"/>
+                    <include reference="dnZ-js-AQA"/>
+                    <include reference="tRn-rT-yKC"/>
                     <exclude reference="5cr-hp-ez5"/>
                     <include reference="OwO-xP-L3H"/>
                     <exclude reference="SDu-2i-By5"/>
@@ -256,11 +258,9 @@
                     <include reference="8ky-uq-mY3"/>
                     <include reference="I6o-FD-ROa"/>
                     <include reference="gXB-Rb-dN9"/>
-                    <include reference="2mT-6d-xlM"/>
-                    <include reference="Qrr-B0-yo5"/>
-                    <include reference="d4U-W0-vES"/>
-                    <include reference="dnZ-js-AQA"/>
-                    <include reference="tRn-rT-yKC"/>
+                    <include reference="2Ia-UA-13o"/>
+                    <include reference="4rl-rd-gLC"/>
+                    <include reference="PIS-cW-0Gi"/>
                 </mask>
             </variation>
             <connections>

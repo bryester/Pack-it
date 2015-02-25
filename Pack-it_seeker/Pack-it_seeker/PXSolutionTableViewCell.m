@@ -20,4 +20,23 @@
     // Configure the view for the selected state
 }
 
+- (void)setImageURL:(NSString *)imageURL {
+    _imageURL = imageURL;
+    
+    //Download image from _imageURL
+    _imageView = nil;
+}
+
+- (void)setShop:(NSString *)shop {
+    _labelShop.text = shop;
+}
+
+- (void)setLocation:(NSString *)location {
+    _labelLocation.text = location;
+}
+
+- (void)setPrice:(float)price {
+    _labelPrice.text = [NSString stringWithFormat:@"%.1f", price];
+}
+
 @end

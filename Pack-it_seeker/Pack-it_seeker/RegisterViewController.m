@@ -20,7 +20,7 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    self.view.backgroundColor = [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1];
+    //self.view.backgroundColor = [UIColor colorWithRed:248/255.0 green:248/255.0 blue:248/255.0 alpha:1];
     
     [PXNetworkManager sharedStore].delegate = self;
     
