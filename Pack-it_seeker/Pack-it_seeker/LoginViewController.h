@@ -20,6 +20,8 @@
     __weak IBOutlet UIButton *forgivebutton;
     
     RegisterViewController *regis;
+    
+    __weak IBOutlet UIActivityIndicatorView *_activityIndicatorView;
 }
 
 @property (strong,nonatomic) PXAccountHolder *account;

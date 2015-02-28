@@ -93,7 +93,9 @@
 }
 
 - (void)loginAutomatically {
-    
+//    if ([[PXAccountHolder sharedInstance] username] && [[PXAccountHolder sharedInstance] password]) {
+//        [self loginByUsername:[[PXAccountHolder sharedInstance] username] password:[[PXAccountHolder sharedInstance] password]];
+//    }
 }
 
 

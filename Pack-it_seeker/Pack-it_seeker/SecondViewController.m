@@ -52,21 +52,29 @@
 #pragma mark UIAlertView
 
 - (void)showLogoutAlertView {
+    
+    //[self showAlertViewWithTitle:@"注销当前用户" message:@"" confirmButtonTitle:@"确定" confirmButtonMethod:@selector(confirmLogout) cancelButtonTitle:@"取消" cancelButtonMethod:nil];
+    
     _alertView = [[UIAlertView alloc] initWithTitle:@"注销当前用户" message:@"" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [_alertView show];
+}
+
+- (void)confirmLogout {
+    NSLog(@"注销当前用户");
+    [[PXAccountHolder sharedInstance] logout];
+    [PXNetworkManager sharedStore].account = nil;
+    [self viewWillAppear:NO];
+    [_tableView reloadData];
 }
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
-        NSLog(@"注销当前用户");
-        [[PXAccountHolder sharedInstance] logout];
-        [PXNetworkManager sharedStore].account = nil;
-        [self viewWillAppear:NO];
-        [_tableView reloadData];
+        [self confirmLogout];
     }else{
         NSLog(@"取消注销用户");
     }
 }
+
 
 
 #pragma mark - UITableViewDataSources

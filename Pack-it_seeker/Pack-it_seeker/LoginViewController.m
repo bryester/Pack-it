@@ -39,6 +39,8 @@
     } else if (_account && _account.username) {
         userName.text = _account.username;
     }
+    
+    [self initActivityIndicatorView];
 }
 - (IBAction)returnClick:(id)sender {
     [self dismissViewControllerAnimated:NO completion:nil];
@@ -50,6 +52,7 @@
     NSLog(@"%@",userPass.text);
 
     [[PXNetworkManager sharedStore] loginByUsername:userName.text password:userPass.text];
+    [self startIndicator];
 
 }
 - (IBAction)registerByEmailClick:(UIButton *)sender {
@@ -112,8 +115,36 @@
 }
 */
 
+
+#pragma mark - UIActivityIndicatorView
+- (void)initActivityIndicatorView {
+    //_activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    
+    //_activityIndicatorView.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+    //_activityIndicatorView.center = self.view.center;
+    //[self.view addSubview:_activityIndicatorView];
+    //[self.view bringSubviewToFront:_activityIndicatorView];
+    //[_activityIndicatorView bringSubviewToFront:self.view];
+    //[_activityIndicatorView setHidden:NO];
+    //[UIApplication sharedApplication].networkActivityIndicatorVisible = TRUE;
+    //[_activityIndicatorView setBounds:self.view.frame];
+    //[_activityIndicatorView setCenter:self.view.center];
+}
+
+- (void)startIndicator {
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [_activityIndicatorView startAnimating];
+}
+
+- (void)stopIndicator {
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    [_activityIndicatorView stopAnimating];
+}
+
+
 #pragma mark - PXNetworkProtocol Delegate
 - (void)onLoginResult:(NSError *)error {
+    [self stopIndicator];
     NSLog(@"onLoginResult");
     if (error) {
         [self showAlertview:error];

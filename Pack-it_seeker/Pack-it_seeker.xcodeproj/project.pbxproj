@@ -18,6 +18,8 @@
 		B44FBD421A9C771B00AFB3AC /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */; };
 		B44FBD431A9C771B00AFB3AC /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */; };
 		B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */; };
+		B453CDB91AA1C37600854D2A /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */; };
+		B453CDBF1AA1C40300854D2A /* AlertViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B453CDBE1AA1C40300854D2A /* AlertViewHolder.m */; };
 		B47C3DA21A9452A400F41A9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA11A9452A400F41A9D /* main.m */; };
 		B47C3DA51A9452A400F41A9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA41A9452A400F41A9D /* AppDelegate.m */; };
 		B47C3DA81A9452A400F41A9D /* ProblemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA71A9452A400F41A9D /* ProblemsViewController.m */; };
@@ -108,6 +110,10 @@
 		B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
 		B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPasswordViewController.xib; sourceTree = "<group>"; };
 		B44FBD4A1A9C790300AFB3AC /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		B453CDB71AA1C37600854D2A /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
+		B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
+		B453CDBD1AA1C40300854D2A /* AlertViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewHolder.h; sourceTree = "<group>"; };
+		B453CDBE1AA1C40300854D2A /* AlertViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewHolder.m; sourceTree = "<group>"; };
 		B47C3D9C1A9452A400F41A9D /* Pack-it_seeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pack-it_seeker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47C3DA01A9452A400F41A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47C3DA11A9452A400F41A9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -253,6 +259,15 @@
 			name = Signup;
 			sourceTree = "<group>";
 		};
+		B453CDBC1AA1C3F800854D2A /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				B453CDBD1AA1C40300854D2A /* AlertViewHolder.h */,
+				B453CDBE1AA1C40300854D2A /* AlertViewHolder.m */,
+			);
+			name = AlertView;
+			sourceTree = "<group>";
+		};
 		B47C3D931A9452A400F41A9D = {
 			isa = PBXGroup;
 			children = (
@@ -343,11 +358,14 @@
 		B4D77D351A9613C700C4ACA5 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B453CDBC1AA1C3F800854D2A /* AlertView */,
 				B44FBCAF1A9C6C5800AFB3AC /* PXAccountHolder.h */,
 				B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */,
 				B4D77D6C1A961E6E00C4ACA5 /* PXNetworkManager.h */,
 				B4D77D6D1A961E6E00C4ACA5 /* PXNetworkManager.m */,
 				B44FBD4A1A9C790300AFB3AC /* Config.h */,
+				B453CDB71AA1C37600854D2A /* UIViewController+Alert.h */,
+				B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -612,6 +630,7 @@
 				B4D77D7F1A96270F00C4ACA5 /* SolutionDetailViewController.m in Sources */,
 				B4D77D7C1A9626CE00C4ACA5 /* SolutionsTableViewController.m in Sources */,
 				B4D77D671A9618A000C4ACA5 /* JSONModel+networking.m in Sources */,
+				B453CDBF1AA1C40300854D2A /* AlertViewHolder.m in Sources */,
 				B4D77D631A9618A000C4ACA5 /* JSONModelError.m in Sources */,
 				B4D77D651A9618A000C4ACA5 /* JSONAPI.m in Sources */,
 				B47C3DA81A9452A400F41A9D /* ProblemsViewController.m in Sources */,
@@ -619,6 +638,7 @@
 				B4D77D621A9618A000C4ACA5 /* JSONModelClassProperty.m in Sources */,
 				B4D77D3E1A9615C400C4ACA5 /* PXTag.m in Sources */,
 				B47C3DA21A9452A400F41A9D /* main.m in Sources */,
+				B453CDB91AA1C37600854D2A /* UIViewController+Alert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

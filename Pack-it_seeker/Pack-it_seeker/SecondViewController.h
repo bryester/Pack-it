@@ -11,6 +11,7 @@
 #import "PXAccountHolder.h"
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "UIViewController+Alert.h"
 
 @interface SecondViewController : UIViewController<UIAlertViewDelegate, UITableViewDelegate, UITableViewDataSource, PXNetworkProtocol> {
     
@@ -26,6 +27,7 @@
     
     LoginViewController *_loginViewController;
     RegisterViewController *_registerViewController;
+    
 }
 
 
