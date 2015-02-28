@@ -28,7 +28,7 @@
 @property (assign, nonatomic) int duration;
 @property (strong, nonatomic) NSArray<Optional, PXSolution> *solutions;   //@PXSolution
 @property (strong, nonatomic) PXTag<Optional> *tag;
-@property (strong, nonatomic) CLLocation *location;
+@property (strong, nonatomic) CLLocation<Ignore> *location;
 
 - (instancetype)initWithString:(NSString *)string error:(JSONModelError *__autoreleasing *)err;
 

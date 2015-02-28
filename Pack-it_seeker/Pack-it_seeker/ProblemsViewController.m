@@ -29,6 +29,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - UIActivityIndicatorView
+
+- (void)startIndicator {
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [_activityIndicator startAnimating];
+}
+
+- (void)stopIndicator {
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    [_activityIndicator stopAnimating];
+}
+
 #pragma mark - TableView Delegate
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -39,7 +51,7 @@
     if (_problems) {
         return _problems.count;
     }
-    return 1;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,6 +72,10 @@
         cell.duration = problem.duration;
         cell.imageURL = problem.pictureURL;
         cell.desc = problem.desc;
+        if (problem.pictureURL) {
+            [cell.imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_URL, problem.pictureURL]] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
+        }
+        
         
     } else {
         cell.status = @"未解决";
@@ -78,15 +94,20 @@
 #pragma mark - Network Methods
 
 - (void)getProblems {
-    //[[PXNetworkManager sharedStore] getAllProblems];
+    if ([PXNetworkManager sharedStore].account) {
+        [self startIndicator];
+        [[PXNetworkManager sharedStore] getAllProblems];
+    }
+    
 }
 
 #pragma mark - PXNetworkProtocol Delegate
 
 - (void)onGetAllProblemsResult:(NSArray *)problems error:(NSError *)error {
+    [self stopIndicator];
     if (!error) {
         _problems = problems;
-        [self getProblems];
+        [self.tableView reloadData];
     }
 }
 

@@ -17,4 +17,13 @@
     return self;
 }
 
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"id": @"problemID",
+                                                       @"picture.picture.url":@"pictureURL"
+                                                       }];
+}
+
+
 @end

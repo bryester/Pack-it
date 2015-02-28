@@ -123,20 +123,29 @@
 
 #pragma mark - Functional Methods
 - (void)getAllProblems {
-    //CLLocation *location = [[CLLocation alloc] initWithLatitude:22.0 longitude:22.0];
-    PXProblem *problem = [PXProblem new];
     
-    problem.pictureURL = @"xxx";
-    
-    problem.location = nil;
-    problem.status = @"yStatus";
-    problem.duration = 1;
-    problem.pictureURL = @"http://image.baidu.com/channel?c=%E6%B1%BD%E8%BD%A6&t=%E5%85%A8%E9%83%A8&s=0";
-    NSMutableArray *array = [NSMutableArray new];
-    [array addObject:problem];
-    
-    if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
-        [self.delegate onGetAllProblemsResult:array error:nil];
+    if (_account) {
+        [NXOAuth2Request performMethod:@"GET"
+                            onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_GET_PROBLEMS]
+                       usingParameters:@{@"API-VERSION": @"v1"}
+                           withAccount:_account
+                   sendProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
+                       NSLog(@"requestProcess:%llu", bytesSend/bytesTotal);
+                   }
+                       responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+                           
+                           
+                           
+                           if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
+                               [self.delegate onGetAllProblemsResult:[self parseProblemsFromResponse:responseData] error:nil];
+                           }
+                           
+                       }];
+        
+    } else{
+        if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
+            [self.delegate onGetAllProblemsResult:nil error:nil];
+        }
     }
 }
 
@@ -181,5 +190,80 @@
     NSLog(@"tokenType:%@", authToken.tokenType);            //NSString
     
     NSLog(@"expiresDate:%@", authToken.expiresAt);          //NSDate
+}
+
+- (NSArray *)parseProblemsFromResponse:(NSData *)responseData {
+    NSArray *result = [self getArrayFromResponse:responseData];
+    
+    if (!result) {
+        return nil;
+    }
+    NSMutableArray *problems = [NSMutableArray new];
+    NSError* err = nil;
+    for (NSDictionary *dic in result) {
+        PXProblem *p = [[PXProblem alloc] initWithDictionary:dic error:&err];
+        [problems addObject:p];
+    }
+    return problems;
+}
+
+#pragma mark - Common Methods
+/*
+ *通用方法，将网络请求返回的data转换成dictionary
+ */
+- (NSDictionary *)getDictionaryFromResponse:(NSData *)data{
+    if (!data) {
+        return nil;
+    }
+    NSError *error = nil;
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:data
+                 options:0
+                 error:&error];
+    
+    if(error) {
+        NSLog(@"JSON was malformed, act appropriately here");
+        return nil;
+    }
+    
+    NSDictionary *result;
+    
+    if([object isKindOfClass:[NSDictionary class]])
+    {
+        result = object;
+    }
+    else
+    {
+        NSLog(@"result is not a dictionary");
+    }
+    return result;
+}
+
+- (NSArray *)getArrayFromResponse:(NSData *)data{
+    NSError *error = nil;
+    if (!data) {
+        return nil;
+    }
+    id object = [NSJSONSerialization
+                 JSONObjectWithData:data
+                 options:0
+                 error:&error];
+    
+    if(error) {
+        NSLog(@"JSON was malformed, act appropriately here");
+        return nil;
+    }
+    
+    NSArray *result;
+    
+    if([object isKindOfClass:[NSArray class]])
+    {
+        result = object;
+    }
+    else
+    {
+        NSLog(@"result is not an array");
+    }
+    return result;
 }
 @end

@@ -20,6 +20,8 @@
 		B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */; };
 		B453CDB91AA1C37600854D2A /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */; };
 		B453CDBF1AA1C40300854D2A /* AlertViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B453CDBE1AA1C40300854D2A /* AlertViewHolder.m */; };
+		B453CDC11AA1E23500854D2A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453CDC01AA1E23500854D2A /* SDWebImage.framework */; };
+		B453CDC31AA1E26100854D2A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453CDC21AA1E26100854D2A /* ImageIO.framework */; };
 		B47C3DA21A9452A400F41A9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA11A9452A400F41A9D /* main.m */; };
 		B47C3DA51A9452A400F41A9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA41A9452A400F41A9D /* AppDelegate.m */; };
 		B47C3DA81A9452A400F41A9D /* ProblemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DA71A9452A400F41A9D /* ProblemsViewController.m */; };
@@ -114,6 +116,8 @@
 		B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
 		B453CDBD1AA1C40300854D2A /* AlertViewHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewHolder.h; sourceTree = "<group>"; };
 		B453CDBE1AA1C40300854D2A /* AlertViewHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewHolder.m; sourceTree = "<group>"; };
+		B453CDC01AA1E23500854D2A /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		B453CDC21AA1E26100854D2A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B47C3D9C1A9452A400F41A9D /* Pack-it_seeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pack-it_seeker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47C3DA01A9452A400F41A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47C3DA11A9452A400F41A9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -181,10 +185,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B453CDC31AA1E26100854D2A /* ImageIO.framework in Frameworks */,
 				B44FBD351A9C740C00AFB3AC /* Security.framework in Frameworks */,
 				B44FBD331A9C73A900AFB3AC /* libOAuth2Client.a in Frameworks */,
 				B4D77D6B1A9618AE00C4ACA5 /* SystemConfiguration.framework in Frameworks */,
 				B4D77D441A96161F00C4ACA5 /* UIKit.framework in Frameworks */,
+				B453CDC11AA1E23500854D2A /* SDWebImage.framework in Frameworks */,
 				B4D77D421A96161A00C4ACA5 /* Foundation.framework in Frameworks */,
 				B4D77D401A96160200C4ACA5 /* CoreLocation.framework in Frameworks */,
 			);
@@ -271,6 +277,7 @@
 		B47C3D931A9452A400F41A9D = {
 			isa = PBXGroup;
 			children = (
+				B453CDC21AA1E26100854D2A /* ImageIO.framework */,
 				B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */,
 				B4D77D461A9618A000C4ACA5 /* JSONModel */,
 				B4D77D451A96163500C4ACA5 /* Framework */,
@@ -373,6 +380,7 @@
 		B4D77D451A96163500C4ACA5 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B453CDC01AA1E23500854D2A /* SDWebImage.framework */,
 				B44FBD341A9C740C00AFB3AC /* Security.framework */,
 				B4D77D6A1A9618AE00C4ACA5 /* SystemConfiguration.framework */,
 				B4D77D431A96161F00C4ACA5 /* UIKit.framework */,
@@ -480,8 +488,8 @@
 			buildConfigurationList = B47C3DC21A9452A400F41A9D /* Build configuration list for PBXNativeTarget "Pack-it_seeker" */;
 			buildPhases = (
 				B47C3D981A9452A400F41A9D /* Sources */,
-				B47C3D991A9452A400F41A9D /* Frameworks */,
 				B47C3D9A1A9452A400F41A9D /* Resources */,
+				B47C3D991A9452A400F41A9D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -765,6 +773,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -781,6 +793,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,

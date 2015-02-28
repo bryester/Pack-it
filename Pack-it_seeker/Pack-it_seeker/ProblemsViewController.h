@@ -10,11 +10,14 @@
 #import "PXNetworkManager.h"
 #import "SolutionsTableViewController.h"
 #import "PXProblemTableViewCell.h"
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "Config.h"
 
 @interface ProblemsViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, PXNetworkProtocol> {
     
     NSArray *_problems;
     
+    __weak IBOutlet UIActivityIndicatorView *_activityIndicator;
     SolutionsTableViewController *_solutionsTableViewController;
 }
 

@@ -34,4 +34,6 @@
 #define ON_RESOURCE_URL_TO_PUT_NEW_PASSWORD             BASE_URL@"/me"
 
 
+#define ON_RESOURCE_URL_TO_GET_PROBLEMS             BASE_URL@"/problems"
+
 #endif
