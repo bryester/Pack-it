@@ -116,7 +116,7 @@
 - (void)onLoginResult:(NSError *)error {
     NSLog(@"onLoginResult");
     if (error) {
-        // [self showAlertview:error];
+        [self showAlertview:error];
         //[self showConfirmAlertViewWithMessage:@"登录失败，请检查账号或网络"];
     } else {
         //[self showConfirmAlertViewWithMessage:@"登录成功"];

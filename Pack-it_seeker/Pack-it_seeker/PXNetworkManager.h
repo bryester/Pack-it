@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PXAccountHolder.h"
 #import "PXProblem.h"
 #import "PXSolution.h"
 #import "NXOAuth2.h"
 #import "PXTag.h"
+#import "Config.h"
 
 @protocol PXNetworkProtocol;
 

@@ -15,6 +15,18 @@
 @implementation AppDelegate
 
 
+- (BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [[PXAccountHolder sharedInstance] loadData];
+    if ([[PXAccountHolder sharedInstance] username] && [[PXAccountHolder sharedInstance] password]) {
+        //Login automatically
+        [[PXNetworkManager sharedStore] loginAutomatically];
+    } else {
+        //[[PXNetworkManager sharedStore] getTempAccount];
+    }
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     return YES;
