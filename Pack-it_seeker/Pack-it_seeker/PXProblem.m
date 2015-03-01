@@ -21,9 +21,14 @@
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
                                                        @"id": @"problemID",
-                                                       @"picture.picture.url":@"pictureURL"
+                                                       @"picture.url":@"pictureURL",
+                                                       @"solved_solutions":@"solutions"
                                                        }];
 }
 
+//- (void)setPictureURL:(NSString *)pictureURL {
+//    NSLog(@"setPic");
+//    self.pictureURL = [NSString stringWithFormat:@"%@%@", BASE_URL, pictureURL];
+//}
 
 @end

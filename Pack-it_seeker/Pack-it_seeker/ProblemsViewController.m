@@ -73,7 +73,8 @@
         cell.imageURL = problem.pictureURL;
         cell.desc = problem.desc;
         if (problem.pictureURL) {
-            [cell.imageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE_URL, problem.pictureURL]] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
+            NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, problem.pictureURL];
+            [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
         
         

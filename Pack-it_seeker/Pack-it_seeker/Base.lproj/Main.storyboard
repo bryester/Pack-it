@@ -295,7 +295,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="GS9-W9-nsQ">
-                            <rect key="frame" x="-10" y="-10" width="20" height="20"/>
+                            <rect key="frame" x="0.0" y="206" width="600" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
@@ -419,11 +419,11 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="_imageView" destination="3I4-Cz-2iR" id="DXg-cA-3Th"/>
                                     <outlet property="_labelDesc" destination="fON-E2-bH5" id="Stk-CJ-hzd"/>
                                     <outlet property="_labelDuration" destination="owt-53-UgK" id="wcH-n0-JbL"/>
                                     <outlet property="_labelLocation" destination="eBQ-s8-ENW" id="uwp-Eg-OJk"/>
                                     <outlet property="_labelStatus" destination="xzf-nV-ZdF" id="r71-sK-DrN"/>
+                                    <outlet property="imageView_customed" destination="3I4-Cz-2iR" id="r5g-12-6zg"/>
                                     <segue destination="BMf-Le-0ux" kind="show" identifier="showSolutions" id="WEB-nm-Ht0"/>
                                 </connections>
                             </tableViewCell>
@@ -462,7 +462,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gRV-FF-P4R" id="ROT-27-wtR">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defult_portraiture.png" translatesAutoresizingMaskIntoConstraints="NO" id="PpA-Wa-c7Q">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PpA-Wa-c7Q">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="103" id="ELZ-nv-G46"/>
@@ -603,6 +603,8 @@
                                     <outlet property="_labelLocation" destination="Xi4-hS-VGn" id="24I-of-n0r"/>
                                     <outlet property="_labelPrice" destination="hSP-q4-c9M" id="y9V-rn-FJU"/>
                                     <outlet property="_labelShop" destination="lZK-PM-TEk" id="xpB-dU-cHB"/>
+                                    <outlet property="imageView" destination="PpA-Wa-c7Q" id="f7J-X0-zJK"/>
+                                    <outlet property="imageView_customed" destination="PpA-Wa-c7Q" id="v6t-1f-zec"/>
                                     <segue destination="JpU-Dm-hx6" kind="show" id="0Df-Vc-zZx"/>
                                 </connections>
                             </tableViewCell>

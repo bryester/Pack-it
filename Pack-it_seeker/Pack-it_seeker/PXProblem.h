@@ -12,6 +12,7 @@
 #import "JSONModel.h"
 #import "PXSolution.h"
 #import "PXTag.h"
+#import "Config.h"
 
 @protocol PXProblem
 @end

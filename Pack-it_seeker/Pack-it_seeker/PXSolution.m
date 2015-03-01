@@ -10,4 +10,13 @@
 
 @implementation PXSolution
 
++(JSONKeyMapper*)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithDictionary:@{
+                                                       @"id": @"solutionID",
+                                                       @"picture.url":@"pictureURL",
+                                                       @"description":@"desc"
+                                                       }];
+}
+
 @end

@@ -42,7 +42,7 @@
     if (_solutions) {
         return _solutions.count;
     }
-    return 2;
+    return 0;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -64,6 +64,10 @@
         cell.price = solution.price;
         cell.imageURL = solution.pictureURL;
         //cell.location = solution.location;
+        if (solution.pictureURL) {
+            NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
+            [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
+        }
         
     } else {
         cell.shop = @"优衣库（新都城店）";

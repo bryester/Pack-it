@@ -17,6 +17,7 @@
     __weak IBOutlet UILabel *_labelLocation;
     
 }
+@property (weak, nonatomic) IBOutlet UIImageView *imageView_customed;
 
 @property (strong, nonatomic) NSString *imageURL;
 @property (strong, nonatomic) NSString *image;

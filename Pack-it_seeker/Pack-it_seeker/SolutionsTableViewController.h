@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "PXSolutionTableViewCell.h"
 #import "PXSolution.h"
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "Config.h"
 
 @interface SolutionsTableViewController : UITableViewController
 
