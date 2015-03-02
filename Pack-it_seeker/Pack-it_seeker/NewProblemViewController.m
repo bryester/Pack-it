@@ -58,6 +58,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSData *compressImage = UIImageJPEGRepresentation(image,0.01);
     image = [UIImage imageWithData: compressImage];
     
+    NSInteger fileSize = compressImage.length;
+    
     [_imageButton setImage:image forState:UIControlStateNormal ];
     [self dismissViewControllerAnimated:picker completion:nil];
 }
