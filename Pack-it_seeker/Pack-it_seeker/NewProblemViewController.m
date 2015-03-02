@@ -51,7 +51,7 @@
 
 - (IBAction)confirm:(id)sender {
     if (_imgData) {
-        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"haha" duration:@(10) tag:nil location:nil];
+        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"hahahawithImg" duration:@(10) tag:nil location:nil];
     }
     
     //[self dismissViewControllerAnimated:NO completion:nil];

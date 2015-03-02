@@ -58,6 +58,7 @@
     if (_credential) {
         _operationManager = [AFHTTPRequestOperationManager manager];
         [_operationManager.requestSerializer setAuthorizationHeaderFieldWithCredential:_credential];
+        
     }
 }
 
@@ -212,15 +213,28 @@
     [finalDictionary setObject:problem forKey:@"problem"];
     
     NSLog(@"quest dictionary:%@", finalDictionary);
-    NSString *jsonString = [self convertToJSONStringFromDictionary:finalDictionary];
+    //NSString *jsonString = [self convertToJSONStringFromDictionary:finalDictionary];
     
     
     
-    NXOAuth2FileStreamWrapper* w =[NXOAuth2FileStreamWrapper
-                                   wrapperWithStream:[NSInputStream inputStreamWithData:imgData]
-                                   contentLength:[imgData length]
-                                   fileName:@"image"];
-    
+    if (_credential) {
+        _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [_operationManager.requestSerializer setAuthorizationHeaderFieldWithCredential:_credential];
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        
+        
+        [_operationManager POST:ON_RESOURCE_URL_TO_POST_PROBLEM
+                     parameters:finalDictionary
+      constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+          [formData appendPartWithFormData:imgData name:@"image"];
+      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          
+          NSLog(@"postNewProblemByImage responseHandler:%@", responseObject);
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          NSLog(@"postNewProblemByImage Error:%@", error);
+      }];
+        
+    }
     
 //    [NXOAuth2Request performMethod:@"POST"
 //                        onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_POST_PROBLEM]
@@ -235,18 +249,18 @@
 //                       
 //                   }];
     
-    [NXOAuth2Request performMethod:@"POST"
-                        onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_POST_PROBLEM]
-                   usingParameters:@{@"file": w}
-                       withAccount:_account
-               sendProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
-                   NSLog(@"requestProcess:%llu", bytesSend/bytesTotal);
-               }
-                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                       
-                       NSLog(@"responseHandler:%@", response);
-                       
-                   }];
+//    [NXOAuth2Request performMethod:@"POST"
+//                        onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_POST_PROBLEM]
+//                   usingParameters:@{@"file": w}
+//                       withAccount:_account
+//               sendProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
+//                   NSLog(@"requestProcess:%llu", bytesSend/bytesTotal);
+//               }
+//                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+//                       
+//                       NSLog(@"responseHandler:%@", response);
+//                       
+//                   }];
     
 }
 
