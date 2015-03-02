@@ -230,8 +230,15 @@
       } success:^(AFHTTPRequestOperation *operation, id responseObject) {
           
           NSLog(@"postNewProblemByImage responseHandler:%@", responseObject);
+          if ([self.delegate respondsToSelector:@selector(onPostNewProblemResult:)]) {
+              [self.delegate onPostNewProblemResult:nil];
+          }
+          
       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
           NSLog(@"postNewProblemByImage Error:%@", error);
+          if ([self.delegate respondsToSelector:@selector(onPostNewProblemResult:)]) {
+              [self.delegate onPostNewProblemResult:error];
+          }
       }];
         
     }

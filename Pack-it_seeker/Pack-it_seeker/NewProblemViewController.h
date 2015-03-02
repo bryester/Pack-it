@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import "PXNetworkManager.h"
+#import "MBProgressHUD.h"
 
 @interface NewProblemViewController : UIViewController <PXNetworkProtocol, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
     __weak IBOutlet UIButton *_imageButton;
     
     NSData *_imgData;
+    
+    MBProgressHUD *_hud;
 }
 
 @end

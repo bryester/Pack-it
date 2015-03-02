@@ -17,10 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [PXNetworkManager sharedStore].delegate = self;
+    [self initHud];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +31,35 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Progress Hub
+- (void)initHud {
+    
+//    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+//    _hud.mode = MBProgressHUDModeAnnularDeterminate;
+//    _hud.labelText = @"Uploading";
+//    [_hud hide:YES];
+}
+
+- (void)showHub {
+    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    _hud.mode = MBProgressHUDModeIndeterminate;
+    _hud.labelText = @"Uploading";
+}
+
+- (void)hideHub {
+    [_hud hide:YES];
+}
+
+- (void)showHubWithText:(NSString *)string {
+    [_hud hide:YES];
+    _hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+    _hud.mode = MBProgressHUDModeText;
+    _hud.labelText = string;
+    
+    [_hud hide:YES afterDelay:1];
+    
+    
+}
 
 #pragma mark - Button Methods
 
@@ -51,6 +83,7 @@
 
 - (IBAction)confirm:(id)sender {
     if (_imgData) {
+        [self showHub];
         [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"hahahawithImg" duration:@(10) tag:nil location:nil];
     }
     
@@ -104,6 +137,21 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     return cell;
 }
+
+
+#pragma mark - PXNetworkProtocol Delegate
+
+- (void)onPostNewProblemResult:(NSError *)error {
+    if (error) {
+        [self showHubWithText:@"Error"];
+    } else {
+        [self showHubWithText:@"Success"];
+        
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
 
 /*
 #pragma mark - Navigation
