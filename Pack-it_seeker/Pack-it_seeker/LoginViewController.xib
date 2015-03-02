@@ -8,11 +8,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
                 <outlet property="_activityIndicatorView" destination="UXK-pr-SQo" id="TLc-ID-DK6"/>
-                <outlet property="forgivebutton" destination="70A-D7-mnj" id="8Xh-jY-oGr"/>
-                <outlet property="login" destination="ONk-H7-kGR" id="UrO-XW-qWR"/>
                 <outlet property="userName" destination="BiG-cL-vOO" id="WcF-4L-CpY"/>
                 <outlet property="userPass" destination="NrJ-cE-zwd" id="Cb7-Kz-K7A"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="E83-VU-3vL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -165,8 +163,7 @@
                             <exclude reference="swn-ZG-BzL"/>
                         </mask>
                     </variation>
-                    <variation key="widthClass=compact" misplaced="YES">
-                        <rect key="frame" x="150" y="231" width="37" height="37"/>
+                    <variation key="widthClass=compact">
                         <mask key="constraints">
                             <exclude reference="1xF-RE-b8D"/>
                             <exclude reference="a4a-0P-6mS"/>
@@ -247,18 +244,11 @@
                     <exclude reference="UXK-pr-SQo"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="2Ia-UA-13o"/>
-                    <exclude reference="4rl-rd-gLC"/>
-                    <exclude reference="PIS-cW-0Gi"/>
                     <exclude reference="Hq6-kL-xIP"/>
                     <exclude reference="YcD-ob-jat"/>
                     <exclude reference="kEw-E5-4HK"/>
                     <exclude reference="sWC-Wd-4mQ"/>
                     <exclude reference="uDR-0B-ppx"/>
-                    <exclude reference="5cr-hp-ez5"/>
-                    <exclude reference="OwO-xP-L3H"/>
-                    <exclude reference="SDu-2i-By5"/>
-                    <exclude reference="gMQ-RG-3eo"/>
                     <exclude reference="2hy-iI-lE8"/>
                     <exclude reference="B0i-se-LCW"/>
                     <exclude reference="M3e-Of-sxt"/>
@@ -268,15 +258,22 @@
                     <exclude reference="Z3b-0j-fmJ"/>
                     <exclude reference="ZW3-pB-u3j"/>
                     <exclude reference="xqP-dq-Or5"/>
-                    <exclude reference="1KP-M4-RpY"/>
-                    <exclude reference="8ky-uq-mY3"/>
-                    <exclude reference="I6o-FD-ROa"/>
-                    <exclude reference="gXB-Rb-dN9"/>
                     <exclude reference="2mT-6d-xlM"/>
                     <exclude reference="Qrr-B0-yo5"/>
                     <exclude reference="d4U-W0-vES"/>
                     <exclude reference="dnZ-js-AQA"/>
                     <exclude reference="tRn-rT-yKC"/>
+                    <exclude reference="5cr-hp-ez5"/>
+                    <exclude reference="OwO-xP-L3H"/>
+                    <exclude reference="SDu-2i-By5"/>
+                    <exclude reference="gMQ-RG-3eo"/>
+                    <exclude reference="1KP-M4-RpY"/>
+                    <exclude reference="8ky-uq-mY3"/>
+                    <exclude reference="I6o-FD-ROa"/>
+                    <exclude reference="gXB-Rb-dN9"/>
+                    <exclude reference="2Ia-UA-13o"/>
+                    <exclude reference="4rl-rd-gLC"/>
+                    <exclude reference="PIS-cW-0Gi"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -290,18 +287,11 @@
                     <include reference="UXK-pr-SQo"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="2Ia-UA-13o"/>
-                    <include reference="4rl-rd-gLC"/>
-                    <include reference="PIS-cW-0Gi"/>
                     <include reference="Hq6-kL-xIP"/>
                     <exclude reference="YcD-ob-jat"/>
                     <exclude reference="kEw-E5-4HK"/>
                     <exclude reference="sWC-Wd-4mQ"/>
                     <include reference="uDR-0B-ppx"/>
-                    <exclude reference="5cr-hp-ez5"/>
-                    <include reference="OwO-xP-L3H"/>
-                    <exclude reference="SDu-2i-By5"/>
-                    <include reference="gMQ-RG-3eo"/>
                     <exclude reference="2hy-iI-lE8"/>
                     <include reference="B0i-se-LCW"/>
                     <include reference="M3e-Of-sxt"/>
@@ -311,15 +301,22 @@
                     <include reference="Z3b-0j-fmJ"/>
                     <exclude reference="ZW3-pB-u3j"/>
                     <exclude reference="xqP-dq-Or5"/>
-                    <include reference="1KP-M4-RpY"/>
-                    <include reference="8ky-uq-mY3"/>
-                    <include reference="I6o-FD-ROa"/>
-                    <include reference="gXB-Rb-dN9"/>
                     <include reference="2mT-6d-xlM"/>
                     <include reference="Qrr-B0-yo5"/>
                     <include reference="d4U-W0-vES"/>
                     <include reference="dnZ-js-AQA"/>
                     <include reference="tRn-rT-yKC"/>
+                    <exclude reference="5cr-hp-ez5"/>
+                    <include reference="OwO-xP-L3H"/>
+                    <exclude reference="SDu-2i-By5"/>
+                    <include reference="gMQ-RG-3eo"/>
+                    <include reference="1KP-M4-RpY"/>
+                    <include reference="8ky-uq-mY3"/>
+                    <include reference="I6o-FD-ROa"/>
+                    <include reference="gXB-Rb-dN9"/>
+                    <include reference="2Ia-UA-13o"/>
+                    <include reference="4rl-rd-gLC"/>
+                    <include reference="PIS-cW-0Gi"/>
                 </mask>
             </variation>
             <connections>

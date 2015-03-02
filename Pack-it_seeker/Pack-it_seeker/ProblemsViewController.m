@@ -17,11 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self initRefreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [PXNetworkManager sharedStore].delegate = self;
-    [self getProblems];
+    if (!(_problems && _problems.count > 0)) {
+        //[self getProblems];
+        [_refreshControl beginRefreshing];
+        [self getProblems];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,6 +44,26 @@
 - (void)stopIndicator {
     [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     [_activityIndicator stopAnimating];
+}
+
+#pragma mark - TableView Refresh
+- (void)initRefreshControl {
+    _refreshControl = [UIRefreshControl new];
+    [_refreshControl addTarget:self action:@selector(refreshTableView:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:_refreshControl];
+}
+
+- (void)refreshTableView:(UIRefreshControl *)refreshControl {
+    //NSLog(@"refreshTableView");
+    //[AuthenticationManager sharedStore].delegate = self;
+    //refreshFlag = 0;
+    [self getProblems];
+}
+
+
+
+- (void)stopRefreshing {
+    [_refreshControl endRefreshing];
 }
 
 #pragma mark - TableView Delegate
@@ -76,14 +101,6 @@
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, problem.pictureURL];
             [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
-        
-        
-    } else {
-        cell.status = @"未解决";
-        cell.duration = 30;
-        cell.desc = @"这是一件T恤，我想要找到一件白色的";
-        cell.location = @"宝琳新都城";
-        //[cell.textLabel setText:@"gg"];
     }
     
     return cell;
@@ -95,9 +112,11 @@
 #pragma mark - Network Methods
 
 - (void)getProblems {
-    if ([PXNetworkManager sharedStore].account) {
-        [self startIndicator];
+    if ([PXNetworkManager sharedStore].credential) {
+        //[self startIndicator];
         [[PXNetworkManager sharedStore] getAllProblems];
+    } else {
+        [self stopRefreshing];
     }
     
 }
@@ -105,7 +124,7 @@
 #pragma mark - PXNetworkProtocol Delegate
 
 - (void)onGetAllProblemsResult:(NSArray *)problems error:(NSError *)error {
-    [self stopIndicator];
+    [self stopRefreshing];
     if (!error) {
         _problems = problems;
         [self.tableView reloadData];

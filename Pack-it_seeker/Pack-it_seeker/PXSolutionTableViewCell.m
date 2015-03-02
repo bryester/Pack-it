@@ -31,12 +31,12 @@
     _labelShop.text = shop;
 }
 
-- (void)setLocation:(NSString *)location {
-    _labelLocation.text = location;
+- (void)setAddress:(NSString *)address {
+    _labelAddress.text = address;
 }
 
-- (void)setPrice:(float)price {
-    _labelPrice.text = [NSString stringWithFormat:@"%.1f", price];
+- (void)setPrice:(NSNumber *)price {
+    _labelPrice.text = [NSString stringWithFormat:@"%@", price];
 }
 
 @end

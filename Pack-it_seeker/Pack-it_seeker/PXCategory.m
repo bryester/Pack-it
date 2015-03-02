@@ -1,20 +1,19 @@
 //
-//  PXTag.m
+//  PXCategory.m
 //  Pack-it_seeker
 //
-//  Created by Jiyang on 2/19/15.
+//  Created by Jiyang on 3/2/15.
 //  Copyright (c) 2015 Jiyang. All rights reserved.
 //
 
-#import "PXTag.h"
+#import "PXCategory.h"
 
-@implementation PXTag
-
+@implementation PXCategory
 
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{
-                                                       @"id": @"tagID"
+                                                       @"id": @"categoryID"
                                                        }];
 }
 

@@ -19,6 +19,10 @@
     // Do any additional setup after loading the view.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [PXNetworkManager sharedStore].delegate = self;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -46,7 +50,11 @@
 }
 
 - (IBAction)confirm:(id)sender {
-    [self dismissViewControllerAnimated:NO completion:nil];
+    if (_imgData) {
+        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"haha" duration:@(10) tag:nil location:nil];
+    }
+    
+    //[self dismissViewControllerAnimated:NO completion:nil];
 }
 
 
@@ -55,8 +63,8 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     UIImage *image= [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    NSData *compressImage = UIImageJPEGRepresentation(image,0.01);
-    image = [UIImage imageWithData: compressImage];
+    _imgData = UIImageJPEGRepresentation(image,0.01);
+    image = [UIImage imageWithData: _imgData];
     
     [_imageButton setImage:image forState:UIControlStateNormal ];
     [self dismissViewControllerAnimated:picker completion:nil];

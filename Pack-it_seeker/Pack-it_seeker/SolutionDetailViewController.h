@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PXSolution.h"
+#import "SDWebImage/UIImageView+WebCache.h"
+#import "Config.h"
 
-@interface SolutionDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SolutionDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    
+    __weak IBOutlet UIImageView *_imageView;
+    __weak IBOutlet UILabel *_labelPrice;
+    __weak IBOutlet UILabel *_labelDesc;
+}
+
+@property (strong,nonatomic) PXSolution *solution;
 
 @end

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "JSONModel.h"
+#import "PXShop.h"
 
 @protocol PXSolution
 @end
@@ -22,7 +23,8 @@
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString<Ignore> *status_CHN;
 @property (strong, nonatomic) NSString<Optional> *desc;
-@property (assign, nonatomic) double price;
+@property (strong, nonatomic) NSNumber<Optional> *price;
+@property (strong, nonatomic) PXShop *shop_profile;
 
 
 @end

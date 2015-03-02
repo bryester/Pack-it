@@ -22,7 +22,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [PXNetworkManager sharedStore].delegate = self;
     
-    if ([[PXAccountHolder sharedInstance] isLogined] && [[PXNetworkManager sharedStore] account]) {
+    if ([[PXAccountHolder sharedInstance] isLogined] && [[PXNetworkManager sharedStore] credential]) {
         _isLogin = YES;
         
     } else {

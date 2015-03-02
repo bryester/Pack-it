@@ -40,6 +40,9 @@
 
 -(instancetype)initWithClientID:(NSString *)clientID secret:(NSString *)secret scope:(NSString *)scope authorizationURL:(NSString *)authURL tokenURL:(NSString *)tokenURL redirectURL:(NSString *)redirectURL{
     self = [self init];
+    
+    
+    
     [[NXOAuth2AccountStore sharedStore] setClientID:clientID
                                              secret:secret
                                               scope:[NSSet setWithObject:scope]
@@ -51,45 +54,82 @@
     return self;
 }
 
+- (void)initOpertationManager {
+    if (_credential) {
+        _operationManager = [AFHTTPRequestOperationManager manager];
+        [_operationManager.requestSerializer setAuthorizationHeaderFieldWithCredential:_credential];
+    }
+}
+
 #pragma mark - User Methods
 
 - (void)loginByUsername:(NSString *)username password:(NSString *)pswd {
-    [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:FOR_ACCOUNT_TYPE
-                                                              username:username
-                                                              password:pswd];
-    NSLog(@"requestUserName");
-    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountStoreAccountsDidChangeNotification
-                                                      object:[NXOAuth2AccountStore sharedStore]
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *aNotification){
-                                                      //NSLog(@"np.1 observer");
-                                                      [[PXAccountHolder sharedInstance] setUsername:username password:pswd];
-                                                      
-                                                      
-                                                      [self parseAccountFromLoginNSNotification:aNotification];
-                                                      
-                                                      NSError *error = nil;
-                                                      if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
-                                                          [self.delegate onLoginResult:error];
-                                                      }
-                                                      
-                                                      //[self uploadDeviceTokenForNotification];
-                                                      
-                                                  }];
-    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountStoreDidFailToRequestAccessNotification
-                                                      object:[NXOAuth2AccountStore sharedStore]
-                                                       queue:nil
-                                                  usingBlock:^(NSNotification *aNotification){
-                                                      
-                                                      //[self getTempAccount];
-                                                      
-                                                      NSError *error = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreErrorKey];
-                                                      NSLog(@"login %@", error);
-                                                      
-                                                      if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
-                                                          [self.delegate onLoginResult:error];
-                                                      }
-                                                  }];
+    
+
+    AFOAuth2Manager *OAuth2Manager =
+    [[AFOAuth2Manager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL]
+                                    clientID:CLIENT_ID
+                                      secret:SECRET];
+    
+    [OAuth2Manager authenticateUsingOAuthWithURLString:@"/oauth/token"
+                                              username:username
+                                              password:pswd
+                                                 scope:SCOPE
+                                               success:^(AFOAuthCredential *credential) {
+                                                   NSLog(@"Token: %@", credential.accessToken);
+                                                   [[PXAccountHolder sharedInstance] setUsername:username password:pswd];
+                                                   //[self parseAccountFromLoginNSNotification:aNotification];
+                                                   _credential = credential;
+                                                   [self initOpertationManager];
+                                                   NSError *error = nil;
+                                                   if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
+                                                       [self.delegate onLoginResult:error];
+                                                   }
+
+                                               }
+                                               failure:^(NSError *error) {
+                                                   NSLog(@"login %@", error);
+                                                   if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
+                                                       [self.delegate onLoginResult:error];
+                                                   }
+                                               }];
+    
+//    [[NXOAuth2AccountStore sharedStore] requestAccessToAccountWithType:FOR_ACCOUNT_TYPE
+//                                                              username:username
+//                                                              password:pswd];
+//    NSLog(@"requestUserName");
+//    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountStoreAccountsDidChangeNotification
+//                                                      object:[NXOAuth2AccountStore sharedStore]
+//                                                       queue:nil
+//                                                  usingBlock:^(NSNotification *aNotification){
+//                                                      //NSLog(@"np.1 observer");
+//                                                      [[PXAccountHolder sharedInstance] setUsername:username password:pswd];
+//                                                      
+//                                                      
+//                                                      [self parseAccountFromLoginNSNotification:aNotification];
+//                                                      
+//                                                      NSError *error = nil;
+//                                                      if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
+//                                                          [self.delegate onLoginResult:error];
+//                                                      }
+//                                                      
+//                                                      //[self uploadDeviceTokenForNotification];
+//                                                      
+//                                                  }];
+//    [[NSNotificationCenter defaultCenter] addObserverForName:NXOAuth2AccountStoreDidFailToRequestAccessNotification
+//                                                      object:[NXOAuth2AccountStore sharedStore]
+//                                                       queue:nil
+//                                                  usingBlock:^(NSNotification *aNotification){
+//                                                      
+//                                                      //[self getTempAccount];
+//                                                      
+//                                                      NSError *error = [aNotification.userInfo objectForKey:NXOAuth2AccountStoreErrorKey];
+//                                                      NSLog(@"login %@", error);
+//                                                      
+//                                                      if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
+//                                                          [self.delegate onLoginResult:error];
+//                                                      }
+//                                                  }];
 }
 
 - (void)loginAutomatically {
@@ -124,28 +164,20 @@
 #pragma mark - Functional Methods
 - (void)getAllProblems {
     
-    if (_account) {
-        [NXOAuth2Request performMethod:@"GET"
-                            onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_GET_PROBLEMS]
-                       usingParameters:@{@"API-VERSION": @"v1"}
-                           withAccount:_account
-                   sendProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
-                       NSLog(@"requestProcess:%llu", bytesSend/bytesTotal);
-                   }
-                       responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
-                           
-                           
-                           
-                           if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
-                               [self.delegate onGetAllProblemsResult:[self parseProblemsFromResponse:responseData] error:nil];
-                           }
-                           
-                       }];
+    if (_operationManager) {
+
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
         
-    } else{
-        if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
-            [self.delegate onGetAllProblemsResult:nil error:nil];
-        }
+        [_operationManager GET:ON_RESOURCE_URL_TO_GET_PROBLEMS
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
+                               [self.delegate onGetAllProblemsResult:[self parseProblemsFromResponseObject:responseObject] error:nil];
+                           }
+                       }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           NSLog(@"getAllProblems Error: %@", error);
+                       }];
     }
 }
 
@@ -153,7 +185,68 @@
     
 }
 
-- (void)postNewProblemByImage:(UIImage *)img desc:(NSString *)desc duration:(int)duration tag:(PXTag *)tag location:(CLLocation *)location {
+- (void)postNewProblemByImage:(NSData *)imgData desc:(NSString *)desc duration:(NSNumber*)duration tag:(PXTag *)tag location:(CLLocation *)location {
+    
+    if (!(imgData && desc && duration && tag && location)) {
+        
+    }
+    
+    NSNumber *_duration = duration == nil ? @(5) : duration;
+    NSString *_desc = desc;
+    NSArray *_location = [NSArray arrayWithObjects:@(location.coordinate.longitude), @(location.coordinate.latitude), nil];
+    NSString *_tagID = tag.tagID;
+    
+    
+    NSMutableDictionary *problem = [NSMutableDictionary dictionary];
+    [problem setObject:_duration forKey:@"duration"];
+    [problem setObject:_location forKey:@"location"];
+    [problem setObject:_desc forKey:@"description"];
+    if (_tagID) {
+        [problem setObject:_tagID forKey:@"tag"];
+    } else {
+        [problem setObject:@"" forKey:@"tag"];
+    }
+    
+    
+    NSMutableDictionary *finalDictionary = [NSMutableDictionary dictionary];
+    [finalDictionary setObject:problem forKey:@"problem"];
+    
+    NSLog(@"quest dictionary:%@", finalDictionary);
+    NSString *jsonString = [self convertToJSONStringFromDictionary:finalDictionary];
+    
+    
+    
+    NXOAuth2FileStreamWrapper* w =[NXOAuth2FileStreamWrapper
+                                   wrapperWithStream:[NSInputStream inputStreamWithData:imgData]
+                                   contentLength:[imgData length]
+                                   fileName:@"image"];
+    
+    
+//    [NXOAuth2Request performMethod:@"POST"
+//                        onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_POST_PROBLEM]
+//                   usingParameters:@{@"API-VERSION": @"v1", @"Content-Type": @"application/json", @"data": jsonString, @"file": w}
+//                       withAccount:_account
+//               sendProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
+//                   NSLog(@"requestProcess:%llu", bytesSend/bytesTotal);
+//               }
+//                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+//                       
+//                       NSLog(@"responseHandler:%@", response);
+//                       
+//                   }];
+    
+    [NXOAuth2Request performMethod:@"POST"
+                        onResource:[NSURL URLWithString:ON_RESOURCE_URL_TO_POST_PROBLEM]
+                   usingParameters:@{@"file": w}
+                       withAccount:_account
+               sendProgressHandler:^(unsigned long long bytesSend, unsigned long long bytesTotal) {
+                   NSLog(@"requestProcess:%llu", bytesSend/bytesTotal);
+               }
+                   responseHandler:^(NSURLResponse *response, NSData *responseData, NSError *error){
+                       
+                       NSLog(@"responseHandler:%@", response);
+                       
+                   }];
     
 }
 
@@ -173,31 +266,14 @@
 }
 
 #pragma mark - Parse Result
-/*
- *用户登录，从返回信息中获得token
- */
-- (void)parseAccountFromLoginNSNotification:(NSNotification*)aNotification{
-    
-    NSLog(@"aNotification.userInfo objectForKey:%@", [aNotification.userInfo objectForKey:@"NXOAuth2AccountStoreNewAccountUserInfoKey"]);
-    
-    
-    _account =[aNotification.userInfo objectForKey:@"NXOAuth2AccountStoreNewAccountUserInfoKey"];
-    NSLog(@"account token: %@", _account.accessToken);
-    NXOAuth2AccessToken *authToken =_account.accessToken;
-    
-    NSLog(@"accessToken:%@", authToken.accessToken);        //NSString
-    NSLog(@"refreshToken:%@", authToken.refreshToken);      //NSString
-    NSLog(@"tokenType:%@", authToken.tokenType);            //NSString
-    
-    NSLog(@"expiresDate:%@", authToken.expiresAt);          //NSDate
-}
 
-- (NSArray *)parseProblemsFromResponse:(NSData *)responseData {
-    NSArray *result = [self getArrayFromResponse:responseData];
+- (NSArray *)parseProblemsFromResponseObject:(id)responseObject {
+    NSArray *result = [self getArrayFromResponseObject:responseObject];
     
     if (!result) {
         return nil;
     }
+    
     NSMutableArray *problems = [NSMutableArray new];
     NSError* err = nil;
     for (NSDictionary *dic in result) {
@@ -265,5 +341,57 @@
         NSLog(@"result is not an array");
     }
     return result;
+}
+
+- (NSDictionary *)getDictionaryFromResponseObject:(id)responseObject{
+
+    NSDictionary *result;
+    
+    if([responseObject isKindOfClass:[NSDictionary class]])
+    {
+        result = responseObject;
+    }
+    else
+    {
+        NSLog(@"result is not a dictionary");
+    }
+    return result;
+}
+
+- (NSArray *)getArrayFromResponseObject:(id)responseObject{
+
+    NSArray *result;
+    
+    if([responseObject isKindOfClass:[NSArray class]])
+    {
+        result = responseObject;
+    }
+    else
+    {
+        NSLog(@"result is not an array");
+    }
+    return result;
+}
+
+/*
+ *通用方法，将dictionary转换成json格式的string
+ */
+- (NSString *)convertToJSONStringFromDictionary:(NSDictionary*)dic{
+    if (!dic) {
+        return nil;
+    }
+    NSError *error;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:dic
+                                                       options:NSJSONWritingPrettyPrinted // Pass 0 if you don't care about the readability of the generated string
+                                                         error:&error];
+    
+    if (! jsonData) {
+        NSLog(@"Got an error: %@", error);
+        return nil;
+    }
+    
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    
+    return jsonString;
 }
 @end

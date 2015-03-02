@@ -18,7 +18,12 @@
     NSArray *_problems;
     
     __weak IBOutlet UIActivityIndicatorView *_activityIndicator;
+    
+    
     SolutionsTableViewController *_solutionsTableViewController;
+    
+    //下拉刷新
+    UIRefreshControl *_refreshControl;
 }
 
 

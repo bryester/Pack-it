@@ -22,7 +22,7 @@
 @property (strong, nonatomic) NSString *problemID;
 
 @property (strong, nonatomic) UIImage<Ignore> *picture;
-@property (strong, nonatomic) NSString *pictureURL;
+@property (strong, nonatomic) NSString<Optional> *pictureURL;
 @property (strong, nonatomic) NSString *status;
 @property (strong, nonatomic) NSString<Ignore> *status_CHN;
 @property (strong, nonatomic) NSString<Optional> *desc;

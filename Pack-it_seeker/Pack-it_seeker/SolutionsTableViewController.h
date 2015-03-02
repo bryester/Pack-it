@@ -11,8 +11,11 @@
 #import "PXSolution.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "Config.h"
+#import "SolutionDetailViewController.h"
 
-@interface SolutionsTableViewController : UITableViewController
+@interface SolutionsTableViewController : UITableViewController {
+    SolutionDetailViewController *_solutionDetailViewController;
+}
 
 @property (strong, nonatomic) NSArray *solutions;
 

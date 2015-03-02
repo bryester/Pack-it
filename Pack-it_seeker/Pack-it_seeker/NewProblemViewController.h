@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PXNetworkManager.h"
 
-@interface NewProblemViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface NewProblemViewController : UIViewController <PXNetworkProtocol, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
     __weak IBOutlet UIButton *_imageButton;
+    
+    NSData *_imgData;
 }
 
 @end

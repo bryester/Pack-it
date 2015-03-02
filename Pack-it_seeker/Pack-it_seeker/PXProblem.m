@@ -22,7 +22,7 @@
     return [[JSONKeyMapper alloc] initWithDictionary:@{
                                                        @"id": @"problemID",
                                                        @"picture.url":@"pictureURL",
-                                                       @"solved_solutions":@"solutions"
+                                                       @"description":@"desc"
                                                        }];
 }
 

@@ -60,20 +60,20 @@
     if (_solutions.count > 0) {
         PXSolution *solution = [_solutions objectAtIndex:indexPath.row];
         
-        //cell.shop = solution.shop;
-        cell.price = solution.price;
+        cell.shop = solution.desc;
+        if (solution.price && ![solution.price isKindOfClass:[NSNull class]]) {
+            cell.price = [NSString stringWithFormat:@"%@", solution.price];
+        } else {
+            cell.price = @"暂无报价";
+        }
+        
         cell.imageURL = solution.pictureURL;
-        //cell.location = solution.location;
+        cell.address = [NSString stringWithFormat:@"%@ - %@",solution.shop_profile.name, solution.shop_profile.address] ;
         if (solution.pictureURL) {
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
             [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
         
-    } else {
-        cell.shop = @"优衣库（新都城店）";
-        cell.price = 300;
-        //cell.imageURL = solution.pictureURL;
-        cell.location = @"新界將軍澳坑口東港城178-179 & 191-192店";
     }
     
     return cell;
@@ -114,14 +114,20 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showDetails"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        _solutionDetailViewController = [segue destinationViewController];
+        _solutionDetailViewController.solution = [_solutions objectAtIndex:indexPath.row];
+        
+    }
 }
-*/
+
 
 @end

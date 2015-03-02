@@ -13,11 +13,17 @@
 #import "NXOAuth2.h"
 #import "PXTag.h"
 #import "Config.h"
+#import "AFNetworking.h"
+#import "AFOAuth2Manager.h"
+#import "AFHTTPRequestSerializer+OAuth2.h"
 
 @protocol PXNetworkProtocol;
 
-@interface PXNetworkManager : NSObject
+@interface PXNetworkManager : NSObject {
+    AFHTTPRequestOperationManager *_operationManager;
+}
 
+@property (strong, nonatomic) AFOAuthCredential *credential;
 @property (strong, nonatomic) NXOAuth2Account *account;
 @property (strong, nonatomic) id <PXNetworkProtocol> delegate;
 
@@ -103,7 +109,7 @@
  *@param tag       optional
  *@param location   not nil
  */
-- (void)postNewProblemByImage:(UIImage *)img desc:(NSString *)desc duration:(int)duration tag:(PXTag *)tag location:(CLLocation *)location;
+- (void)postNewProblemByImage:(NSData *)imgData desc:(NSString *)desc duration:(NSNumber *)duration tag:(PXTag *)tag location:(CLLocation *)location;
 
 /**
  *删除Problem

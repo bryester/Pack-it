@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONModel.h"
+#import "PXCategory.h"
 
-@interface PXTag : NSObject
+@interface PXTag : JSONModel
+
+@property (strong, nonatomic) NSString *tagID;
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) PXCategory<Optional> *category;
 
 @end
