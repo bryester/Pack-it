@@ -207,7 +207,7 @@
     } else {
         [problem setObject:@"" forKey:@"tag"];
     }
-    
+    //[problem setObject:imgData forKey:@"picture"];
     
     NSMutableDictionary *finalDictionary = [NSMutableDictionary dictionary];
     [finalDictionary setObject:problem forKey:@"problem"];
@@ -215,18 +215,15 @@
     NSLog(@"quest dictionary:%@", finalDictionary);
     //NSString *jsonString = [self convertToJSONStringFromDictionary:finalDictionary];
     
-    
-    
     if (_credential) {
-        _operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
-        [_operationManager.requestSerializer setAuthorizationHeaderFieldWithCredential:_credential];
+        //_operationManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        //[_operationManager.requestSerializer setAuthorizationHeaderFieldWithCredential:_credential];
         [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
-        
         
         [_operationManager POST:ON_RESOURCE_URL_TO_POST_PROBLEM
                      parameters:finalDictionary
       constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-          [formData appendPartWithFormData:imgData name:@"image"];
+          [formData appendPartWithFileData:imgData name:@"problem[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
       } success:^(AFHTTPRequestOperation *operation, id responseObject) {
           
           NSLog(@"postNewProblemByImage responseHandler:%@", responseObject);

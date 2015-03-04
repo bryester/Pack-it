@@ -57,8 +57,6 @@
     _hud.labelText = string;
     
     [_hud hide:YES afterDelay:1];
-    
-    
 }
 
 #pragma mark - Button Methods
@@ -99,7 +97,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     _imgData = UIImageJPEGRepresentation(image,0.01);
     image = [UIImage imageWithData: _imgData];
     
-    NSInteger fileSize = compressImage.length;
+    NSInteger fileSize = _imgData.length;
     
     [_imageButton setImage:image forState:UIControlStateNormal ];
     [self dismissViewControllerAnimated:picker completion:nil];
@@ -149,8 +147,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     } else {
         [self showHubWithText:@"Success"];
         
-        
-        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
 }
 
