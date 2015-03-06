@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -844,7 +845,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="ybN-I1-EEk"/>
+                    <navigationItem key="navigationItem" title="Detail" id="ybN-I1-EEk">
+                        <barButtonItem key="rightBarButtonItem" title="Route" style="plain" id="hOC-qa-SGe">
+                            <connections>
+                                <segue destination="jbQ-hI-ncl" kind="show" id="kgp-dm-nKD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="_imageView" destination="Hjo-aB-YOG" id="RJp-ih-fQd"/>
                         <outlet property="_labelDesc" destination="Les-M6-Q8h" id="co7-8r-ILw"/>
@@ -858,7 +865,7 @@
         <!--Map-->
         <scene sceneID="pGt-8u-Zs6">
             <objects>
-                <viewController id="jbQ-hI-ncl" sceneMemberID="viewController">
+                <viewController id="jbQ-hI-ncl" customClass="NaviViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4hm-iN-9dk"/>
                         <viewControllerLayoutGuide type="bottom" id="CIF-nk-kp9"/>
@@ -866,9 +873,69 @@
                     <view key="view" contentMode="scaleToFill" id="phu-ro-sXL">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fx0-Qe-OP0" customClass="BMKMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-Kz-xpT">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <segments>
+                                    <segment title="步行"/>
+                                    <segment title="驾车"/>
+                                    <segment title="公交"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CIF-nk-kp9" firstAttribute="top" secondItem="Fx0-Qe-OP0" secondAttribute="bottom" id="4gM-wY-Acq"/>
+                            <constraint firstItem="8ct-Kz-xpT" firstAttribute="trailing" secondItem="phu-ro-sXL" secondAttribute="trailingMargin" id="Hpp-KN-cXX"/>
+                            <constraint firstItem="Fx0-Qe-OP0" firstAttribute="top" secondItem="4hm-iN-9dk" secondAttribute="bottom" id="P8m-kf-l2Z"/>
+                            <constraint firstItem="CIF-nk-kp9" firstAttribute="top" secondItem="Fx0-Qe-OP0" secondAttribute="bottom" id="W4g-97-YL4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fx0-Qe-OP0" secondAttribute="trailing" constant="-16" id="a6N-iL-ahr"/>
+                            <constraint firstItem="Fx0-Qe-OP0" firstAttribute="leading" secondItem="phu-ro-sXL" secondAttribute="leadingMargin" constant="-16" id="exH-xU-HZB"/>
+                            <constraint firstItem="8ct-Kz-xpT" firstAttribute="leading" secondItem="phu-ro-sXL" secondAttribute="leadingMargin" id="pBn-zK-1vS"/>
+                            <constraint firstItem="CIF-nk-kp9" firstAttribute="top" secondItem="8ct-Kz-xpT" secondAttribute="bottom" constant="8" id="tDO-hd-Jho"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Fx0-Qe-OP0"/>
+                                <exclude reference="8ct-Kz-xpT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4gM-wY-Acq"/>
+                                <exclude reference="W4g-97-YL4"/>
+                                <exclude reference="tDO-hd-Jho"/>
+                                <exclude reference="Hpp-KN-cXX"/>
+                                <exclude reference="pBn-zK-1vS"/>
+                                <exclude reference="P8m-kf-l2Z"/>
+                                <exclude reference="a6N-iL-ahr"/>
+                                <exclude reference="exH-xU-HZB"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Fx0-Qe-OP0"/>
+                                <include reference="8ct-Kz-xpT"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="4gM-wY-Acq"/>
+                                <exclude reference="W4g-97-YL4"/>
+                                <include reference="tDO-hd-Jho"/>
+                                <include reference="Hpp-KN-cXX"/>
+                                <include reference="pBn-zK-1vS"/>
+                                <include reference="P8m-kf-l2Z"/>
+                                <include reference="a6N-iL-ahr"/>
+                                <include reference="exH-xU-HZB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="VMn-eC-k4Z"/>
+                    <connections>
+                        <outlet property="_mapView" destination="Fx0-Qe-OP0" id="sD4-iL-ULF"/>
+                        <outlet property="_typeSwitcher" destination="8ct-Kz-xpT" id="WAi-4J-u4R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YO-7y-qX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -918,4 +985,7 @@
         <image name="bg.png" width="720" height="495"/>
         <image name="defult_portraiture.png" width="166" height="166"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kgp-dm-nKD"/>
+    </inferredMetricsTieBreakers>
 </document>

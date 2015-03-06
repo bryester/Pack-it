@@ -62,6 +62,12 @@
     }
 }
 
+#pragma mark - Setters
+
+- (void)setCurrentLocation:(CLLocation *)currentLocation {
+    //
+}
+
 #pragma mark - User Methods
 
 - (void)loginByUsername:(NSString *)username password:(NSString *)pswd {

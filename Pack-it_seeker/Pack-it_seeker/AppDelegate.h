@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 #import "PXNetworkManager.h"
+#import "BMapKit.h"
+#import "Config.h"
+#import "PXNetworkManager.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate, BMKLocationServiceDelegate> {
+    
+    
+    //Outdoor
+    BMKMapManager *_mapManager;
+    BMKLocationService* _locService;
+    
+    //Upload Location
+    //NSTimer *_uploadTimer;
+    
+}
 
 @property (strong, nonatomic) UIWindow *window;
 

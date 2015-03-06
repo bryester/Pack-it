@@ -9,6 +9,10 @@
 #ifndef Pack_it_seeker_Config_h
 #define Pack_it_seeker_Config_h
 
+
+#pragma mark - Network Request
+
+
 #define BASE_URL @"http://120.24.163.76:8000"
 
 //[NSString stringWithFormat:@"%@%@%@", BASE_URL, xxx, xxx];
@@ -36,5 +40,10 @@
 
 #define ON_RESOURCE_URL_TO_GET_PROBLEMS             BASE_URL@"/problems"
 #define ON_RESOURCE_URL_TO_POST_PROBLEM             BASE_URL@"/problems"
+
+
+#pragma mark - BaiduMap
+
+#define BaiduMap_Key    @"Zq1APR1rIS7k94yOFNh5Nt57"
 
 #endif

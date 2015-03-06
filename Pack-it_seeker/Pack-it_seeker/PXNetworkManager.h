@@ -28,6 +28,9 @@
 @property (strong, nonatomic) id <PXNetworkProtocol> delegate;
 
 
+@property (strong, nonatomic) CLLocation *currentLocation;
+
+
 #pragma mark - Init Methods
 
 + (instancetype)sharedStore;
