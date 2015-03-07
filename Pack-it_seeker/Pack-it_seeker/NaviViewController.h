@@ -10,6 +10,7 @@
 #import "UIImage+Rotate.h"
 #import "BMapKit.h"
 #import "PXShop.h"
+#import "PXNetworkManager.h"
 
 #define MYBUNDLE_NAME @ "mapapi.bundle"
 #define MYBUNDLE_PATH [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: MYBUNDLE_NAME]
