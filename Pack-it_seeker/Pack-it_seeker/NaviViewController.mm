@@ -142,9 +142,13 @@
 #pragma mark - Buttons Action
 - (void)showCurrentLocation {
     NSLog(@"进入普通定位态");
-    if (_locService) {
+    if (_locService && (_locService.userLocation.location.coordinate.longitude != 0)) {
         //显示当前位置页面
         NSLog(@"my location: longitude: %f, latitude: %f", _locService.userLocation.location.coordinate.longitude, _locService.userLocation.location.coordinate.latitude);
+        [_mapView setCenterCoordinate:_locService.userLocation.location.coordinate animated:true];
+    } else if ([PXNetworkManager sharedStore].currentLocation) {
+        //显示当前位置页面
+        NSLog(@"my locationX: longitude: %f, latitude: %f", _locService.userLocation.location.coordinate.longitude, _locService.userLocation.location.coordinate.latitude);
         [_mapView setCenterCoordinate:_locService.userLocation.location.coordinate animated:true];
     }
 }

@@ -651,7 +651,7 @@
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
-                                    <rect key="frame" x="16" y="448" width="368" height="58"/>
+                                    <rect key="frame" x="16" y="443" width="368" height="58"/>
                                     <mask key="constraints">
                                         <include reference="bTz-Mb-wMe"/>
                                     </mask>
@@ -710,7 +710,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="398" width="368" height="42"/>
+                                    <rect key="frame" x="16" y="393" width="368" height="42"/>
                                     <mask key="subviews">
                                         <include reference="LQS-pJ-S5y"/>
                                         <include reference="kdj-5H-FZj"/>
@@ -736,7 +736,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="72" width="368" height="368"/>
+                                    <rect key="frame" x="16" y="67" width="368" height="368"/>
                                     <mask key="constraints">
                                         <include reference="AeJ-YP-OLN"/>
                                     </mask>
@@ -768,7 +768,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="506" width="368" height="50"/>
+                                    <rect key="frame" x="16" y="501" width="368" height="50"/>
                                     <mask key="constraints">
                                         <include reference="U8z-W1-vy1"/>
                                     </mask>
@@ -848,7 +848,7 @@
                     <navigationItem key="navigationItem" title="Detail" id="ybN-I1-EEk">
                         <barButtonItem key="rightBarButtonItem" title="Route" style="plain" id="hOC-qa-SGe">
                             <connections>
-                                <segue destination="jbQ-hI-ncl" kind="show" id="kgp-dm-nKD"/>
+                                <segue destination="jbQ-hI-ncl" kind="show" identifier="toMap" id="kgp-dm-nKD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -877,6 +877,9 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fx0-Qe-OP0" customClass="BMKMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="487"/>
+                                </variation>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-Kz-xpT">
                                 <rect key="frame" x="-61" y="-14" width="123" height="29"/>
@@ -885,6 +888,9 @@
                                     <segment title="驾车"/>
                                     <segment title="公交"/>
                                 </segments>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="515" width="368" height="29"/>
+                                </variation>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
