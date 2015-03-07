@@ -19,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
     //适配iOS8
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 8 && self.locationManager == nil) {
@@ -130,7 +129,7 @@
     
     [_mapView setCenterCoordinate:_destAnnotation.coordinate animated:true];
     
-    //[self poiToAnnotation:_destAnnotation];
+    [self poiToAnnotation:_destAnnotation];
 }
 
 - (void) initSearch{
@@ -197,52 +196,50 @@
     
 }
 
-//通过关键词搜索Poi
-- (void)searchPoiByKeyword: (NSString *)keyword{
-    if(_locService == nil || _mapView == nil || _poiSearcher == nil){
-        NSLog(@"initLocate Error");
-        return;
-    }
-    
-    BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
-    citySearchOption.pageIndex = 0;
-    citySearchOption.pageCapacity = 10;
-    citySearchOption.city= @"深圳";
-    citySearchOption.keyword = keyword;
-    BOOL flag = [_poiSearcher poiSearchInCity:citySearchOption];
-    
-    if(flag)
-    {
-        NSLog(@"周边检索发送成功");
-    }
-    else
-    {
-        NSLog(@"周边检索发送失败");
-    }
-    
-    
-}
-
-//通过UID搜索Poi
-- (void)searchPoiByUID: (NSString *)uid{
-    if(_locService == nil || _mapView == nil || _poiSearcher == nil){
-        NSLog(@"initLocate Error");
-        return;
-    }
-    BMKPoiDetailSearchOption* option = [[BMKPoiDetailSearchOption alloc] init];
-    option.poiUid = uid;
-    BOOL flag = [_poiSearcher poiDetailSearch:option];
-    if(flag)
-    {
-        NSLog(@"UID检索发送成功");
-    }
-    else
-    {
-        NSLog(@"UID检索发送失败");
-    }
-    
-    
-}
+////通过关键词搜索Poi
+//- (void)searchPoiByKeyword: (NSString *)keyword{
+//    if(_locService == nil || _mapView == nil || _poiSearcher == nil){
+//        NSLog(@"initLocate Error");
+//        return;
+//    }
+//    
+//    BMKCitySearchOption *citySearchOption = [[BMKCitySearchOption alloc]init];
+//    citySearchOption.pageIndex = 0;
+//    citySearchOption.pageCapacity = 10;
+//    citySearchOption.city= @"深圳";
+//    citySearchOption.keyword = keyword;
+//    BOOL flag = [_poiSearcher poiSearchInCity:citySearchOption];
+//    
+//    if(flag)
+//    {
+//        NSLog(@"周边检索发送成功");
+//    }
+//    else
+//    {
+//        NSLog(@"周边检索发送失败");
+//    }
+//    
+//    
+//}
+//
+////通过UID搜索Poi
+//- (void)searchPoiByUID: (NSString *)uid{
+//    if(_locService == nil || _mapView == nil || _poiSearcher == nil){
+//        NSLog(@"initLocate Error");
+//        return;
+//    }
+//    BMKPoiDetailSearchOption* option = [[BMKPoiDetailSearchOption alloc] init];
+//    option.poiUid = uid;
+//    BOOL flag = [_poiSearcher poiDetailSearch:option];
+//    if(flag)
+//    {
+//        NSLog(@"UID检索发送成功");
+//    }
+//    else
+//    {
+//        NSLog(@"UID检索发送失败");
+//    }
+//}
 
 //步行
 - (void)searchWalkingRoute{
@@ -351,28 +348,28 @@
     [_mapView addAnnotation:pointAnnotation];
 }
 
-//发起反向地理编码检索
-- (void) searchReverseGeoCode:(CLLocationCoordinate2D) coordinate{
-    if (_geoCodeSearcher == nil) {
-        NSLog(@"_geoCodeSearcher == nil");
-        return;
-    }
-    if (coordinate.latitude) {
-        NSLog(@"_geoCodeSearcher location != nil");
-        BMKReverseGeoCodeOption *reverseGeoCodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
-        reverseGeoCodeSearchOption.reverseGeoPoint = coordinate;
-        BOOL flag = [_geoCodeSearcher reverseGeoCode:reverseGeoCodeSearchOption];
-        if(flag)
-        {
-            NSLog(@"反geo检索发送成功");
-        }
-        else
-        {
-            NSLog(@"反geo检索发送失败");
-        }
-    }
-    
-}
+////发起反向地理编码检索
+//- (void) searchReverseGeoCode:(CLLocationCoordinate2D) coordinate{
+//    if (_geoCodeSearcher == nil) {
+//        NSLog(@"_geoCodeSearcher == nil");
+//        return;
+//    }
+//    if (coordinate.latitude) {
+//        NSLog(@"_geoCodeSearcher location != nil");
+//        BMKReverseGeoCodeOption *reverseGeoCodeSearchOption = [[BMKReverseGeoCodeOption alloc]init];
+//        reverseGeoCodeSearchOption.reverseGeoPoint = coordinate;
+//        BOOL flag = [_geoCodeSearcher reverseGeoCode:reverseGeoCodeSearchOption];
+//        if(flag)
+//        {
+//            NSLog(@"反geo检索发送成功");
+//        }
+//        else
+//        {
+//            NSLog(@"反geo检索发送失败");
+//        }
+//    }
+//    
+//}
 
 - (NSString*)getMyBundlePath1:(NSString *)filename
 {
@@ -613,17 +610,17 @@
     return nil;
 }
 
-/**
- *当选中一个annotation views时，调用此接口
- *@param mapView 地图View
- *@param views 选中的annotation views
- */
-- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
-    //选中annotation为当前用户location时
-    if ([view .annotation isKindOfClass:[BMKUserLocation class]]) {
-        [self searchReverseGeoCode:_locService.userLocation.location.coordinate];
-    }
-}
+///**
+// *当选中一个annotation views时，调用此接口
+// *@param mapView 地图View
+// *@param views 选中的annotation views
+// */
+//- (void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view{
+//    //选中annotation为当前用户location时
+//    if ([view .annotation isKindOfClass:[BMKUserLocation class]]) {
+//        [self searchReverseGeoCode:_locService.userLocation.location.coordinate];
+//    }
+//}
 
 - (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error{
     //NSLog(@"GetReverseGeoCodeResultError %u", error);
