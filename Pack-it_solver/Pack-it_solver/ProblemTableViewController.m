@@ -94,10 +94,10 @@
         
         cell.status = solution.status;
         cell.duration = solution.problem.duration;
-        cell.imageURL = solution.pictureURL;
+        cell.imageURL = solution.problem.pictureURL;
         cell.desc = solution.problem.desc;
         if (solution.pictureURL) {
-            NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
+            NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.problem.pictureURL];
             [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
     }
@@ -136,11 +136,10 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-//    if ([segue.identifier isEqualToString:@"showSolutions"]) {
-//        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-//        _solutionsTableViewController = [segue destinationViewController];
-//        _solutionsTableViewController.solutions = [[_problems objectAtIndex:indexPath.row] solutions];
-//        
-//    }
+    if ([segue.identifier isEqualToString:@"toDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        ProblemDetailViewController *problemDetailViewController = [segue destinationViewController];
+        problemDetailViewController.solution = [_solutions objectAtIndex:indexPath.row];
+    }
 }
 @end

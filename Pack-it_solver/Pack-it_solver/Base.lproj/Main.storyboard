@@ -331,7 +331,7 @@
                                     <outlet property="_labelLocation" destination="6x2-Av-fqn" id="eSj-zf-Tc9"/>
                                     <outlet property="_labelStatus" destination="sUp-BA-WsC" id="DfG-lF-0Ug"/>
                                     <outlet property="imageView_customed" destination="Zb2-4F-v5w" id="1Ty-Si-wkw"/>
-                                    <segue destination="N7E-yL-pfl" kind="show" id="Ccj-2Q-xSf"/>
+                                    <segue destination="N7E-yL-pfl" kind="show" identifier="toDetail" id="Ccj-2Q-xSf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -371,7 +371,7 @@
         <!--Question Detail-->
         <scene sceneID="Nvf-sK-e0S">
             <objects>
-                <viewController id="N7E-yL-pfl" customClass="SolutionDetailViewController" sceneMemberID="viewController">
+                <viewController id="N7E-yL-pfl" customClass="ProblemDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6gt-r9-9cx"/>
                         <viewControllerLayoutGuide type="bottom" id="iHd-AK-3mt"/>
@@ -430,10 +430,10 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="DEr-LL-Zf5" kind="show" id="TI1-Bm-DKp"/>
+                                    <segue destination="DEr-LL-Zf5" kind="show" identifier="toSolution" id="TI1-Bm-DKp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_image_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-uD-xlj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defult_portraiture.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zcx-uD-xlj">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Zcx-uD-xlj" secondAttribute="height" multiplier="1:1" id="zKa-L8-get"/>
@@ -510,8 +510,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Question Detail" id="jUS-2e-SLT"/>
                     <connections>
-                        <outlet property="_imageView" destination="Zcx-uD-xlj" id="dII-xH-966"/>
-                        <outlet property="_labelDesc" destination="q5r-sM-9N3" id="kqP-B5-LSx"/>
+                        <outlet property="_btnToSolution" destination="mMO-jG-US3" id="Iyp-LX-0Ww"/>
+                        <outlet property="_imageView" destination="Zcx-uD-xlj" id="QJn-HW-HQe"/>
+                        <outlet property="_labelDesc" destination="q5r-sM-9N3" id="RTc-0k-chy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="STc-8P-p6s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -530,22 +531,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_image_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZZL-s8-EsD">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="ZZL-s8-EsD" secondAttribute="height" multiplier="1:1" id="C4e-o8-BiD"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="C4e-o8-BiD"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="C4e-o8-BiD"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="My Price/RMB" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zt3-zu-lBg">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <constraints>
@@ -553,7 +538,7 @@
                                 </constraints>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="xTz-1X-iK0"/>
@@ -565,56 +550,79 @@
                                     </mask>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9H-Zn-ydn">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="s9H-Zn-ydn" secondAttribute="height" id="WuH-0p-bJ1"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="add_image_default.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WuH-0p-bJ1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="WuH-0p-bJ1"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="addImage:" destination="DEr-LL-Zf5" eventType="touchUpInside" id="hyC-l7-rPu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="s9H-Zn-ydn" firstAttribute="top" secondItem="eJK-gZ-RG3" secondAttribute="bottom" constant="8" id="1HJ-nM-AxB"/>
                             <constraint firstItem="tyI-jQ-WXg" firstAttribute="top" secondItem="zt3-zu-lBg" secondAttribute="bottom" id="2ye-Uf-8ys"/>
-                            <constraint firstItem="ZZL-s8-EsD" firstAttribute="leading" secondItem="sdH-gO-nzp" secondAttribute="leadingMargin" id="ClW-M0-yGF"/>
+                            <constraint firstItem="s9H-Zn-ydn" firstAttribute="leading" secondItem="sdH-gO-nzp" secondAttribute="leadingMargin" id="81m-gj-1tC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zt3-zu-lBg" secondAttribute="trailing" constant="-16" id="GTR-6E-dut"/>
                             <constraint firstItem="zt3-zu-lBg" firstAttribute="leading" secondItem="sdH-gO-nzp" secondAttribute="leadingMargin" constant="-16" id="Xab-Te-q9e"/>
-                            <constraint firstItem="ZZL-s8-EsD" firstAttribute="trailing" secondItem="sdH-gO-nzp" secondAttribute="trailingMargin" id="gNi-Q4-PnP"/>
-                            <constraint firstItem="ZZL-s8-EsD" firstAttribute="top" secondItem="eJK-gZ-RG3" secondAttribute="bottom" constant="8" id="kLa-XL-fcQ"/>
-                            <constraint firstItem="ZZL-s8-EsD" firstAttribute="trailing" secondItem="sdH-gO-nzp" secondAttribute="trailingMargin" id="naV-bl-M37"/>
-                            <constraint firstItem="ZZL-s8-EsD" firstAttribute="leading" secondItem="sdH-gO-nzp" secondAttribute="leadingMargin" id="wpy-jz-k9L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s9H-Zn-ydn" secondAttribute="trailing" constant="-199" id="uMt-ZW-oDw">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="ZZL-s8-EsD"/>
                                 <exclude reference="zt3-zu-lBg"/>
+                                <exclude reference="s9H-Zn-ydn"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="2ye-Uf-8ys"/>
                                 <exclude reference="GTR-6E-dut"/>
                                 <exclude reference="Xab-Te-q9e"/>
-                                <exclude reference="ClW-M0-yGF"/>
-                                <exclude reference="gNi-Q4-PnP"/>
-                                <exclude reference="kLa-XL-fcQ"/>
-                                <exclude reference="naV-bl-M37"/>
-                                <exclude reference="wpy-jz-k9L"/>
+                                <exclude reference="1HJ-nM-AxB"/>
+                                <exclude reference="81m-gj-1tC"/>
+                                <exclude reference="uMt-ZW-oDw"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="ZZL-s8-EsD"/>
                                 <include reference="zt3-zu-lBg"/>
+                                <include reference="s9H-Zn-ydn"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="2ye-Uf-8ys"/>
                                 <include reference="GTR-6E-dut"/>
                                 <include reference="Xab-Te-q9e"/>
-                                <exclude reference="ClW-M0-yGF"/>
-                                <exclude reference="gNi-Q4-PnP"/>
-                                <include reference="kLa-XL-fcQ"/>
-                                <include reference="naV-bl-M37"/>
-                                <include reference="wpy-jz-k9L"/>
+                                <include reference="1HJ-nM-AxB"/>
+                                <include reference="81m-gj-1tC"/>
+                                <include reference="uMt-ZW-oDw"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Solver Question" id="X0r-6L-naZ">
-                        <barButtonItem key="rightBarButtonItem" title="Confirm" style="plain" id="U63-xK-LhF"/>
+                        <barButtonItem key="rightBarButtonItem" title="Confirm" style="plain" id="U63-xK-LhF">
+                            <connections>
+                                <action selector="confirm:" destination="DEr-LL-Zf5" id="fvj-uB-5Nb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="_imageView" destination="ZZL-s8-EsD" id="T1D-hf-3FM"/>
+                        <outlet property="_imageButton" destination="s9H-Zn-ydn" id="B8Y-jm-iNj"/>
+                        <outlet property="_textPrice" destination="zt3-zu-lBg" id="RVR-0i-wEZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fPx-gA-ANE" userLabel="First Responder" sceneMemberID="firstResponder"/>

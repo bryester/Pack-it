@@ -284,6 +284,44 @@
  */
 - (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forProblem:(NSString *)problemID {
     
+    if (!imgData || !problemID) {
+        return;
+    }
+    
+    NSString *_desc = desc;
+    
+    NSMutableDictionary *solution = [NSMutableDictionary dictionary];
+    [solution setObject:price forKey:@"price"];
+    [solution setObject:_desc forKey:@"description"];
+    //[problem setObject:imgData forKey:@"picture"];
+    
+    NSMutableDictionary *finalDictionary = [NSMutableDictionary dictionary];
+    [finalDictionary setObject:solution forKey:@"solution"];
+    
+    NSLog(@"quest dictionary:%@", finalDictionary);
+    
+    if (_credential) {
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        
+        [_operationManager POST:[NSString stringWithFormat:ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM, problemID]
+                     parameters:finalDictionary
+      constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+          [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
+      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+          
+          NSLog(@"postNewSolutionByImage responseHandler:%@", responseObject);
+          if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
+              [self.delegate onPostNewSolutionResult:nil];
+          }
+          
+      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          NSLog(@"postNewSolutionByImage Error:%@", error);
+          if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
+              [self.delegate onPostNewSolutionResult:error];
+          }
+      }];
+        
+    }
 }
 
 /**

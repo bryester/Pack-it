@@ -11,6 +11,7 @@
 #import "PXProblemTableViewCell.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "Config.h"
+#import "ProblemDetailViewController.h"
 
 @interface ProblemTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, PXNetworkProtocol> {
     

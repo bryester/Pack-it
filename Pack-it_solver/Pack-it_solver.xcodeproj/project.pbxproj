@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B450A0841AAC7E680080C6D9 /* ProblemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */; };
+		B450A0881AAC81B90080C6D9 /* SolutionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B450A0871AAC81B90080C6D9 /* SolutionDetailViewController.m */; };
 		B47C3DD71A94531900F41A9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DD61A94531900F41A9D /* main.m */; };
 		B47C3DDA1A94531900F41A9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DD91A94531900F41A9D /* AppDelegate.m */; };
 		B47C3DE31A94531900F41A9D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B47C3DE11A94531900F41A9D /* Main.storyboard */; };
@@ -75,6 +77,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B450A0821AAC7E680080C6D9 /* ProblemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemDetailViewController.h; sourceTree = "<group>"; };
+		B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemDetailViewController.m; sourceTree = "<group>"; };
+		B450A0861AAC81B90080C6D9 /* SolutionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolutionDetailViewController.h; sourceTree = "<group>"; };
+		B450A0871AAC81B90080C6D9 /* SolutionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolutionDetailViewController.m; sourceTree = "<group>"; };
 		B47C3DD11A94531900F41A9D /* Pack-it_solver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pack-it_solver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47C3DD51A94531900F41A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47C3DD61A94531900F41A9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -382,6 +388,10 @@
 			children = (
 				B483C11C1AAB1CF600A742A6 /* ProblemTableViewController.h */,
 				B483C11D1AAB1CF600A742A6 /* ProblemTableViewController.m */,
+				B450A0821AAC7E680080C6D9 /* ProblemDetailViewController.h */,
+				B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */,
+				B450A0861AAC81B90080C6D9 /* SolutionDetailViewController.h */,
+				B450A0871AAC81B90080C6D9 /* SolutionDetailViewController.m */,
 			);
 			name = Problem;
 			sourceTree = "<group>";
@@ -610,6 +620,7 @@
 				B483C0B31AAB1A0A00A742A6 /* PXNetworkManager.m in Sources */,
 				B483C10B1AAB1AAE00A742A6 /* AFNetworkReachabilityManager.m in Sources */,
 				B483C0E61AAB1AA500A742A6 /* JSONModelArray.m in Sources */,
+				B450A0881AAC81B90080C6D9 /* SolutionDetailViewController.m in Sources */,
 				B483C0971AAB19B000A742A6 /* SecondViewController.m in Sources */,
 				B483C0A71AAB19D900A742A6 /* SetPasswordViewController.m in Sources */,
 				B483C0B41AAB1A0A00A742A6 /* UIViewController+Alert.m in Sources */,
@@ -628,6 +639,7 @@
 				B483C0EB1AAB1AA600A742A6 /* JSONHTTPClient.m in Sources */,
 				B483C0C81AAB1A4400A742A6 /* PXCategory.m in Sources */,
 				B47C3DDA1A94531900F41A9D /* AppDelegate.m in Sources */,
+				B450A0841AAC7E680080C6D9 /* ProblemDetailViewController.m in Sources */,
 				B483C1211AAB1D2B00A742A6 /* PXProblemTableViewCell.m in Sources */,
 				B483C1161AAB1AB400A742A6 /* MBProgressHUD.m in Sources */,
 				B483C0B21AAB1A0A00A742A6 /* PXAccountHolder.m in Sources */,

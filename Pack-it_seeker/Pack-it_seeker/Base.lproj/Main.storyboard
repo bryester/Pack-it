@@ -804,6 +804,11 @@
                                 <exclude reference="Yw9-0Z-t9U"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Kcq-c3-FBl"/>
+                                <exclude reference="K5f-ve-gMJ"/>
+                                <exclude reference="UYR-E4-YYz"/>
+                                <exclude reference="fSP-GB-aDa"/>
+                                <exclude reference="rnK-hK-tDi"/>
                                 <exclude reference="6mA-rI-2Fe"/>
                                 <exclude reference="BFQ-IZ-JVc"/>
                                 <exclude reference="Ldu-ch-gpi"/>
@@ -814,14 +819,9 @@
                                 <exclude reference="rER-gi-C3r"/>
                                 <exclude reference="EUl-HU-uN9"/>
                                 <exclude reference="fTb-nO-800"/>
-                                <exclude reference="K5f-ve-gMJ"/>
-                                <exclude reference="UYR-E4-YYz"/>
-                                <exclude reference="fSP-GB-aDa"/>
-                                <exclude reference="rnK-hK-tDi"/>
                                 <exclude reference="1kj-aP-KQL"/>
                                 <exclude reference="EuV-ku-vgR"/>
                                 <exclude reference="uxd-Gy-d3u"/>
-                                <exclude reference="Kcq-c3-FBl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -832,6 +832,11 @@
                                 <include reference="Yw9-0Z-t9U"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Kcq-c3-FBl"/>
+                                <include reference="K5f-ve-gMJ"/>
+                                <include reference="UYR-E4-YYz"/>
+                                <exclude reference="fSP-GB-aDa"/>
+                                <include reference="rnK-hK-tDi"/>
                                 <exclude reference="6mA-rI-2Fe"/>
                                 <exclude reference="BFQ-IZ-JVc"/>
                                 <include reference="Ldu-ch-gpi"/>
@@ -842,14 +847,9 @@
                                 <exclude reference="rER-gi-C3r"/>
                                 <include reference="EUl-HU-uN9"/>
                                 <include reference="fTb-nO-800"/>
-                                <include reference="K5f-ve-gMJ"/>
-                                <include reference="UYR-E4-YYz"/>
-                                <exclude reference="fSP-GB-aDa"/>
-                                <include reference="rnK-hK-tDi"/>
                                 <include reference="1kj-aP-KQL"/>
                                 <include reference="EuV-ku-vgR"/>
                                 <include reference="uxd-Gy-d3u"/>
-                                <exclude reference="Kcq-c3-FBl"/>
                             </mask>
                         </variation>
                     </view>
