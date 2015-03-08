@@ -41,6 +41,8 @@
 #define ON_RESOURCE_URL_TO_GET_PROBLEMS             BASE_URL@"/problems"
 #define ON_RESOURCE_URL_TO_POST_PROBLEM             BASE_URL@"/problems"
 
+#define ON_RESOURCE_URL_TO_GET_SOLUTIONS                    BASE_URL@"/solutions"
+#define ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM        BASE_URL@"/solutions/%@"
 
 #pragma mark - BaiduMap
 

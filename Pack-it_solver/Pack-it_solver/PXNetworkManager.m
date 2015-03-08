@@ -246,6 +246,55 @@
     
 }
 
+#pragma mark Solution
+
+/**
+ *获得用户的所有Solutions
+ *异步函数，返回结果在PXNetworkProtocol的onGetAllSolutionsResult通知
+ */
+- (void)getAllSolutions {
+    if (_operationManager) {
+        
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        
+        [_operationManager GET:ON_RESOURCE_URL_TO_GET_SOLUTIONS
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           
+                           if ([self.delegate respondsToSelector:@selector(onGetAllSolutionsResult:error:)]) {
+                               
+                               [self.delegate onGetAllSolutionsResult:[self parseSolutionsFromResponseObject:responseObject]
+                                                                error:nil];
+                               
+                           }
+                       }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           NSLog(@"getAllSolutions Error: %@", error);
+                       }];
+    }
+}
+
+/**
+ *回答问题
+ *异步函数，返回结果在NetworkProtocol的onPostNewSolutionResult通知
+ *@param img    optional
+ *@param desc     optional
+ *@param price      not nil
+ *@param problemID      not nil
+ */
+- (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forProblem:(NSString *)problemID {
+    
+}
+
+/**
+ *删除Solution
+ *异步函数，返回结果在PXNetworkProtocol的onDeleteSolutionResult通知
+ *@param solutionID
+ */
+- (void)deleteSolution:(NSString *)solutionID {
+    
+}
+
 
 #pragma mark Tag
 
@@ -273,6 +322,22 @@
         [problems addObject:p];
     }
     return problems;
+}
+
+- (NSArray *)parseSolutionsFromResponseObject:(id)responseObject {
+    NSArray *result = [self getArrayFromResponseObject:responseObject];
+    
+    if (!result) {
+        return nil;
+    }
+    
+    NSMutableArray *solutions = [NSMutableArray new];
+    NSError* err = nil;
+    for (NSDictionary *dic in result) {
+        PXSolution *s = [[PXSolution alloc] initWithDictionary:dic error:&err];
+        [solutions addObject:s];
+    }
+    return solutions;
 }
 
 #pragma mark - Common Methods

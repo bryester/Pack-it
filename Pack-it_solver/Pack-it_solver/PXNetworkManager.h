@@ -103,7 +103,7 @@
 
 /**
  *发表新提问
- *异步函数，返回结果在NetworkProtocol的onPostNewProblemByImageResult通知
+ *异步函数，返回结果在NetworkProtocol的onPostNewProblemResult通知
  *@param img    not nil
  *@param desc     optional
  *@param duration     not nil, default as 
@@ -118,6 +118,31 @@
  *@param problem
  */
 - (void)deleteProblem:(PXProblem *)problem;
+
+#pragma mark Solution
+
+/**
+ *获得用户的所有Solutions
+ *异步函数，返回结果在PXNetworkProtocol的onGetAllSolutionsResult通知
+ */
+- (void)getAllSolutions;
+
+/**
+ *回答问题
+ *异步函数，返回结果在NetworkProtocol的onPostNewSolutionResult通知
+ *@param img    optional
+ *@param desc     optional
+ *@param price      not nil
+ *@param problemID      not nil
+ */
+- (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forProblem:(NSString *)problemID;
+
+/**
+ *删除Solution
+ *异步函数，返回结果在PXNetworkProtocol的onDeleteSolutionResult通知
+ *@param solutionID
+ */
+- (void)deleteSolution:(NSString *)solutionID;
 
 #pragma mark Tag
 
@@ -159,6 +184,21 @@
  *异步回调，返回删除Problem的结果
  */
 - (void)onDeleteProblemResult:(NSError *)error;
+
+/**
+ *异步回调，返回获得用户的所有Problem的结果
+ */
+- (void)onGetAllSolutionsResult:(NSArray *)solutions error:(NSError *)error;
+
+/**
+ *异步回调，
+ */
+- (void)onPostNewSolutionResult:(NSError *)error;
+
+/**
+ *异步回调，返回删除Problem的结果
+ */
+- (void)onDeleteSolutionResult:(NSError *)error;
 
 
 @end

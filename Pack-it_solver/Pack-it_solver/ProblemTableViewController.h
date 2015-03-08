@@ -14,7 +14,7 @@
 
 @interface ProblemTableViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, PXNetworkProtocol> {
     
-    NSArray *_problems;
+    NSArray *_solutions;
     
     __weak IBOutlet UIActivityIndicatorView *_activityIndicator;
     

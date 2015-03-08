@@ -10,13 +10,6 @@
 
 @implementation PXProblem
 
-- (instancetype)initWithString:(NSString *)string error:(JSONModelError *__autoreleasing *)err {
-    self = [self initWithString:string error:err];
-    
-    
-    return self;
-}
-
 +(JSONKeyMapper*)keyMapper
 {
     return [[JSONKeyMapper alloc] initWithDictionary:@{

@@ -21,10 +21,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [PXNetworkManager sharedStore].delegate = self;
-    if (!(_problems && _problems.count > 0)) {
+    if (!(_solutions && _solutions.count > 0)) {
         //[self getProblems];
         [_refreshControl beginRefreshing];
-        [self getProblems];
+        [self getSolutions];
     }
 }
 
@@ -56,7 +56,7 @@
     //NSLog(@"refreshTableView");
     //[AuthenticationManager sharedStore].delegate = self;
     //refreshFlag = 0;
-    [self getProblems];
+    [self getSolutions];
 }
 
 
@@ -72,8 +72,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_problems) {
-        return _problems.count;
+    if (_solutions) {
+        return _solutions.count;
     }
     return 0;
 }
@@ -89,15 +89,15 @@
         cell = [[PXProblemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PXProblemTableViewCell"];
     }
     
-    if (_problems.count > 0) {
-        PXProblem *problem = [_problems objectAtIndex:indexPath.row];
+    if (_solutions.count > 0) {
+        PXSolution *solution = [_solutions objectAtIndex:indexPath.row];
         
-        cell.status = problem.status;
-        cell.duration = problem.duration;
-        cell.imageURL = problem.pictureURL;
-        cell.desc = problem.desc;
-        if (problem.pictureURL) {
-            NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, problem.pictureURL];
+        cell.status = solution.status;
+        cell.duration = solution.problem.duration;
+        cell.imageURL = solution.pictureURL;
+        cell.desc = solution.problem.desc;
+        if (solution.pictureURL) {
+            NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
             [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
     }
@@ -110,10 +110,10 @@
 }
 #pragma mark - Network Methods
 
-- (void)getProblems {
+- (void)getSolutions {
     if ([PXNetworkManager sharedStore].credential) {
         //[self startIndicator];
-        [[PXNetworkManager sharedStore] getAllProblems];
+        [[PXNetworkManager sharedStore] getAllSolutions];
     } else {
         [self stopRefreshing];
     }
@@ -122,10 +122,10 @@
 
 #pragma mark - PXNetworkProtocol Delegate
 
-- (void)onGetAllProblemsResult:(NSArray *)problems error:(NSError *)error {
+- (void)onGetAllSolutionsResult:(NSArray *)solutions error:(NSError *)error {
     [self stopRefreshing];
     if (!error) {
-        _problems = problems;
+        _solutions = solutions;
         [self.tableView reloadData];
     }
 }

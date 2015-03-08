@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "JSONModel.h"
 #import "PXShop.h"
+#import "PXProblem.h"
 
 @protocol PXSolution
 @end
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) NSString<Optional> *desc;
 @property (strong, nonatomic) NSNumber<Optional> *price;
 @property (strong, nonatomic) PXShop *shop_profile;
+@property (strong, nonatomic) PXProblem *problem;
 
 
 @end

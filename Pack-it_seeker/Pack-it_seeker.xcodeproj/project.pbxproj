@@ -492,9 +492,6 @@
 		B47C3D931A9452A400F41A9D = {
 			isa = PBXGroup;
 			children = (
-				B41783041AA9A0AA009E8437 /* MessageUI.framework */,
-				B41782BF1AA99260009E8437 /* OpenGLES.framework */,
-				B41782BD1AA99256009E8437 /* QuartzCore.framework */,
 				B417827A1AA98FC2009E8437 /* BaiduMap */,
 				B44FBD251A9C739500AFB3AC /* OAuth2Client.xcodeproj */,
 				B4D77D461A9618A000C4ACA5 /* JSONModel */,
@@ -526,7 +523,7 @@
 				B4D77D341A9612E100C4ACA5 /* Model */,
 				B47C3DA31A9452A400F41A9D /* AppDelegate.h */,
 				B47C3DA41A9452A400F41A9D /* AppDelegate.m */,
-				B4D77D331A96126E00C4ACA5 /* ViewControllers */,
+				B4D77D331A96126E00C4ACA5 /* Controller */,
 				B47C3DAC1A9452A400F41A9D /* Main.storyboard */,
 				B47C3DAF1A9452A400F41A9D /* Images.xcassets */,
 				B47C3DB11A9452A400F41A9D /* LaunchScreen.xib */,
@@ -608,13 +605,13 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
-		B4D77D331A96126E00C4ACA5 /* ViewControllers */ = {
+		B4D77D331A96126E00C4ACA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B44FBCAD1A9C6B9A00AFB3AC /* Problem&Solution */,
 				B44FBCAE1A9C6BAD00AFB3AC /* User */,
 			);
-			name = ViewControllers;
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		B4D77D341A9612E100C4ACA5 /* Model */ = {
@@ -653,6 +650,9 @@
 		B4D77D451A96163500C4ACA5 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				B41783041AA9A0AA009E8437 /* MessageUI.framework */,
+				B41782BF1AA99260009E8437 /* OpenGLES.framework */,
+				B41782BD1AA99256009E8437 /* QuartzCore.framework */,
 				B4CC9D8A1AA4A65700135B29 /* CoreGraphics.framework */,
 				B453CDC21AA1E26100854D2A /* ImageIO.framework */,
 				B453CDC01AA1E23500854D2A /* SDWebImage.framework */,
