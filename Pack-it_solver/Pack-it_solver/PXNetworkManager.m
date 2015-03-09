@@ -282,9 +282,9 @@
  *@param price      not nil
  *@param problemID      not nil
  */
-- (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forProblem:(NSString *)problemID {
+- (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forSolution:(NSString *)solutionID {
     
-    if (!imgData || !problemID) {
+    if (!imgData || !solutionID) {
         return;
     }
     
@@ -303,7 +303,7 @@
     if (_credential) {
         [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
         
-        [_operationManager POST:[NSString stringWithFormat:ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM, problemID]
+        [_operationManager POST:[NSString stringWithFormat:ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM, solutionID]
                      parameters:finalDictionary
       constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
           [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PXNetworkManager.h"
 #import "MBProgressHUD.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SolutionDetailViewController : UIViewController<PXNetworkProtocol, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     
@@ -16,9 +17,13 @@
     
     __weak IBOutlet UITextField *_textPrice;
     
+    __weak IBOutlet UIBarButtonItem *_confirmButton;
+    
     NSData *_imgData;
     
     MBProgressHUD *_hud;
+    
+    
 }
 
 @property (strong, nonatomic) PXSolution *solution;

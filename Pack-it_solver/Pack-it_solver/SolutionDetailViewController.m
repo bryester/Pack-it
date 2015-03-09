@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self showContent];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -32,6 +33,40 @@
 
 - (void)showContent {
     if (_solution && _solution.problem) {
+        if ([_solution.status isEqualToString:@"waiting"]) {
+            //待解决
+            _textPrice.enabled = YES;
+            
+        } else if ([_solution.status isEqualToString:@"solved"]) {
+            //已回答
+            
+            [_confirmButton setEnabled:NO];
+            [_confirmButton setTintColor:[UIColor clearColor]];
+            
+            _textPrice.enabled = NO;
+            [_textPrice setText:[_solution.price stringValue]];
+            
+            _imageButton.enabled = NO;
+            [SDWebImageDownloader.sharedDownloader downloadImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", BASE_URL, _solution.pictureURL]]
+                                                                options:0
+                                                               progress:^(NSInteger receivedSize, NSInteger expectedSize)
+             {
+                 // progression tracking code
+             }
+                                                              completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished)
+             {
+                 if (image && finished)
+                 {
+                     [_imageButton setImage:image forState:UIControlStateNormal];
+                     
+                 }
+             }];
+            
+            
+        } else if ([_solution.status isEqualToString:@"failed"]) {
+            //未回答
+            
+        }
     }
 }
 
@@ -63,10 +98,12 @@
     [_hud hide:YES afterDelay:1];
 }
 
+#pragma mark - Button Methods
+
 - (IBAction)confirm:(id)sender {
     if (_imgData && _textPrice.text && ![_textPrice.text  isEqual: @""] && _solution) {
         [self showHub];
-        [[PXNetworkManager sharedStore] postNewSolutionByImage:_imgData desc:@"" price:@([_textPrice.text floatValue]) forProblem:_solution.solutionID];
+        [[PXNetworkManager sharedStore] postNewSolutionByImage:_imgData desc:@"" price:@([_textPrice.text floatValue]) forSolution:_solution.solutionID];
     }
 }
 

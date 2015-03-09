@@ -50,10 +50,11 @@
         [_btnToSolution setBackgroundColor:[UIColor greenColor]];
     } else if ([_solution.status isEqualToString:@"solved"]) {
         [_btnToSolution setTitle:@"Check my solution" forState:UIControlStateNormal];
-        [_btnToSolution setBackgroundColor:[UIColor greenColor]];
+        [_btnToSolution setBackgroundColor:[UIColor yellowColor]];
     } else if ([_solution.status isEqualToString:@"failed"]) {
         [_btnToSolution setTitle:@"Failed" forState:UIControlStateNormal];
         [_btnToSolution setBackgroundColor:[UIColor grayColor]];
+        [_btnToSolution setEnabled:NO];
     }
 }
 

@@ -135,7 +135,7 @@
  *@param price      not nil
  *@param problemID      not nil
  */
-- (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forProblem:(NSString *)problemID;
+- (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forSolution:(NSString *)solutionID;
 
 /**
  *删除Solution
