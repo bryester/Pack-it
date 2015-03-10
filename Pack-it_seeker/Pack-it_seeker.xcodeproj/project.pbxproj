@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B411FD7B1AA439F8006E60F8 /* PXShop.m in Sources */ = {isa = PBXBuildFile; fileRef = B411FD7A1AA439F8006E60F8 /* PXShop.m */; };
+		B41248521AAECB94005BAD2C /* cemara.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B41248511AAECB94005BAD2C /* cemara.jpg */; };
 		B41782791AA98EFC009E8437 /* NaviViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41782781AA98EFC009E8437 /* NaviViewController.mm */; };
 		B41782BE1AA99256009E8437 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41782BD1AA99256009E8437 /* QuartzCore.framework */; };
 		B41782C01AA99260009E8437 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41782BF1AA99260009E8437 /* OpenGLES.framework */; };
@@ -120,6 +121,7 @@
 /* Begin PBXFileReference section */
 		B411FD791AA439F8006E60F8 /* PXShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXShop.h; sourceTree = "<group>"; };
 		B411FD7A1AA439F8006E60F8 /* PXShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXShop.m; sourceTree = "<group>"; };
+		B41248511AAECB94005BAD2C /* cemara.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cemara.jpg; sourceTree = "<group>"; };
 		B41782771AA98EFC009E8437 /* NaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviViewController.h; sourceTree = "<group>"; };
 		B41782781AA98EFC009E8437 /* NaviViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NaviViewController.mm; sourceTree = "<group>"; };
 		B41782BD1AA99256009E8437 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -748,6 +750,7 @@
 		B4D77D821A96420900C4ACA5 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B41248511AAECB94005BAD2C /* cemara.jpg */,
 				B4BCCC291AAEA9EF0022FF9B /* add_image_default.png */,
 				B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */,
 				B44FBCB21A9C6D6D00AFB3AC /* bg.png */,
@@ -873,6 +876,7 @@
 				B47C3DB31A9452A400F41A9D /* LaunchScreen.xib in Resources */,
 				B47C3DB01A9452A400F41A9D /* Images.xcassets in Resources */,
 				B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */,
+				B41248521AAECB94005BAD2C /* cemara.jpg in Resources */,
 				B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */,
 				B4BCCC2A1AAEA9EF0022FF9B /* add_image_default.png in Resources */,
 				B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */,

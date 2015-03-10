@@ -659,7 +659,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_image_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="Hjo-aB-YOG">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cemara.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Hjo-aB-YOG">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Hjo-aB-YOG" secondAttribute="height" multiplier="1:1" id="AeJ-YP-OLN"/>
@@ -994,6 +994,7 @@
     <resources>
         <image name="add_image_default.png" width="512" height="512"/>
         <image name="bg.png" width="720" height="495"/>
+        <image name="cemara.jpg" width="512" height="512"/>
         <image name="defult_portraiture.png" width="166" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>

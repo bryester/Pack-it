@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B41248561AAECBDF005BAD2C /* cemara.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B41248551AAECBDF005BAD2C /* cemara.jpg */; };
 		B450A0841AAC7E680080C6D9 /* ProblemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */; };
 		B450A0881AAC81B90080C6D9 /* SolutionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B450A0871AAC81B90080C6D9 /* SolutionDetailViewController.m */; };
 		B47C3DD71A94531900F41A9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DD61A94531900F41A9D /* main.m */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B41248551AAECBDF005BAD2C /* cemara.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cemara.jpg; sourceTree = "<group>"; };
 		B450A0821AAC7E680080C6D9 /* ProblemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemDetailViewController.h; sourceTree = "<group>"; };
 		B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemDetailViewController.m; sourceTree = "<group>"; };
 		B450A0861AAC81B90080C6D9 /* SolutionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolutionDetailViewController.h; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 		B483C03D1AAB180100A742A6 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B41248551AAECBDF005BAD2C /* cemara.jpg */,
 				B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */,
 				B483C03F1AAB186100A742A6 /* defult_portraiture.png */,
 				B483C0401AAB186100A742A6 /* bg.png */,
@@ -599,6 +602,7 @@
 				B47C3DE51A94531900F41A9D /* Images.xcassets in Resources */,
 				B483C0A61AAB19D900A742A6 /* RegisterViewController.xib in Resources */,
 				B4BCCC2C1AAEB01B0022FF9B /* add_image_default.png in Resources */,
+				B41248561AAECBDF005BAD2C /* cemara.jpg in Resources */,
 				B483C0A81AAB19D900A742A6 /* SetPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

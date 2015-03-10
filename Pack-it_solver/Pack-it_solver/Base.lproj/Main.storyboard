@@ -474,11 +474,7 @@
                                 <exclude reference="Zcx-uD-xlj"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0Hp-TY-ooU"/>
-                                <exclude reference="6GW-mi-UXW"/>
-                                <exclude reference="Hce-Ci-4Lv"/>
-                                <exclude reference="QKR-YZ-fRu"/>
-                                <exclude reference="kba-up-IRN"/>
+                                <exclude reference="R3J-Lv-e2r"/>
                                 <exclude reference="03d-xg-4Gi"/>
                                 <exclude reference="FUC-hA-znL"/>
                                 <exclude reference="WpE-Jf-MfF"/>
@@ -487,7 +483,11 @@
                                 <exclude reference="EW5-Sf-ZfT"/>
                                 <exclude reference="JOd-AE-cHx"/>
                                 <exclude reference="ysX-me-XtO"/>
-                                <exclude reference="R3J-Lv-e2r"/>
+                                <exclude reference="0Hp-TY-ooU"/>
+                                <exclude reference="6GW-mi-UXW"/>
+                                <exclude reference="Hce-Ci-4Lv"/>
+                                <exclude reference="QKR-YZ-fRu"/>
+                                <exclude reference="kba-up-IRN"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -497,11 +497,7 @@
                                 <include reference="Zcx-uD-xlj"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0Hp-TY-ooU"/>
-                                <include reference="6GW-mi-UXW"/>
-                                <include reference="Hce-Ci-4Lv"/>
-                                <exclude reference="QKR-YZ-fRu"/>
-                                <exclude reference="kba-up-IRN"/>
+                                <include reference="R3J-Lv-e2r"/>
                                 <include reference="03d-xg-4Gi"/>
                                 <include reference="FUC-hA-znL"/>
                                 <exclude reference="WpE-Jf-MfF"/>
@@ -510,7 +506,11 @@
                                 <exclude reference="EW5-Sf-ZfT"/>
                                 <include reference="JOd-AE-cHx"/>
                                 <exclude reference="ysX-me-XtO"/>
-                                <include reference="R3J-Lv-e2r"/>
+                                <include reference="0Hp-TY-ooU"/>
+                                <include reference="6GW-mi-UXW"/>
+                                <include reference="Hce-Ci-4Lv"/>
+                                <exclude reference="QKR-YZ-fRu"/>
+                                <exclude reference="kba-up-IRN"/>
                             </mask>
                         </variation>
                     </view>
@@ -561,7 +561,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="s9H-Zn-ydn" secondAttribute="height" id="WuH-0p-bJ1"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="add_image_default.png">
+                                <state key="normal" title="Button" image="cemara.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -638,8 +638,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_image_default.png" width="512" height="512"/>
         <image name="bg.png" width="720" height="495"/>
+        <image name="cemara.jpg" width="512" height="512"/>
         <image name="defult_portraiture.png" width="166" height="166"/>
     </resources>
 </document>
