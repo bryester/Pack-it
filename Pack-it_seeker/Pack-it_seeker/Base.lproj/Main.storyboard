@@ -187,6 +187,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-2a-b4F">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewProblemCell" rowHeight="44" id="hUg-Xc-efA">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hUg-Xc-efA" id="Zui-Uk-CRL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WB0-zu-yn3" id="XYq-Jy-TZL"/>
+                                    <outlet property="delegate" destination="WB0-zu-yn3" id="JUo-XG-ZdI"/>
+                                </connections>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LhL-xj-8tN">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -194,7 +211,7 @@
                                     <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="368:325" id="P1L-7G-rmP"/>
                                     <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="1:1" id="zWo-00-y01"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="add_image_default.png"/>
+                                <state key="normal" title="Button" image="cemara.jpg"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8ic-kI-X9m"/>
@@ -213,23 +230,6 @@
                                     <action selector="addImage:" destination="WB0-zu-yn3" eventType="touchUpInside" id="cP3-QV-i4G"/>
                                 </connections>
                             </button>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-2a-b4F">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NewProblemCell" rowHeight="44" id="hUg-Xc-efA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hUg-Xc-efA" id="Zui-Uk-CRL">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="WB0-zu-yn3" id="XYq-Jy-TZL"/>
-                                    <outlet property="delegate" destination="WB0-zu-yn3" id="JUo-XG-ZdI"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -244,8 +244,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="LhL-xj-8tN"/>
                                 <exclude reference="yh1-2a-b4F"/>
+                                <exclude reference="LhL-xj-8tN"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Azt-8D-9rB"/>
@@ -260,8 +260,8 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="LhL-xj-8tN"/>
                                 <include reference="yh1-2a-b4F"/>
+                                <include reference="LhL-xj-8tN"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Azt-8D-9rB"/>
@@ -438,7 +438,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Seeker" id="qQW-IA-46l">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="JGz-4q-Zce">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="JGz-4q-Zce">
                             <connections>
                                 <segue destination="WB0-zu-yn3" kind="show" id="hwE-T1-HpZ"/>
                             </connections>
@@ -871,7 +871,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df2-ei-z47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3270" y="-296"/>
+            <point key="canvasLocation" x="3259.5" y="-352"/>
         </scene>
         <!--Map-->
         <scene sceneID="pGt-8u-Zs6">
@@ -950,7 +950,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YO-7y-qX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4062" y="-296"/>
+            <point key="canvasLocation" x="4071" y="-352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nx1-8B-AWg">
@@ -992,7 +992,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add_image_default.png" width="512" height="512"/>
         <image name="bg.png" width="720" height="495"/>
         <image name="cemara.jpg" width="512" height="512"/>
         <image name="defult_portraiture.png" width="166" height="166"/>

@@ -140,7 +140,7 @@
 
 - (void)onPostNewSolutionResult:(NSError *)error {
     if (error) {
-        [self showHubWithText:@"Error"];
+        [self showHubWithText:error.description];
     } else {
         [self showHubWithText:@"Success"];
         

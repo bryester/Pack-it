@@ -152,7 +152,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 - (void)onPostNewProblemResult:(NSError *)error {
     if (error) {
-        [self showHubWithText:@"Error"];
+        [self showHubWithText:error.description];
     } else {
         [self showHubWithText:@"Success"];
         
