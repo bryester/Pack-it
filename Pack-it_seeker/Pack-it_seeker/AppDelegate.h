@@ -10,7 +10,6 @@
 #import "PXNetworkManager.h"
 #import "BMapKit.h"
 #import "Config.h"
-#import "PXNetworkManager.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate, BMKLocationServiceDelegate> {
     

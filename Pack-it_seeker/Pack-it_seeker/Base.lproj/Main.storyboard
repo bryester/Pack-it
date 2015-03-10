@@ -192,25 +192,28 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="184:111" id="8ic-kI-X9m"/>
                                     <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="368:325" id="P1L-7G-rmP"/>
+                                    <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="1:1" id="zWo-00-y01"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="add_image_default.png"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8ic-kI-X9m"/>
                                         <exclude reference="P1L-7G-rmP"/>
+                                        <exclude reference="zWo-00-y01"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="8ic-kI-X9m"/>
+                                        <exclude reference="8ic-kI-X9m"/>
                                         <exclude reference="P1L-7G-rmP"/>
+                                        <include reference="zWo-00-y01"/>
                                     </mask>
                                 </variation>
                                 <connections>
                                     <action selector="addImage:" destination="WB0-zu-yn3" eventType="touchUpInside" id="cP3-QV-i4G"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-2a-b4F">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="40" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yh1-2a-b4F">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -285,7 +288,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2p-sV-N7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1657" y="-995"/>
+            <point key="canvasLocation" x="1656" y="-995"/>
         </scene>
         <!--Seeker-->
         <scene sceneID="8jG-q3-DWi">

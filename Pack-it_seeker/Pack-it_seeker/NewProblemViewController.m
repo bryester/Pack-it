@@ -82,7 +82,16 @@
 - (IBAction)confirm:(id)sender {
     if (_imgData) {
         [self showHub];
-        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"hahahawithImg" duration:@(10) tag:nil location:nil];
+        
+//        NSArray *coordinateArray = nil;
+        
+//        if ([PXNetworkManager sharedStore].currentLocation) {
+//             coordinateArray = [NSArray arrayWithObjects:[@([PXNetworkManager sharedStore].currentLocation.coordinate.longitude) stringValue], [@([PXNetworkManager sharedStore].currentLocation.coordinate.latitude) stringValue], nil];
+//            
+//        }
+        
+        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"new problem. Can you help me?" duration:@(10) tag:nil location:[PXNetworkManager sharedStore].currentLocation];
+        
     }
     
     //[self dismissViewControllerAnimated:NO completion:nil];

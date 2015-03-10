@@ -100,8 +100,11 @@
  */
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
+    CLLocation *location = userLocation.location;
+    CLLocationCoordinate2D coordinate = userLocation.location.coordinate;
+    CLLocationDegrees latitude = userLocation.location.coordinate.latitude;
     NSLog(@"didUpdateUserLocation lat %f,long %f",userLocation.location.coordinate.latitude,userLocation.location.coordinate.longitude);
-    [PXNetworkManager sharedStore].currentLocation = userLocation.location;
+    [PXNetworkManager sharedStore].currentLocation = [[CLLocation alloc] initWithLatitude:coordinate.latitude longitude:coordinate.longitude];
 }
 
 

@@ -63,10 +63,10 @@
 }
 
 #pragma mark - Setters
-
-- (void)setCurrentLocation:(CLLocation *)currentLocation {
-    //
-}
+//
+//- (void)setCurrentLocation:(CLLocation *)currentLocation {
+//    self.currentLocation = currentLocation;
+//}
 
 #pragma mark - User Methods
 
@@ -184,6 +184,9 @@
                        }
                        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                            NSLog(@"getAllProblems Error: %@", error);
+                           if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
+                               [self.delegate onGetAllProblemsResult:nil error:error];
+                           }
                        }];
     }
 }
@@ -201,7 +204,14 @@
     NSNumber *_duration = duration == nil ? @(5) : duration;
     NSString *_desc = desc;
     NSArray *_location = [NSArray arrayWithObjects:@(location.coordinate.longitude), @(location.coordinate.latitude), nil];
-    NSString *_tagID = tag.tagID;
+    
+    NSString *_tagID;
+    if (!tag) {
+        _tagID = @"54f6b97a695a390e790b0000";
+    } else {
+        _tagID = tag.tagID;
+    }
+    
     
     
     NSMutableDictionary *problem = [NSMutableDictionary dictionary];

@@ -112,13 +112,21 @@
 
 - (void)initDestShop {
     if (!_destShop) {
-        return;
+        //return;
     }
     _destAnnotation = [[BMKPointAnnotation alloc]init];
-    _destAnnotation.coordinate = CLLocationCoordinate2DMake(114.271499, 22.326487);
-    
-    _destAnnotation.title = _destShop.name;
-    _destAnnotation.subtitle = _destShop.address;
+    if (_destShop) {
+        
+        _destAnnotation.coordinate = CLLocationCoordinate2DMake([[_destShop.location objectAtIndex:0] floatValue], [[_destShop.location objectAtIndex:1] floatValue]);
+        
+        _destAnnotation.title = _destShop.name;
+        _destAnnotation.subtitle = _destShop.address;
+    } else {
+        _destAnnotation.coordinate = CLLocationCoordinate2DMake(114.271499, 22.326487);
+        
+        _destAnnotation.title = @"Shop";
+        _destAnnotation.subtitle = @"xx大街xx";
+    }
     
     
     CLLocationDegrees latDelta = 0.01;
@@ -141,14 +149,17 @@
 #pragma mark - Buttons Action
 - (void)showCurrentLocation {
     NSLog(@"进入普通定位态");
+    
+    CLLocationCoordinate2D coordinate = [PXNetworkManager sharedStore].currentLocation.coordinate;
+    
     if (_locService && (_locService.userLocation.location.coordinate.longitude != 0)) {
         //显示当前位置页面
         NSLog(@"my location: longitude: %f, latitude: %f", _locService.userLocation.location.coordinate.longitude, _locService.userLocation.location.coordinate.latitude);
         [_mapView setCenterCoordinate:_locService.userLocation.location.coordinate animated:true];
-    } else if ([PXNetworkManager sharedStore].currentLocation) {
+    } else if (coordinate.longitude != 0) {
         //显示当前位置页面
-        NSLog(@"my locationX: longitude: %f, latitude: %f", _locService.userLocation.location.coordinate.longitude, _locService.userLocation.location.coordinate.latitude);
-        [_mapView setCenterCoordinate:_locService.userLocation.location.coordinate animated:true];
+        NSLog(@"my locationX: longitude: %f, latitude: %f", coordinate.longitude, coordinate.latitude);
+        [_mapView setCenterCoordinate:coordinate animated:true];
     }
 }
 

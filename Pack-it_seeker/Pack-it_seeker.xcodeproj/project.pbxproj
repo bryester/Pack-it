@@ -38,6 +38,7 @@
 		B47C3DB01A9452A400F41A9D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B47C3DAF1A9452A400F41A9D /* Images.xcassets */; };
 		B47C3DB31A9452A400F41A9D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B47C3DB11A9452A400F41A9D /* LaunchScreen.xib */; };
 		B47C3DBF1A9452A400F41A9D /* Pack_it_seekerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DBE1A9452A400F41A9D /* Pack_it_seekerTests.m */; };
+		B4BCCC2A1AAEA9EF0022FF9B /* add_image_default.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCC291AAEA9EF0022FF9B /* add_image_default.png */; };
 		B4CC9D3B1AA4504A00135B29 /* PXCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CC9D3A1AA4504A00135B29 /* PXCategory.m */; };
 		B4CC9D7B1AA4A11C00135B29 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CC9D641AA4A11C00135B29 /* AFHTTPRequestOperation.m */; };
 		B4CC9D7C1AA4A11C00135B29 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CC9D661AA4A11C00135B29 /* AFHTTPRequestOperationManager.m */; };
@@ -75,7 +76,6 @@
 		B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4D77D771A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib */; };
 		B4D77D7C1A9626CE00C4ACA5 /* SolutionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D7B1A9626CE00C4ACA5 /* SolutionsTableViewController.m */; };
 		B4D77D7F1A96270F00C4ACA5 /* SolutionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D7E1A96270F00C4ACA5 /* SolutionDetailViewController.m */; };
-		B4D77D871A96422000C4ACA5 /* add_image_default.png in Resources */ = {isa = PBXBuildFile; fileRef = B4D77D861A96422000C4ACA5 /* add_image_default.png */; };
 		B4D77D8C1A96438500C4ACA5 /* NewProblemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D77D8B1A96438500C4ACA5 /* NewProblemViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -227,6 +227,7 @@
 		B47C3DB81A9452A400F41A9D /* Pack-it_seekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pack-it_seekerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47C3DBD1A9452A400F41A9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B47C3DBE1A9452A400F41A9D /* Pack_it_seekerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pack_it_seekerTests.m; sourceTree = "<group>"; };
+		B4BCCC291AAEA9EF0022FF9B /* add_image_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image_default.png; sourceTree = "<group>"; };
 		B4CC9D391AA4504A00135B29 /* PXCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXCategory.h; sourceTree = "<group>"; };
 		B4CC9D3A1AA4504A00135B29 /* PXCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXCategory.m; sourceTree = "<group>"; };
 		B4CC9D631AA4A11C00135B29 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -297,7 +298,6 @@
 		B4D77D7B1A9626CE00C4ACA5 /* SolutionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolutionsTableViewController.m; sourceTree = "<group>"; };
 		B4D77D7D1A96270F00C4ACA5 /* SolutionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolutionDetailViewController.h; sourceTree = "<group>"; };
 		B4D77D7E1A96270F00C4ACA5 /* SolutionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolutionDetailViewController.m; sourceTree = "<group>"; };
-		B4D77D861A96422000C4ACA5 /* add_image_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_image_default.png; path = Images.xcassets/add_image_default.png; sourceTree = "<group>"; };
 		B4D77D8A1A96438500C4ACA5 /* NewProblemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewProblemViewController.h; sourceTree = "<group>"; };
 		B4D77D8B1A96438500C4ACA5 /* NewProblemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewProblemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -748,9 +748,9 @@
 		B4D77D821A96420900C4ACA5 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B4BCCC291AAEA9EF0022FF9B /* add_image_default.png */,
 				B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */,
 				B44FBCB21A9C6D6D00AFB3AC /* bg.png */,
-				B4D77D861A96422000C4ACA5 /* add_image_default.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -870,11 +870,11 @@
 				B47C3DAE1A9452A400F41A9D /* Main.storyboard in Resources */,
 				B41783031AA9A066009E8437 /* mapapi.bundle in Resources */,
 				B44FBD421A9C771B00AFB3AC /* RegisterViewController.xib in Resources */,
-				B4D77D871A96422000C4ACA5 /* add_image_default.png in Resources */,
 				B47C3DB31A9452A400F41A9D /* LaunchScreen.xib in Resources */,
 				B47C3DB01A9452A400F41A9D /* Images.xcassets in Resources */,
 				B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */,
 				B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */,
+				B4BCCC2A1AAEA9EF0022FF9B /* add_image_default.png in Resources */,
 				B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */,
 				B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */,
 				B44FBD3A1A9C76FF00AFB3AC /* LoginViewController.xib in Resources */,
@@ -1066,6 +1066,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1086,6 +1088,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
@@ -1094,6 +1097,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1114,6 +1119,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
