@@ -1,0 +1,18 @@
+
+/* Class = "IBUIButton"; normalTitle = "忘记密码"; ObjectID = "70A-D7-mnj"; */
+"70A-D7-mnj.normalTitle" = "忘记密码";
+
+/* Class = "IBUITextField"; placeholder = "请输入用户名"; ObjectID = "BiG-cL-vOO"; */
+"BiG-cL-vOO.placeholder" = "请输入用户名";
+
+/* Class = "IBUINavigationItem"; title = "登录"; ObjectID = "KHW-P7-qY5"; */
+"KHW-P7-qY5.title" = "登录";
+
+/* Class = "IBUITextField"; placeholder = "请输入密码"; ObjectID = "NrJ-cE-zwd"; */
+"NrJ-cE-zwd.placeholder" = "请输入密码";
+
+/* Class = "IBUIButton"; normalTitle = "登录"; ObjectID = "ONk-H7-kGR"; */
+"ONk-H7-kGR.normalTitle" = "登录";
+
+/* Class = "IBUIButton"; normalTitle = "手机注册"; ObjectID = "rJN-MZ-uJo"; */
+"rJN-MZ-uJo.normalTitle" = "手机注册";

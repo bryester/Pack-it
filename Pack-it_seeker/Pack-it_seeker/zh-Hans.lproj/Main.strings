@@ -1,0 +1,66 @@
+
+/* Class = "IBUISegmentedControl"; 8ct-Kz-xpT.segmentTitles[0] = "步行"; ObjectID = "8ct-Kz-xpT"; */
+"8ct-Kz-xpT.segmentTitles[0]" = "步行";
+
+/* Class = "IBUISegmentedControl"; 8ct-Kz-xpT.segmentTitles[1] = "驾车"; ObjectID = "8ct-Kz-xpT"; */
+"8ct-Kz-xpT.segmentTitles[1]" = "驾车";
+
+/* Class = "IBUISegmentedControl"; 8ct-Kz-xpT.segmentTitles[2] = "公交"; ObjectID = "8ct-Kz-xpT"; */
+"8ct-Kz-xpT.segmentTitles[2]" = "公交";
+
+/* Class = "IBUILabel"; text = "元"; ObjectID = "ATK-A3-Tcf"; */
+"ATK-A3-Tcf.text" = "元";
+
+/* Class = "IBUILabel"; text = "元"; ObjectID = "LQS-pJ-S5y"; */
+"LQS-pJ-S5y.text" = "元";
+
+/* Class = "IBUILabel"; text = "Desc"; ObjectID = "Les-M6-Q8h"; */
+"Les-M6-Q8h.text" = "描述";
+
+/* Class = "IBUINavigationItem"; title = "Me"; ObjectID = "Udb-XV-QWD"; */
+"Udb-XV-QWD.title" = "我";
+
+/* Class = "IBUINavigationItem"; title = "Map"; ObjectID = "VMn-eC-k4Z"; */
+"VMn-eC-k4Z.title" = "地图";
+
+/* Class = "IBUILabel"; text = "Location"; ObjectID = "Xi4-hS-VGn"; */
+"Xi4-hS-VGn.text" = "位置";
+
+/* Class = "IBUILabel"; text = "Location"; ObjectID = "eBQ-s8-ENW"; */
+"eBQ-s8-ENW.text" = "位置";
+
+/* Class = "IBUILabel"; text = "Desc"; ObjectID = "fON-E2-bH5"; */
+"fON-E2-bH5.text" = "描述";
+
+/* Class = "IBUIBarButtonItem"; title = "Route"; ObjectID = "hOC-qa-SGe"; */
+"hOC-qa-SGe.title" = "导航";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "hSP-q4-c9M"; */
+"hSP-q4-c9M.text" = "0";
+
+/* Class = "IBUILabel"; text = "User_1234567"; ObjectID = "iLO-5O-LVI"; */
+"iLO-5O-LVI.text" = "User_1234567";
+
+/* Class = "IBUINavigationItem"; title = "Solutions"; ObjectID = "jGU-DC-KUc"; */
+"jGU-DC-KUc.title" = "解答";
+
+/* Class = "IBUILabel"; text = "0"; ObjectID = "kdj-5H-FZj"; */
+"kdj-5H-FZj.text" = "0";
+
+/* Class = "IBUILabel"; text = "Shop"; ObjectID = "lZK-PM-TEk"; */
+"lZK-PM-TEk.text" = "商铺";
+
+/* Class = "IBUINavigationItem"; title = "New Problem"; ObjectID = "me7-4h-HPg"; */
+"me7-4h-HPg.title" = "新问题";
+
+/* Class = "IBUILabel"; text = "Duration"; ObjectID = "owt-53-UgK"; */
+"owt-53-UgK.text" = "有效时长";
+
+/* Class = "IBUINavigationItem"; title = "Questions"; ObjectID = "qQW-IA-46l"; */
+"qQW-IA-46l.title" = "问题";
+
+/* Class = "IBUILabel"; text = "Status"; ObjectID = "xzf-nV-ZdF"; */
+"xzf-nV-ZdF.text" = "状态";
+
+/* Class = "IBUINavigationItem"; title = "Detail"; ObjectID = "ybN-I1-EEk"; */
+"ybN-I1-EEk.title" = "详情";

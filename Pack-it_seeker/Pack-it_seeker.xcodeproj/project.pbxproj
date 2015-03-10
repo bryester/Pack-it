@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B411FD7B1AA439F8006E60F8 /* PXShop.m in Sources */ = {isa = PBXBuildFile; fileRef = B411FD7A1AA439F8006E60F8 /* PXShop.m */; };
 		B41248521AAECB94005BAD2C /* cemara.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B41248511AAECB94005BAD2C /* cemara.jpg */; };
+		B412486B1AAEFFFD005BAD2C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B412486D1AAEFFFD005BAD2C /* LoginViewController.xib */; };
+		B41248721AAF0025005BAD2C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41248741AAF0025005BAD2C /* RegisterViewController.xib */; };
+		B41248771AAF0035005BAD2C /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41248791AAF0035005BAD2C /* SetPasswordViewController.xib */; };
 		B41782791AA98EFC009E8437 /* NaviViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41782781AA98EFC009E8437 /* NaviViewController.mm */; };
 		B41782BE1AA99256009E8437 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41782BD1AA99256009E8437 /* QuartzCore.framework */; };
 		B41782C01AA99260009E8437 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41782BF1AA99260009E8437 /* OpenGLES.framework */; };
@@ -22,11 +25,8 @@
 		B44FBD331A9C73A900AFB3AC /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B44FBD2E1A9C739500AFB3AC /* libOAuth2Client.a */; };
 		B44FBD351A9C740C00AFB3AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44FBD341A9C740C00AFB3AC /* Security.framework */; };
 		B44FBD391A9C76FF00AFB3AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */; };
-		B44FBD3A1A9C76FF00AFB3AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD381A9C76FF00AFB3AC /* LoginViewController.xib */; };
 		B44FBD411A9C771B00AFB3AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */; };
-		B44FBD421A9C771B00AFB3AC /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */; };
 		B44FBD431A9C771B00AFB3AC /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */; };
-		B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */; };
 		B453CDB91AA1C37600854D2A /* UIViewController+Alert.m in Sources */ = {isa = PBXBuildFile; fileRef = B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */; };
 		B453CDBF1AA1C40300854D2A /* AlertViewHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B453CDBE1AA1C40300854D2A /* AlertViewHolder.m */; };
 		B453CDC11AA1E23500854D2A /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B453CDC01AA1E23500854D2A /* SDWebImage.framework */; };
@@ -122,6 +122,15 @@
 		B411FD791AA439F8006E60F8 /* PXShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXShop.h; sourceTree = "<group>"; };
 		B411FD7A1AA439F8006E60F8 /* PXShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXShop.m; sourceTree = "<group>"; };
 		B41248511AAECB94005BAD2C /* cemara.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cemara.jpg; sourceTree = "<group>"; };
+		B41248661AAEFEAC005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B412486A1AAEFFB1005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B412486C1AAEFFFD005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
+		B412486F1AAF0004005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		B41248711AAF000F005BAD2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LoginViewController.strings; sourceTree = "<group>"; };
+		B41248731AAF0025005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegisterViewController.xib; sourceTree = "<group>"; };
+		B41248761AAF002D005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RegisterViewController.strings"; sourceTree = "<group>"; };
+		B41248781AAF0035005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetPasswordViewController.xib; sourceTree = "<group>"; };
+		B412487B1AAF0039005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SetPasswordViewController.strings"; sourceTree = "<group>"; };
 		B41782771AA98EFC009E8437 /* NaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviViewController.h; sourceTree = "<group>"; };
 		B41782781AA98EFC009E8437 /* NaviViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NaviViewController.mm; sourceTree = "<group>"; };
 		B41782BD1AA99256009E8437 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -200,13 +209,10 @@
 		B44FBD341A9C740C00AFB3AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B44FBD361A9C76FF00AFB3AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		B44FBD381A9C76FF00AFB3AC /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B44FBD3B1A9C771B00AFB3AC /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		B44FBD3E1A9C771B00AFB3AC /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
 		B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
-		B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPasswordViewController.xib; sourceTree = "<group>"; };
 		B44FBD4A1A9C790300AFB3AC /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		B453CDB71AA1C37600854D2A /* UIViewController+Alert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alert.h"; sourceTree = "<group>"; };
 		B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alert.m"; sourceTree = "<group>"; };
@@ -464,7 +470,7 @@
 			children = (
 				B44FBD361A9C76FF00AFB3AC /* LoginViewController.h */,
 				B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */,
-				B44FBD381A9C76FF00AFB3AC /* LoginViewController.xib */,
+				B412486D1AAEFFFD005BAD2C /* LoginViewController.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -474,10 +480,10 @@
 			children = (
 				B44FBD3B1A9C771B00AFB3AC /* RegisterViewController.h */,
 				B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */,
-				B44FBD3D1A9C771B00AFB3AC /* RegisterViewController.xib */,
+				B41248741AAF0025005BAD2C /* RegisterViewController.xib */,
 				B44FBD3E1A9C771B00AFB3AC /* SetPasswordViewController.h */,
 				B44FBD3F1A9C771B00AFB3AC /* SetPasswordViewController.m */,
-				B44FBD401A9C771B00AFB3AC /* SetPasswordViewController.xib */,
+				B41248791AAF0035005BAD2C /* SetPasswordViewController.xib */,
 			);
 			name = Signup;
 			sourceTree = "<group>";
@@ -823,6 +829,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B47C3D931A9452A400F41A9D;
 			productRefGroup = B47C3D9D1A9452A400F41A9D /* Products */;
@@ -872,16 +879,16 @@
 			files = (
 				B47C3DAE1A9452A400F41A9D /* Main.storyboard in Resources */,
 				B41783031AA9A066009E8437 /* mapapi.bundle in Resources */,
-				B44FBD421A9C771B00AFB3AC /* RegisterViewController.xib in Resources */,
+				B41248721AAF0025005BAD2C /* RegisterViewController.xib in Resources */,
 				B47C3DB31A9452A400F41A9D /* LaunchScreen.xib in Resources */,
 				B47C3DB01A9452A400F41A9D /* Images.xcassets in Resources */,
 				B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */,
 				B41248521AAECB94005BAD2C /* cemara.jpg in Resources */,
 				B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */,
 				B4BCCC2A1AAEA9EF0022FF9B /* add_image_default.png in Resources */,
-				B44FBD441A9C771B00AFB3AC /* SetPasswordViewController.xib in Resources */,
+				B41248771AAF0035005BAD2C /* SetPasswordViewController.xib in Resources */,
 				B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */,
-				B44FBD3A1A9C76FF00AFB3AC /* LoginViewController.xib in Resources */,
+				B412486B1AAEFFFD005BAD2C /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,10 +978,39 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B412486D1AAEFFFD005BAD2C /* LoginViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B412486C1AAEFFFD005BAD2C /* Base */,
+				B412486F1AAF0004005BAD2C /* zh-Hans */,
+				B41248711AAF000F005BAD2C /* en */,
+			);
+			name = LoginViewController.xib;
+			sourceTree = "<group>";
+		};
+		B41248741AAF0025005BAD2C /* RegisterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41248731AAF0025005BAD2C /* Base */,
+				B41248761AAF002D005BAD2C /* zh-Hans */,
+			);
+			name = RegisterViewController.xib;
+			sourceTree = "<group>";
+		};
+		B41248791AAF0035005BAD2C /* SetPasswordViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41248781AAF0035005BAD2C /* Base */,
+				B412487B1AAF0039005BAD2C /* zh-Hans */,
+			);
+			name = SetPasswordViewController.xib;
+			sourceTree = "<group>";
+		};
 		B47C3DAC1A9452A400F41A9D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B47C3DAD1A9452A400F41A9D /* Base */,
+				B412486A1AAEFFB1005BAD2C /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -983,6 +1019,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B47C3DB21A9452A400F41A9D /* Base */,
+				B41248661AAEFEAC005BAD2C /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

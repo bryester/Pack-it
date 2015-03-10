@@ -211,7 +211,7 @@
                                     <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="368:325" id="P1L-7G-rmP"/>
                                     <constraint firstAttribute="width" secondItem="LhL-xj-8tN" secondAttribute="height" multiplier="1:1" id="zWo-00-y01"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="cemara.jpg"/>
+                                <state key="normal" image="cemara.jpg"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="8ic-kI-X9m"/>
@@ -290,7 +290,7 @@
             </objects>
             <point key="canvasLocation" x="1656" y="-995"/>
         </scene>
-        <!--Seeker-->
+        <!--Questions-->
         <scene sceneID="8jG-q3-DWi">
             <objects>
                 <tableViewController id="kBg-8g-EWn" customClass="ProblemsViewController" sceneMemberID="viewController">
@@ -437,7 +437,7 @@
                             <outlet property="delegate" destination="kBg-8g-EWn" id="bqr-gu-5eF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Seeker" id="qQW-IA-46l">
+                    <navigationItem key="navigationItem" title="Questions" id="qQW-IA-46l">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="JGz-4q-Zce">
                             <connections>
                                 <segue destination="WB0-zu-yn3" kind="show" id="hwE-T1-HpZ"/>
@@ -956,7 +956,7 @@
         <scene sceneID="nx1-8B-AWg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lcr-4U-1Qs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="eX3-x3-te1"/>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="eX3-x3-te1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VsF-sX-Yxe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
