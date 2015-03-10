@@ -301,25 +301,67 @@
     NSLog(@"quest dictionary:%@", finalDictionary);
     
     if (_credential) {
+        
+        
+        
+        
         [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
         
-        [_operationManager POST:[NSString stringWithFormat:ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM, solutionID]
-                     parameters:finalDictionary
-      constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-          [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
-      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-          
-          NSLog(@"postNewSolutionByImage responseHandler:%@", responseObject);
-          if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
-              [self.delegate onPostNewSolutionResult:nil];
-          }
-          
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          NSLog(@"postNewSolutionByImage Error:%@", error);
-          if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
-              [self.delegate onPostNewSolutionResult:error];
-          }
-      }];
+        
+        // need to pass the full URLString instead of just a path like when using 'PUT' or 'POST' convenience methods
+        NSString *URLString = [NSString stringWithFormat:ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM, solutionID];
+        NSMutableURLRequest *request = [_operationManager.requestSerializer
+                                        multipartFormRequestWithMethod:@"PUT"
+                                        URLString:URLString
+                                        parameters:finalDictionary
+                                        constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
+        }
+                                        error:nil];
+        
+        // 'PUT' and 'POST' convenience methods auto-run, but HTTPRequestOperationWithRequest just
+        // sets up the request. you're responsible for firing it.
+        AFHTTPRequestOperation *requestOperation = [_operationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            NSLog(@"postNewSolutionByImage responseHandler:%@", responseObject);
+            if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
+                [self.delegate onPostNewSolutionResult:nil];
+            }
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            NSLog(@"postNewSolutionByImage Error:%@", error);
+            if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
+                [self.delegate onPostNewSolutionResult:error];
+            }
+            
+        }];
+        
+        // fire the request
+        [requestOperation start];
+        
+        
+        
+        
+        
+//        [_operationManager POST:[NSString stringWithFormat:ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM, solutionID]
+//                     parameters:finalDictionary
+//      constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+//          [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
+//      } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//          
+//          
+//          NSLog(@"postNewSolutionByImage responseHandler:%@", responseObject);
+//          if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
+//              [self.delegate onPostNewSolutionResult:nil];
+//          }
+//          
+//      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//          NSLog(@"postNewSolutionByImage Error:%@", error);
+//          if ([self.delegate respondsToSelector:@selector(onPostNewSolutionResult:)]) {
+//              [self.delegate onPostNewSolutionResult:error];
+//          }
+//      }];
         
     }
 }

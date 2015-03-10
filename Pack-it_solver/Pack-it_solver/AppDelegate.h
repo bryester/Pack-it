@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PXAccountHolder.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

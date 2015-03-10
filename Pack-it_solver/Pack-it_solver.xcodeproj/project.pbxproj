@@ -17,7 +17,6 @@
 		B47C3DF41A94531A00F41A9D /* Pack_it_solverTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DF31A94531A00F41A9D /* Pack_it_solverTests.m */; };
 		B483C0441AAB186100A742A6 /* defult_portraiture.png in Resources */ = {isa = PBXBuildFile; fileRef = B483C03F1AAB186100A742A6 /* defult_portraiture.png */; };
 		B483C0451AAB186100A742A6 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B483C0401AAB186100A742A6 /* bg.png */; };
-		B483C0461AAB186100A742A6 /* add_image_default.png in Resources */ = {isa = PBXBuildFile; fileRef = B483C0411AAB186100A742A6 /* add_image_default.png */; };
 		B483C0971AAB19B000A742A6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0961AAB19B000A742A6 /* SecondViewController.m */; };
 		B483C09C1AAB19C400A742A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C09A1AAB19C400A742A6 /* LoginViewController.m */; };
 		B483C09D1AAB19C400A742A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B483C09B1AAB19C400A742A6 /* LoginViewController.xib */; };
@@ -64,6 +63,7 @@
 		B483C1251AAB1E5100A742A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B483C1241AAB1E5100A742A6 /* SystemConfiguration.framework */; };
 		B483C1291AAB1EE800A742A6 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B483C1281AAB1EE800A742A6 /* ImageIO.framework */; };
 		B483C12B1AAB211900A742A6 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B483C12A1AAB211900A742A6 /* SDWebImage.framework */; };
+		B4BCCC2C1AAEB01B0022FF9B /* add_image_default.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,6 @@
 		B47C3DF31A94531A00F41A9D /* Pack_it_solverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Pack_it_solverTests.m; sourceTree = "<group>"; };
 		B483C03F1AAB186100A742A6 /* defult_portraiture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = defult_portraiture.png; path = "../../Pack-it_seeker/Pack-it_seeker/defult_portraiture.png"; sourceTree = "<group>"; };
 		B483C0401AAB186100A742A6 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = "../../Pack-it_seeker/Pack-it_seeker/bg.png"; sourceTree = "<group>"; };
-		B483C0411AAB186100A742A6 /* add_image_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add_image_default.png; path = "../../Pack-it_seeker/Pack-it_seeker/Images.xcassets/add_image_default.png"; sourceTree = "<group>"; };
 		B483C0951AAB19B000A742A6 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		B483C0961AAB19B000A742A6 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B483C0991AAB19C400A742A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -183,6 +182,7 @@
 		B483C1241AAB1E5100A742A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B483C1281AAB1EE800A742A6 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B483C12A1AAB211900A742A6 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image_default.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,9 +288,9 @@
 		B483C03D1AAB180100A742A6 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */,
 				B483C03F1AAB186100A742A6 /* defult_portraiture.png */,
 				B483C0401AAB186100A742A6 /* bg.png */,
-				B483C0411AAB186100A742A6 /* add_image_default.png */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -592,13 +592,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B483C0451AAB186100A742A6 /* bg.png in Resources */,
-				B483C0461AAB186100A742A6 /* add_image_default.png in Resources */,
 				B47C3DE31A94531900F41A9D /* Main.storyboard in Resources */,
 				B483C0441AAB186100A742A6 /* defult_portraiture.png in Resources */,
 				B47C3DE81A94531900F41A9D /* LaunchScreen.xib in Resources */,
 				B483C09D1AAB19C400A742A6 /* LoginViewController.xib in Resources */,
 				B47C3DE51A94531900F41A9D /* Images.xcassets in Resources */,
 				B483C0A61AAB19D900A742A6 /* RegisterViewController.xib in Resources */,
+				B4BCCC2C1AAEB01B0022FF9B /* add_image_default.png in Resources */,
 				B483C0A81AAB19D900A742A6 /* SetPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
