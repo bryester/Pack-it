@@ -561,7 +561,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="s9H-Zn-ydn" secondAttribute="height" id="WuH-0p-bJ1"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="cemara.jpg">
+                                <state key="normal" image="cemara.jpg">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">

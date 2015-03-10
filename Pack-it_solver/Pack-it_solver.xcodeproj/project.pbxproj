@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B41248561AAECBDF005BAD2C /* cemara.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B41248551AAECBDF005BAD2C /* cemara.jpg */; };
+		B412487E1AAF12AD005BAD2C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41248801AAF12AD005BAD2C /* LoginViewController.xib */; };
+		B41248831AAF12C1005BAD2C /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41248851AAF12C1005BAD2C /* SetPasswordViewController.xib */; };
+		B41248881AAF12CD005BAD2C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B412488A1AAF12CD005BAD2C /* RegisterViewController.xib */; };
 		B450A0841AAC7E680080C6D9 /* ProblemDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */; };
 		B450A0881AAC81B90080C6D9 /* SolutionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B450A0871AAC81B90080C6D9 /* SolutionDetailViewController.m */; };
 		B47C3DD71A94531900F41A9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B47C3DD61A94531900F41A9D /* main.m */; };
@@ -20,11 +23,8 @@
 		B483C0451AAB186100A742A6 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B483C0401AAB186100A742A6 /* bg.png */; };
 		B483C0971AAB19B000A742A6 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0961AAB19B000A742A6 /* SecondViewController.m */; };
 		B483C09C1AAB19C400A742A6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C09A1AAB19C400A742A6 /* LoginViewController.m */; };
-		B483C09D1AAB19C400A742A6 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B483C09B1AAB19C400A742A6 /* LoginViewController.xib */; };
 		B483C0A51AAB19D900A742A6 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0A01AAB19D900A742A6 /* RegisterViewController.m */; };
-		B483C0A61AAB19D900A742A6 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B483C0A11AAB19D900A742A6 /* RegisterViewController.xib */; };
 		B483C0A71AAB19D900A742A6 /* SetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0A31AAB19D900A742A6 /* SetPasswordViewController.m */; };
-		B483C0A81AAB19D900A742A6 /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B483C0A41AAB19D900A742A6 /* SetPasswordViewController.xib */; };
 		B483C0B11AAB1A0A00A742A6 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0AA1AAB1A0A00A742A6 /* UIImage+Rotate.m */; };
 		B483C0B21AAB1A0A00A742A6 /* PXAccountHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0AC1AAB1A0A00A742A6 /* PXAccountHolder.m */; };
 		B483C0B31AAB1A0A00A742A6 /* PXNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B483C0AE1AAB1A0A00A742A6 /* PXNetworkManager.m */; };
@@ -79,6 +79,14 @@
 
 /* Begin PBXFileReference section */
 		B41248551AAECBDF005BAD2C /* cemara.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cemara.jpg; sourceTree = "<group>"; };
+		B412487C1AAF1232005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B412487D1AAF1232005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B412487F1AAF12AD005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoginViewController.xib; sourceTree = "<group>"; };
+		B41248821AAF12AF005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LoginViewController.strings"; sourceTree = "<group>"; };
+		B41248841AAF12C1005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetPasswordViewController.xib; sourceTree = "<group>"; };
+		B41248871AAF12C3005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SetPasswordViewController.strings"; sourceTree = "<group>"; };
+		B41248891AAF12CD005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RegisterViewController.xib; sourceTree = "<group>"; };
+		B412488C1AAF12D1005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RegisterViewController.strings"; sourceTree = "<group>"; };
 		B450A0821AAC7E680080C6D9 /* ProblemDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProblemDetailViewController.h; sourceTree = "<group>"; };
 		B450A0831AAC7E680080C6D9 /* ProblemDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProblemDetailViewController.m; sourceTree = "<group>"; };
 		B450A0861AAC81B90080C6D9 /* SolutionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolutionDetailViewController.h; sourceTree = "<group>"; };
@@ -100,13 +108,10 @@
 		B483C0961AAB19B000A742A6 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		B483C0991AAB19C400A742A6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		B483C09A1AAB19C400A742A6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		B483C09B1AAB19C400A742A6 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		B483C09F1AAB19D900A742A6 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		B483C0A01AAB19D900A742A6 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		B483C0A11AAB19D900A742A6 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		B483C0A21AAB19D900A742A6 /* SetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetPasswordViewController.h; sourceTree = "<group>"; };
 		B483C0A31AAB19D900A742A6 /* SetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetPasswordViewController.m; sourceTree = "<group>"; };
-		B483C0A41AAB19D900A742A6 /* SetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetPasswordViewController.xib; sourceTree = "<group>"; };
 		B483C0A91AAB1A0A00A742A6 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		B483C0AA1AAB1A0A00A742A6 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
 		B483C0AB1AAB1A0A00A742A6 /* PXAccountHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAccountHolder.h; sourceTree = "<group>"; };
@@ -323,7 +328,7 @@
 			children = (
 				B483C0991AAB19C400A742A6 /* LoginViewController.h */,
 				B483C09A1AAB19C400A742A6 /* LoginViewController.m */,
-				B483C09B1AAB19C400A742A6 /* LoginViewController.xib */,
+				B41248801AAF12AD005BAD2C /* LoginViewController.xib */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -333,10 +338,10 @@
 			children = (
 				B483C09F1AAB19D900A742A6 /* RegisterViewController.h */,
 				B483C0A01AAB19D900A742A6 /* RegisterViewController.m */,
-				B483C0A11AAB19D900A742A6 /* RegisterViewController.xib */,
+				B412488A1AAF12CD005BAD2C /* RegisterViewController.xib */,
 				B483C0A21AAB19D900A742A6 /* SetPasswordViewController.h */,
 				B483C0A31AAB19D900A742A6 /* SetPasswordViewController.m */,
-				B483C0A41AAB19D900A742A6 /* SetPasswordViewController.xib */,
+				B41248851AAF12C1005BAD2C /* SetPasswordViewController.xib */,
 			);
 			name = Signup;
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = B47C3DC81A94531900F41A9D;
 			productRefGroup = B47C3DD21A94531900F41A9D /* Products */;
@@ -598,12 +604,12 @@
 				B47C3DE31A94531900F41A9D /* Main.storyboard in Resources */,
 				B483C0441AAB186100A742A6 /* defult_portraiture.png in Resources */,
 				B47C3DE81A94531900F41A9D /* LaunchScreen.xib in Resources */,
-				B483C09D1AAB19C400A742A6 /* LoginViewController.xib in Resources */,
+				B412487E1AAF12AD005BAD2C /* LoginViewController.xib in Resources */,
 				B47C3DE51A94531900F41A9D /* Images.xcassets in Resources */,
-				B483C0A61AAB19D900A742A6 /* RegisterViewController.xib in Resources */,
+				B41248881AAF12CD005BAD2C /* RegisterViewController.xib in Resources */,
 				B4BCCC2C1AAEB01B0022FF9B /* add_image_default.png in Resources */,
 				B41248561AAECBDF005BAD2C /* cemara.jpg in Resources */,
-				B483C0A81AAB19D900A742A6 /* SetPasswordViewController.xib in Resources */,
+				B41248831AAF12C1005BAD2C /* SetPasswordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,10 +692,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B41248801AAF12AD005BAD2C /* LoginViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B412487F1AAF12AD005BAD2C /* Base */,
+				B41248821AAF12AF005BAD2C /* zh-Hans */,
+			);
+			name = LoginViewController.xib;
+			sourceTree = "<group>";
+		};
+		B41248851AAF12C1005BAD2C /* SetPasswordViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41248841AAF12C1005BAD2C /* Base */,
+				B41248871AAF12C3005BAD2C /* zh-Hans */,
+			);
+			name = SetPasswordViewController.xib;
+			sourceTree = "<group>";
+		};
+		B412488A1AAF12CD005BAD2C /* RegisterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41248891AAF12CD005BAD2C /* Base */,
+				B412488C1AAF12D1005BAD2C /* zh-Hans */,
+			);
+			name = RegisterViewController.xib;
+			sourceTree = "<group>";
+		};
 		B47C3DE11A94531900F41A9D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B47C3DE21A94531900F41A9D /* Base */,
+				B412487C1AAF1232005BAD2C /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -698,6 +732,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B47C3DE71A94531900F41A9D /* Base */,
+				B412487D1AAF1232005BAD2C /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

@@ -1,0 +1,15 @@
+
+/* Class = "IBUINavigationItem"; title = "发送验证码"; ObjectID = "2Pj-G0-8nw"; */
+"2Pj-G0-8nw.title" = "发送验证码";
+
+/* Class = "IBUITextField"; placeholder = "验证码"; ObjectID = "7We-Lj-RHG"; */
+"7We-Lj-RHG.placeholder" = "验证码";
+
+/* Class = "IBUIButton"; normalTitle = "提交"; ObjectID = "HZU-FW-9yy"; */
+"HZU-FW-9yy.normalTitle" = "提交";
+
+/* Class = "IBUIButton"; normalTitle = "发送验证码"; ObjectID = "gNZ-N9-pS1"; */
+"gNZ-N9-pS1.normalTitle" = "发送验证码";
+
+/* Class = "IBUITextField"; placeholder = "输入手机号"; ObjectID = "rPy-DD-4ta"; */
+"rPy-DD-4ta.placeholder" = "输入手机号";

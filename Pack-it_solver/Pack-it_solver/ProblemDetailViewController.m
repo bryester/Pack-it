@@ -46,13 +46,13 @@
     }
     
     if ([_solution.status isEqualToString:@"waiting"]) {
-        [_btnToSolution setTitle:@"Solve" forState:UIControlStateNormal];
+        [_btnToSolution setTitle:@"解决问题" forState:UIControlStateNormal];
         [_btnToSolution setBackgroundColor:[UIColor greenColor]];
     } else if ([_solution.status isEqualToString:@"solved"]) {
-        [_btnToSolution setTitle:@"Check my solution" forState:UIControlStateNormal];
+        [_btnToSolution setTitle:@"查看我的回答" forState:UIControlStateNormal];
         [_btnToSolution setBackgroundColor:[UIColor yellowColor]];
     } else if ([_solution.status isEqualToString:@"failed"]) {
-        [_btnToSolution setTitle:@"Failed" forState:UIControlStateNormal];
+        [_btnToSolution setTitle:@"问题失败" forState:UIControlStateNormal];
         [_btnToSolution setBackgroundColor:[UIColor grayColor]];
         [_btnToSolution setEnabled:NO];
     }

@@ -12,6 +12,7 @@
 		B412486B1AAEFFFD005BAD2C /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B412486D1AAEFFFD005BAD2C /* LoginViewController.xib */; };
 		B41248721AAF0025005BAD2C /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41248741AAF0025005BAD2C /* RegisterViewController.xib */; };
 		B41248771AAF0035005BAD2C /* SetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B41248791AAF0035005BAD2C /* SetPasswordViewController.xib */; };
+		B412488F1AAF1795005BAD2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B412488E1AAF1795005BAD2C /* Localizable.strings */; };
 		B41782791AA98EFC009E8437 /* NaviViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B41782781AA98EFC009E8437 /* NaviViewController.mm */; };
 		B41782BE1AA99256009E8437 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41782BD1AA99256009E8437 /* QuartzCore.framework */; };
 		B41782C01AA99260009E8437 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41782BF1AA99260009E8437 /* OpenGLES.framework */; };
@@ -131,6 +132,7 @@
 		B41248761AAF002D005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/RegisterViewController.strings"; sourceTree = "<group>"; };
 		B41248781AAF0035005BAD2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SetPasswordViewController.xib; sourceTree = "<group>"; };
 		B412487B1AAF0039005BAD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SetPasswordViewController.strings"; sourceTree = "<group>"; };
+		B412488E1AAF1795005BAD2C /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
 		B41782771AA98EFC009E8437 /* NaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviViewController.h; sourceTree = "<group>"; };
 		B41782781AA98EFC009E8437 /* NaviViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NaviViewController.mm; sourceTree = "<group>"; };
 		B41782BD1AA99256009E8437 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -543,6 +545,7 @@
 		B47C3D9F1A9452A400F41A9D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B412488E1AAF1795005BAD2C /* Localizable.strings */,
 				B47C3DA01A9452A400F41A9D /* Info.plist */,
 				B47C3DA11A9452A400F41A9D /* main.m */,
 			);
@@ -886,6 +889,7 @@
 				B41248521AAECB94005BAD2C /* cemara.jpg in Resources */,
 				B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */,
 				B4BCCC2A1AAEA9EF0022FF9B /* add_image_default.png in Resources */,
+				B412488F1AAF1795005BAD2C /* Localizable.strings in Resources */,
 				B41248771AAF0035005BAD2C /* SetPasswordViewController.xib in Resources */,
 				B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */,
 				B412486B1AAEFFFD005BAD2C /* LoginViewController.xib in Resources */,

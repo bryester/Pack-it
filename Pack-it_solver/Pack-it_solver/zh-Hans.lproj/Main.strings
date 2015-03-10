@@ -1,0 +1,42 @@
+
+/* Class = "IBUINavigationItem"; title = "Me"; ObjectID = "6qL-d7-bkf"; */
+"6qL-d7-bkf.title" = "我";
+
+/* Class = "IBUILabel"; text = "Location"; ObjectID = "6x2-Av-fqn"; */
+"6x2-Av-fqn.text" = "位置";
+
+/* Class = "IBUILabel"; text = "User_1234567"; ObjectID = "Ba5-ZJ-4SU"; */
+"Ba5-ZJ-4SU.text" = "User_1234567";
+
+/* Class = "IBUINavigationItem"; title = "Seeker"; ObjectID = "Ea3-vo-kTZ"; */
+"Ea3-vo-kTZ.title" = "问题";
+
+/* Class = "IBUILabel"; text = "Duration"; ObjectID = "ORx-9I-AbH"; */
+"ORx-9I-AbH.text" = "有效时长";
+
+/* Class = "IBUIBarButtonItem"; title = "Confirm"; ObjectID = "U63-xK-LhF"; */
+"U63-xK-LhF.title" = "确定";
+
+/* Class = "IBUINavigationItem"; title = "Solver Question"; ObjectID = "X0r-6L-naZ"; */
+"X0r-6L-naZ.title" = "回答";
+
+/* Class = "IBUINavigationItem"; title = "Question Detail"; ObjectID = "jUS-2e-SLT"; */
+"jUS-2e-SLT.title" = "问题详情";
+
+/* Class = "IBUIButton"; normalTitle = "Solve"; ObjectID = "mMO-jG-US3"; */
+"mMO-jG-US3.normalTitle" = "解决问题";
+
+/* Class = "IBUILabel"; text = "Desc"; ObjectID = "q5r-sM-9N3"; */
+"q5r-sM-9N3.text" = "描述";
+
+/* Class = "IBUIButton"; normalTitle = "Button"; ObjectID = "s9H-Zn-ydn"; */
+"s9H-Zn-ydn.normalTitle" = "Button";
+
+/* Class = "IBUILabel"; text = "Status"; ObjectID = "sUp-BA-WsC"; */
+"sUp-BA-WsC.text" = "状态";
+
+/* Class = "IBUILabel"; text = "Desc"; ObjectID = "sdt-jP-2RT"; */
+"sdt-jP-2RT.text" = "描述";
+
+/* Class = "IBUITextField"; placeholder = "My Price/RMB"; ObjectID = "zt3-zu-lBg"; */
+"zt3-zu-lBg.placeholder" = "我的报价／元";
