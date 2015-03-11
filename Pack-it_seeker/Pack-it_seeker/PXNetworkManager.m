@@ -17,42 +17,42 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shared = [PXNetworkManager new];
-        [shared setClientID:CLIENT_ID
-                     secret:SECRET
-                      scope:SCOPE
-           authorizationURL:AUTH_URL
-                   tokenURL:TOKEN_URL
-                redirectURL:REDIRECT_URL];
+//        [shared setClientID:CLIENT_ID
+//                     secret:SECRET
+//                      scope:SCOPE
+//           authorizationURL:AUTH_URL
+//                   tokenURL:TOKEN_URL
+//                redirectURL:REDIRECT_URL];
     });
     return shared;
 }
 
-- (void)setClientID:(NSString *)clientID secret:(NSString *)secret scope:(NSString *)scope authorizationURL:(NSString *)authURL tokenURL:(NSString *)tokenURL redirectURL:(NSString *)redirectURL{
-    [[NXOAuth2AccountStore sharedStore] setClientID:clientID
-                                             secret:secret
-                                              scope:[NSSet setWithObject:scope]
-                                   authorizationURL:[NSURL URLWithString:authURL]
-                                           tokenURL:[NSURL URLWithString:tokenURL]
-                                        redirectURL:[NSURL URLWithString:redirectURL]
-                                      keyChainGroup:KEY_CHAIN_GROUP
-                                     forAccountType:FOR_ACCOUNT_TYPE];
-}
+//- (void)setClientID:(NSString *)clientID secret:(NSString *)secret scope:(NSString *)scope authorizationURL:(NSString *)authURL tokenURL:(NSString *)tokenURL redirectURL:(NSString *)redirectURL{
+//    [[NXOAuth2AccountStore sharedStore] setClientID:clientID
+//                                             secret:secret
+//                                              scope:[NSSet setWithObject:scope]
+//                                   authorizationURL:[NSURL URLWithString:authURL]
+//                                           tokenURL:[NSURL URLWithString:tokenURL]
+//                                        redirectURL:[NSURL URLWithString:redirectURL]
+//                                      keyChainGroup:KEY_CHAIN_GROUP
+//                                     forAccountType:FOR_ACCOUNT_TYPE];
+//}
 
--(instancetype)initWithClientID:(NSString *)clientID secret:(NSString *)secret scope:(NSString *)scope authorizationURL:(NSString *)authURL tokenURL:(NSString *)tokenURL redirectURL:(NSString *)redirectURL{
-    self = [self init];
-    
-    
-    
-    [[NXOAuth2AccountStore sharedStore] setClientID:clientID
-                                             secret:secret
-                                              scope:[NSSet setWithObject:scope]
-                                   authorizationURL:[NSURL URLWithString:authURL]
-                                           tokenURL:[NSURL URLWithString:tokenURL]
-                                        redirectURL:[NSURL URLWithString:redirectURL]
-                                      keyChainGroup:KEY_CHAIN_GROUP
-                                     forAccountType:FOR_ACCOUNT_TYPE];
-    return self;
-}
+//-(instancetype)initWithClientID:(NSString *)clientID secret:(NSString *)secret scope:(NSString *)scope authorizationURL:(NSString *)authURL tokenURL:(NSString *)tokenURL redirectURL:(NSString *)redirectURL{
+//    self = [self init];
+//    
+//    
+//    
+//    [[NXOAuth2AccountStore sharedStore] setClientID:clientID
+//                                             secret:secret
+//                                              scope:[NSSet setWithObject:scope]
+//                                   authorizationURL:[NSURL URLWithString:authURL]
+//                                           tokenURL:[NSURL URLWithString:tokenURL]
+//                                        redirectURL:[NSURL URLWithString:redirectURL]
+//                                      keyChainGroup:KEY_CHAIN_GROUP
+//                                     forAccountType:FOR_ACCOUNT_TYPE];
+//    return self;
+//}
 
 - (void)initOpertationManager {
     if (_credential) {

@@ -619,7 +619,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
@@ -642,7 +642,7 @@
 				LD_DYLIB_INSTALL_NAME = "@executable_path/../Frameworks/$(EXECUTABLE_PATH)";
 				OTHER_CFLAGS = "-DNX_BLOCKS_AVAILABLE=1";
 				PRODUCT_NAME = OAuth2Client;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos8.1;
 			};
 			name = Debug;
 		};
@@ -650,7 +650,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
@@ -675,7 +675,7 @@
 					"-DNS_BLOCK_ASSERTIONS=1",
 				);
 				PRODUCT_NAME = OAuth2Client;
-				SDKROOT = macosx;
+				SDKROOT = iphoneos8.1;
 				ZERO_LINK = NO;
 			};
 			name = Release;

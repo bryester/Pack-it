@@ -438,6 +438,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Questions" id="qQW-IA-46l">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="wK8-wA-AcX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y5a-mA-DIK">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jbQ-hI-ncl" kind="show" id="FQo-LF-B8p"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="camera" id="JGz-4q-Zce">
                             <connections>
                                 <segue destination="WB0-zu-yn3" kind="show" id="hwE-T1-HpZ"/>
@@ -944,13 +956,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="VMn-eC-k4Z"/>
                     <connections>
-                        <outlet property="_mapView" destination="Fx0-Qe-OP0" id="sD4-iL-ULF"/>
-                        <outlet property="_typeSwitcher" destination="8ct-Kz-xpT" id="WAi-4J-u4R"/>
+                        <outlet property="_mapView" destination="Fx0-Qe-OP0" id="On3-f3-Uc3"/>
+                        <outlet property="_typeSwitcher" destination="8ct-Kz-xpT" id="rYJ-j8-ujU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YO-7y-qX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4071" y="-352"/>
+            <point key="canvasLocation" x="2397" y="-832"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nx1-8B-AWg">
@@ -997,6 +1009,6 @@
         <image name="defult_portraiture.png" width="166" height="166"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kgp-dm-nKD"/>
+        <segue reference="FQo-LF-B8p"/>
     </inferredMetricsTieBreakers>
 </document>

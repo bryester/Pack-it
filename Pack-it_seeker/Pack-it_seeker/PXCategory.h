@@ -11,8 +11,8 @@
 
 @interface PXCategory : JSONModel
 
-@property (strong, nonatomic) NSString *categoryID;
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString<Optional> *categoryID;
+@property (strong, nonatomic) NSString<Optional> *name;
 @property (strong, nonatomic) NSString<Optional> *icon;
 
 @end

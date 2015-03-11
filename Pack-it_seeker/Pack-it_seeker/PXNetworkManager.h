@@ -10,7 +10,6 @@
 #import "PXAccountHolder.h"
 #import "PXProblem.h"
 #import "PXSolution.h"
-#import "NXOAuth2.h"
 #import "PXTag.h"
 #import "Config.h"
 #import "AFNetworking.h"
@@ -24,12 +23,18 @@
 }
 
 @property (strong, nonatomic) AFOAuthCredential *credential;
-@property (strong, nonatomic) NXOAuth2Account *account;
+//@property (strong, nonatomic) NXOAuth2Account *account;
 @property (strong, nonatomic) id <PXNetworkProtocol> delegate;
 
 
 @property (strong, nonatomic) CLLocation *currentLocation;
 
+/*
+ * 在从solution跳转到map的时候，因为在SolutionDetail里面import mapView失败，
+ * 所以，在此处存放当前的solution，供mapView调用，拿到目标位置的坐标
+ * 暂时用。之后要解决import失败的问题。
+ */
+@property (strong, nonatomic) PXSolution *currentSolution;
 
 #pragma mark - Init Methods
 

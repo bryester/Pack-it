@@ -10,7 +10,7 @@
 #import "PXSolution.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "Config.h"
-//#import "NaviViewController.h"
+#import "PXNetworkManager.h"
 
 @interface SolutionDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     

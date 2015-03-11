@@ -62,7 +62,7 @@
 - (void)confirmLogout {
     NSLog(@"注销当前用户");
     [[PXAccountHolder sharedInstance] logout];
-    [PXNetworkManager sharedStore].account = nil;
+    [PXNetworkManager sharedStore].credential = nil;
     [self viewWillAppear:NO];
     [_tableView reloadData];
 }

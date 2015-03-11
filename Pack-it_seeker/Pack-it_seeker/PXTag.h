@@ -12,8 +12,8 @@
 
 @interface PXTag : JSONModel
 
-@property (strong, nonatomic) NSString *tagID;
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString<Optional> *tagID;
+@property (strong, nonatomic) NSString<Optional> *name;
 @property (strong, nonatomic) PXCategory<Optional> *category;
 
 @end

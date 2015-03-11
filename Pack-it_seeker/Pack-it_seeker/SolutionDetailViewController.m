@@ -92,12 +92,11 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-//    if ([segue.identifier isEqualToString:@"toMap"]) {
-//        
-//        NaviViewController *_naviViewController = [segue destinationViewController];
-//        _naviViewController.destShop = _solution.shop_profile;
-//        
-//    }
+    if ([segue.identifier isEqualToString:@"toMap"]) {
+        
+        [PXNetworkManager sharedStore].currentSolution = _solution;
+        
+    }
 }
 
 @end

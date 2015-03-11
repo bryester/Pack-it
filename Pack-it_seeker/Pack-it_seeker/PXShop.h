@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) NSString *shopID;
 
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString<Optional> *name;
 @property (strong, nonatomic) NSString<Optional> *pictureURL;
 @property (strong, nonatomic) NSString<Optional> *tel;
 @property (strong, nonatomic) NSString<Optional> *desc;

@@ -23,7 +23,6 @@
 		B44FBCB11A9C6C5800AFB3AC /* PXAccountHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */; };
 		B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B44FBCB21A9C6D6D00AFB3AC /* bg.png */; };
 		B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */ = {isa = PBXBuildFile; fileRef = B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */; };
-		B44FBD331A9C73A900AFB3AC /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B44FBD2E1A9C739500AFB3AC /* libOAuth2Client.a */; };
 		B44FBD351A9C740C00AFB3AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B44FBD341A9C740C00AFB3AC /* Security.framework */; };
 		B44FBD391A9C76FF00AFB3AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD371A9C76FF00AFB3AC /* LoginViewController.m */; };
 		B44FBD411A9C771B00AFB3AC /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBD3C1A9C771B00AFB3AC /* RegisterViewController.m */; };
@@ -323,7 +322,6 @@
 				B4CC9D8B1AA4A65700135B29 /* CoreGraphics.framework in Frameworks */,
 				B453CDC31AA1E26100854D2A /* ImageIO.framework in Frameworks */,
 				B44FBD351A9C740C00AFB3AC /* Security.framework in Frameworks */,
-				B44FBD331A9C73A900AFB3AC /* libOAuth2Client.a in Frameworks */,
 				B4D77D6B1A9618AE00C4ACA5 /* SystemConfiguration.framework in Frameworks */,
 				B41782C31AA99EC9009E8437 /* libbaidumapapi.a in Frameworks */,
 				B4D77D441A96161F00C4ACA5 /* UIKit.framework in Frameworks */,

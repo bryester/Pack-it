@@ -18,7 +18,7 @@
 
 @interface RouteAnnotation : BMKPointAnnotation
 {
-    int _type;          //<0:起点 1：终点 2：公交 3：地铁 4:驾乘 5:途经点
+    int _type; ///<0:起点 1：终点 2：公交 3：地铁 4:驾乘 5:途经点
     int _degree;
 }
 
@@ -33,21 +33,23 @@
 @end
 
 
-@interface NaviViewController : UIViewController <UIGestureRecognizerDelegate, BMKGeneralDelegate, BMKMapViewDelegate, BMKLocationServiceDelegate, BMKPoiSearchDelegate, BMKGeoCodeSearchDelegate, BMKRouteSearchDelegate> {
+@interface NaviViewController : UIViewController <UIGestureRecognizerDelegate, BMKGeneralDelegate, BMKMapViewDelegate, BMKLocationServiceDelegate, BMKRouteSearchDelegate> {
     
     __weak IBOutlet BMKMapView *_mapView;
     
-    BMKLocationService* _locService;
-    BMKPoiSearch *_poiSearcher;
-    BMKGeoCodeSearch *_geoCodeSearcher;
-    BMKRouteSearch *_routeSearcher;
+    __weak IBOutlet UISegmentedControl *_typeSwitcher;
+    
+    BMKRouteSearch* _routeSearch;
+    
+    BMKLocationService *_locService;
+    
+    CLLocationManager *_locationManager;
+    
+    CLLocation *_destLocation;
+    
+    PXShop *_destShop;
     
     BMKPointAnnotation *_destAnnotation;
-    
-    __weak IBOutlet UISegmentedControl *_typeSwitcher;
 }
-
-@property (nonatomic, strong) CLLocationManager  *locationManager;
-@property (strong, nonatomic) PXShop *destShop;
 
 @end
