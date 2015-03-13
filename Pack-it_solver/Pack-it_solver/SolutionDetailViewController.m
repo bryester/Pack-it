@@ -125,15 +125,38 @@
  */
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
-    UIImage *image= [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    _imgData = UIImageJPEGRepresentation(image,0.01);
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    //Dismiss PickerController
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    [NSThread detachNewThreadSelector:@selector(resizeAndShowImage:) toTarget:self withObject:image];
+}
+
+- (void)resizeAndShowImage:(UIImage *)image {
+    
+    // Create a graphics image context
+    CGSize newSize = CGSizeMake(320, 480);
+    UIGraphicsBeginImageContext(newSize);
+    // Tell the old image to draw in this new context, with the desired
+    // new size
+    [image drawInRect:CGRectMake(0,0,newSize.width,newSize.height)];
+    // Get the new image from the context
+    UIImage* newImage = UIGraphicsGetImageFromCurrentImageContext();
+    // End the context
+    UIGraphicsEndImageContext();
+    
+    
+    _imgData = UIImageJPEGRepresentation(newImage,0.01);
+    
     image = [UIImage imageWithData: _imgData];
     
-    NSInteger fileSize = _imgData.length;
+    [_imageButton setImage:newImage forState:UIControlStateNormal];
     
-    [_imageButton setImage:image forState:UIControlStateNormal];
-    [self dismissViewControllerAnimated:picker completion:nil];
-    
+    //
+    //    NSInteger fileSize = _imgData.length;
+    //    NSLog(@"image size1:%ld", (long)fileSize);
+    //CGSize size = [newImage size];
 }
 
 #pragma mark - PXNetworkProtocol Delegate
