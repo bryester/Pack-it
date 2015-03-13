@@ -64,7 +64,7 @@
         if (solution.price && ![solution.price isKindOfClass:[NSNull class]]) {
             cell.price = [NSString stringWithFormat:@"%@", solution.price];
         } else {
-            cell.price = @"暂无报价";
+            cell.price = @"－";
         }
         
         cell.imageURL = solution.pictureURL;
