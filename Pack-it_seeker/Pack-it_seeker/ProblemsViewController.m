@@ -80,7 +80,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
+    return 250;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,6 +99,24 @@
         cell.desc = problem.desc;
         if (problem.pictureURL) {
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, problem.pictureURL];
+            
+//            SDWebImageManager *manager = [SDWebImageManager sharedManager];
+//            [manager downloadWithURL:[NSURL URLWithString:url]
+//                             options:SDWebImageProgressiveDownload
+//                            progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+//                                
+//                            } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished) {
+//                                
+//                                if (finished ) {
+//                                    
+//                                }
+//                                
+//                            }];
+//            [manager downloadWithURL:url delegate:self options:0 success:^(UIImage *image)
+//            {
+//                cell.profilePicture.image = [self imageByScalingAndCroppingForSize:CGSizeMake(cell.profilePicture.frame.size.width, cell.profilePicture.frame.size.height) image:image];
+//            } failure:nil];
+//            
             [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
     }

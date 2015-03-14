@@ -13,7 +13,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "Config.h"
 
-@interface ProblemsViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, PXNetworkProtocol> {
+@interface ProblemsViewController : UITableViewController<UITableViewDataSource, UITableViewDelegate, PXNetworkProtocol, SDWebImageManagerDelegate> {
     
     NSArray *_problems;
     

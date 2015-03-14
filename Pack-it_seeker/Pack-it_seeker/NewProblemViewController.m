@@ -113,7 +113,7 @@
 //            
 //        }
         
-        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"new problem. Can you help me?" duration:@(10) tag:nil location:[PXNetworkManager sharedStore].currentLocation];
+        [[PXNetworkManager sharedStore] postNewProblemByImage:_imgData desc:@"" duration:@(10) tag:nil location:[PXNetworkManager sharedStore].currentLocation];
         
     }
     

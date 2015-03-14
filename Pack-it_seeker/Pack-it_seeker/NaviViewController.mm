@@ -61,6 +61,7 @@
     
     [self addDestShopAnnotation];
     [self showDrivingRoute];
+    [self initMap];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -73,6 +74,19 @@
     _routeSearch.delegate = nil; // 不用时，置nil
 }
 
+- (void)initMap {
+    
+    _mapView.frame = CGRectMake(0, self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height - self.tabBarController.tabBar.frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    
+    [_mapView setUserInteractionEnabled:YES];
+    
+    [_mapView setZoomEnabled:YES];
+    
+    //显示比例尺
+    _mapView.showMapScaleBar = true;
+    
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -241,7 +255,7 @@
 //        destL = [[CLLocation alloc] initWithLatitude:39.797798 longitude:116.404161];
 //    }
 //    
-    //[_mapView showAnnotations:@[startL, destL] animated:true];
+    [_mapView showAnnotations:@[[[CLLocation alloc] initWithLatitude:40.002538 longitude:116.32838], [[CLLocation alloc] initWithLatitude:39.797798 longitude:116.404161]] animated:YES];
     
     BMKPlanNode* start = [BMKPlanNode new];
     //start.pt = [PXNetworkManager sharedStore].currentLocation.coordinate;
