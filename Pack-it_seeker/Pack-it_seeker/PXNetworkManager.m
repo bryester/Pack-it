@@ -191,11 +191,84 @@
                                [self.delegate onGetAllProblemsResult:nil error:error];
                            }
                        }];
+    } else {
+        if ([self.delegate respondsToSelector:@selector(onGetAllProblemsResult:error:)]) {
+            [self.delegate onGetAllProblemsResult:nil error:[NSError new]];
+        }
     }
 }
 
-- (void)postNewProblem {
+/**
+ *获得specific problem
+ *异步函数，返回结果在PXNetworkProtocol的onGetProblemResult通知
+ */
+- (void)getProblemByID:(NSString *)problemID {
     
+    if (_operationManager) {
+        
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        
+        [_operationManager GET:[NSString stringWithFormat:ON_RESOURCE_URL_TO_GET_PROBLEM_BY_ID, problemID]
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           
+                           if ([self.delegate respondsToSelector:@selector(onGetProblemByIDResult:error:)]) {
+                               [self.delegate onGetProblemByIDResult:[self parseSingleProblemFromResponseObject:responseObject] error:nil];
+                           }
+                           
+                       }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           NSLog(@"onGetProblemByIDResult Error: %@", error);
+                           if ([self.delegate respondsToSelector:@selector(onGetProblemByIDResult:error:)]) {
+                               [self.delegate onGetProblemByIDResult:nil error:error];
+                           }
+                       }];
+    } else {
+        if ([self.delegate respondsToSelector:@selector(onGetProblemByIDResult:error:)]) {
+            [self.delegate onGetProblemByIDResult:nil error:[NSError new]];
+        }
+    }
+    
+}
+
+/**
+ *alter the tag of a specific problem
+ *异步函数，返回结果在PXNetworkProtocol的onPutNewTagResult通知
+ */
+- (void)putNewTag:(NSString *)tagID forProblem:(NSString *)problemID {
+    if (_operationManager && tagID) {
+        
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        //[_operationManager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+        
+        
+        NSMutableDictionary *problem = [NSMutableDictionary dictionary];
+        [problem setObject:tagID forKey:@"tag"];
+        
+        NSMutableDictionary *finalDictionary = [NSMutableDictionary dictionary];
+        [finalDictionary setObject:problem forKey:@"problem"];
+
+        
+        [_operationManager PUT:[NSString stringWithFormat:ON_RESOURCE_URL_TO_PUT_TAG_FOR_PROBLEM, problemID]
+                    parameters:finalDictionary
+                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           
+                           if ([self.delegate respondsToSelector:@selector(onPutNewTagResult:)]) {
+                               [self.delegate onPutNewTagResult:nil];
+                           }
+                           
+                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           NSLog(@"putNewTag Error: %@", error);
+                           if ([self.delegate respondsToSelector:@selector(onPutNewTagResult:)]) {
+                               [self.delegate onPutNewTagResult:error];
+                           }
+                           
+                       }];
+    } else {
+        if ([self.delegate respondsToSelector:@selector(onPutNewTagResult:)]) {
+            [self.delegate onPutNewTagResult:[NSError new]];
+        }
+    }
 }
 
 - (void)postNewProblemByImage:(NSData *)imgData desc:(NSString *)desc duration:(NSNumber*)duration tag:(PXTag *)tag location:(CLLocation *)location {
@@ -210,7 +283,7 @@
     
     NSString *_tagID;
     if (!tag) {
-        _tagID = @"54f6b97a695a390e790b0000";
+        _tagID = @"";
     } else {
         _tagID = tag.tagID;
     }
@@ -347,6 +420,17 @@
         [problems addObject:p];
     }
     return problems;
+}
+
+- (PXProblem *)parseSingleProblemFromResponseObject:(id)responseObject {
+    NSDictionary *result = [self getDictionaryFromResponseObject:responseObject];
+    
+    if (!result) {
+        return nil;
+    }
+    
+    PXProblem *problem = [[PXProblem alloc] initWithDictionary:result error:nil];
+    return problem;
 }
 
 - (NSArray *)parseTagsFromResponseObject:(id)responseObject {

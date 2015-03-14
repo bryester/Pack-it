@@ -140,7 +140,8 @@
     if ([segue.identifier isEqualToString:@"showSolutions"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         _solutionsTableViewController = [segue destinationViewController];
-        _solutionsTableViewController.solutions = [[_problems objectAtIndex:indexPath.row] solutions];
+        //_solutionsTableViewController.solutions = [[_problems objectAtIndex:indexPath.row] solutions];
+        _solutionsTableViewController.problem = [_problems objectAtIndex:indexPath.row];
         
     }
 }

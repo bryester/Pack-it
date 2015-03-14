@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Pack-it_seeker
+
+  Created by Jiyang on 3/10/15.
+  Copyright (c) 2015 Jiyang. All rights reserved.
+*/
+
+
+"Alter Tags" = "选择正确的标签";
+"Cancel" = "取消";
+"COnfirm" = "确定";

@@ -104,6 +104,18 @@
 - (void)getAllProblems;
 
 /**
+ *获得specific problem
+ *异步函数，返回结果在PXNetworkProtocol的onGetProblemByIDResult通知
+ */
+- (void)getProblemByID:(NSString *)problemID;
+
+/**
+ *alter the tag of a specific problem
+ *异步函数，返回结果在PXNetworkProtocol的onPutNewTagResult通知
+ */
+- (void)putNewTag:(NSString *)tagID forProblem:(NSString *)problemID;
+
+/**
  *create new problem
  *异步函数，返回结果在PXNetworkProtocol的onPostNewProblemResult通知
  */
@@ -158,6 +170,9 @@
  */
 - (void)onGetAllProblemsResult:(NSArray *)problems error:(NSError *)error;
 
+- (void)onGetProblemByIDResult:(PXProblem *)problem error:(NSError *)error;
+
+- (void)onPutNewTagResult:(NSError *)error;
 /**
  *异步回调，
  */

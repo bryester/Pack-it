@@ -14,7 +14,8 @@
 
 @implementation SolutionsTableViewController
 
-@synthesize solutions = _solutions;
+//@synthesize solutions = _solutions;
+@synthesize problem = _problem;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,9 +27,28 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [PXNetworkManager sharedStore].delegate = self;
+    [self prepareTags];
+    [self showTitle];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)removeContent {
+    _problem.solutions = nil;
+    [self.tableView reloadData];
+}
+
+- (void)refreshContent {
+    [[PXNetworkManager sharedStore] getProblemByID:_problem.problemID];
+}
+
+- (void)showTitle {
+    _naviItem.title = _problem.tag.name;
 }
 
 #pragma mark - Table view data source
@@ -39,8 +59,8 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_solutions) {
-        return _solutions.count;
+    if (_problem && _problem.solutions) {
+        return _problem.solutions.count;
     }
     return 0;
 }
@@ -57,8 +77,8 @@
         cell = [[PXSolutionTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PXSolutionTableViewCell"];
     }
     
-    if (_solutions.count > 0) {
-        PXSolution *solution = [_solutions objectAtIndex:indexPath.row];
+    if (_problem.solutions.count > 0) {
+        PXSolution *solution = [_problem.solutions objectAtIndex:indexPath.row];
         
         cell.shop = solution.desc;
         if (solution.price && ![solution.price isKindOfClass:[NSNull class]]) {
@@ -78,7 +98,6 @@
     
     return cell;
 }
-
 
 /*
 // Override to support conditional editing of the table view.
@@ -114,6 +133,87 @@
 }
 */
 
+#pragma mark - Alternative Tags
+
+- (void)prepareTags {
+    
+    NSArray *tags = [PXTagHolder sharedInstance].tags;
+    
+    if (tags) {
+        _tagsName = [NSMutableArray new];
+        for (PXTag *tag in tags) {
+            [_tagsName addObject:tag.name];
+        }
+    } else {
+        [[PXNetworkManager sharedStore] getAllTags];
+    }
+}
+
+- (IBAction)showAlterTags:(id)sender {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:NSLocalizedString(@"Alter Tags", nil)
+                                                             delegate:self
+                                                    cancelButtonTitle:nil
+                                               destructiveButtonTitle:nil
+                                                    otherButtonTitles:nil];
+    
+    for (NSString *str in _tagsName) {
+        [actionSheet addButtonWithTitle:str];
+    }
+    
+    [actionSheet addButtonWithTitle:NSLocalizedString(@"Cancel", nil)];
+    
+    actionSheet.cancelButtonIndex = [_tagsName count];
+    
+    //    [actionSheet showInView:self.view];
+    [actionSheet showFromTabBar:self.tabBarController.tabBar];
+    
+    //    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+    //        // In this case the device is an iPad.
+    //        [actionSheet showFromRect:[(UIButton *)sender frame] inView:self.view animated:YES];
+    //    }
+    //    else{
+    //        // In this case the device is an iPhone/iPod Touch.
+    //        [actionSheet showInView:self.view];
+    //    }
+    //
+    actionSheet.tag = 100;
+}
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (actionSheet.tag == 100 && buttonIndex < [PXTagHolder sharedInstance].tags.count) {
+        
+        [self removeContent];
+        
+        PXTag *newTag = [[PXTagHolder sharedInstance].tags objectAtIndex:buttonIndex];
+        
+        [[PXNetworkManager sharedStore] putNewTag:newTag.tagID forProblem:_problem.problemID];
+    }
+}
+
+#pragma mark - Network Protocol
+
+- (void)onPutNewTagResult:(NSError *)error {
+    if (!error) {
+        [self refreshContent];
+    } else {
+        
+    }
+}
+
+- (void)onGetProblemByIDResult:(PXProblem *)problem error:(NSError *)error {
+    if (!error) {
+        if ([_problem.problemID isEqualToString:problem.problemID]) {
+            _problem.tag = problem.tag;
+            _problem.solutions = problem.solutions;
+            [self.tableView reloadData];
+            [self showTitle];
+        }
+    } else {
+        
+    }
+}
 
 #pragma mark - Navigation
 
@@ -124,7 +224,7 @@
     if ([segue.identifier isEqualToString:@"showDetails"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         _solutionDetailViewController = [segue destinationViewController];
-        _solutionDetailViewController.solution = [_solutions objectAtIndex:indexPath.row];
+        _solutionDetailViewController.solution = [_problem.solutions objectAtIndex:indexPath.row];
         
     }
 }

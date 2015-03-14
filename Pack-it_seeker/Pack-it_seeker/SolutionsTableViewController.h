@@ -13,11 +13,19 @@
 #import "Config.h"
 #import "SolutionDetailViewController.h"
 #import "PXTagHolder.h"
+#import "PXNetworkManager.h"
+#import "PXProblem.h"
 
-@interface SolutionsTableViewController : UITableViewController {
+@interface SolutionsTableViewController : UITableViewController <UIActionSheetDelegate, PXNetworkProtocol> {
     SolutionDetailViewController *_solutionDetailViewController;
+    
+    NSMutableArray *_tagsName;
+    
+    
+    __weak IBOutlet UINavigationItem *_naviItem;
 }
 
-@property (strong, nonatomic) NSArray *solutions;
+//@property (strong, nonatomic) NSArray *solutions;
+@property (strong, nonatomic) PXProblem *problem;
 
 @end

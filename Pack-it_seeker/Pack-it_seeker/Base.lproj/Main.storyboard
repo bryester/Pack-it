@@ -622,8 +622,15 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Solutions" id="jGU-DC-KUc">
-                        <barButtonItem key="rightBarButtonItem" title="Wrong?" style="plain" id="IKv-zR-jLS"/>
+                        <barButtonItem key="rightBarButtonItem" title="Wrong?" style="plain" id="IKv-zR-jLS">
+                            <connections>
+                                <action selector="showAlterTags:" destination="BMf-Le-0ux" id="WYW-vm-ePI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="_naviItem" destination="jGU-DC-KUc" id="E4X-QF-bGb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxC-Se-VMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
