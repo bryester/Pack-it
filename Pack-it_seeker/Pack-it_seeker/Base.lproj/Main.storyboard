@@ -309,28 +309,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IJE-jp-ips" id="Z6c-Mg-1b1">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-Cz-2iR">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="3I4-Cz-2iR" secondAttribute="height" multiplier="1:1" id="12Q-Ea-rQf"/>
-                                                <constraint firstAttribute="height" constant="103" id="UTP-eB-YC1"/>
-                                                <constraint firstAttribute="width" constant="103" id="dYs-c2-yop"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="12Q-Ea-rQf"/>
-                                                    <exclude reference="UTP-eB-YC1"/>
-                                                    <exclude reference="dYs-c2-yop"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="constraints">
-                                                    <include reference="12Q-Ea-rQf"/>
-                                                    <exclude reference="UTP-eB-YC1"/>
-                                                    <exclude reference="dYs-c2-yop"/>
-                                                </mask>
-                                            </variation>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owt-53-UgK">
                                             <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -355,6 +333,28 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add_image_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="3I4-Cz-2iR">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="3I4-Cz-2iR" secondAttribute="height" multiplier="1:1" id="12Q-Ea-rQf"/>
+                                                <constraint firstAttribute="height" constant="103" id="UTP-eB-YC1"/>
+                                                <constraint firstAttribute="width" constant="103" id="dYs-c2-yop"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="12Q-Ea-rQf"/>
+                                                    <exclude reference="UTP-eB-YC1"/>
+                                                    <exclude reference="dYs-c2-yop"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="12Q-Ea-rQf"/>
+                                                    <exclude reference="UTP-eB-YC1"/>
+                                                    <exclude reference="dYs-c2-yop"/>
+                                                </mask>
+                                            </variation>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="xzf-nV-ZdF" firstAttribute="top" secondItem="3I4-Cz-2iR" secondAttribute="top" id="1pP-Lm-1iH"/>
@@ -375,11 +375,11 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="subviews">
-                                            <exclude reference="3I4-Cz-2iR"/>
                                             <exclude reference="owt-53-UgK"/>
                                             <exclude reference="xzf-nV-ZdF"/>
                                             <exclude reference="eBQ-s8-ENW"/>
                                             <exclude reference="fON-E2-bH5"/>
+                                            <exclude reference="3I4-Cz-2iR"/>
                                         </mask>
                                         <mask key="constraints">
                                             <exclude reference="88u-55-DRn"/>
@@ -399,11 +399,11 @@
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
-                                            <include reference="3I4-Cz-2iR"/>
                                             <include reference="owt-53-UgK"/>
                                             <include reference="xzf-nV-ZdF"/>
                                             <include reference="eBQ-s8-ENW"/>
                                             <include reference="fON-E2-bH5"/>
+                                            <include reference="3I4-Cz-2iR"/>
                                         </mask>
                                         <mask key="constraints">
                                             <include reference="88u-55-DRn"/>
@@ -610,6 +610,7 @@
                                     <outlet property="_labelAddress" destination="Xi4-hS-VGn" id="f7X-qb-eGO"/>
                                     <outlet property="_labelPrice" destination="hSP-q4-c9M" id="y9V-rn-FJU"/>
                                     <outlet property="_labelShop" destination="lZK-PM-TEk" id="xpB-dU-cHB"/>
+                                    <outlet property="_labelYuan" destination="ATK-A3-Tcf" id="6Qs-lC-4gq"/>
                                     <outlet property="imageView" destination="PpA-Wa-c7Q" id="f7J-X0-zJK"/>
                                     <outlet property="imageView_customed" destination="PpA-Wa-c7Q" id="v6t-1f-zec"/>
                                     <segue destination="JpU-Dm-hx6" kind="show" identifier="showDetails" id="0Df-Vc-zZx"/>
@@ -751,7 +752,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Yw9-0Z-t9U">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Yw9-0Z-t9U">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -876,6 +877,7 @@
                         <outlet property="_imageView" destination="Hjo-aB-YOG" id="RJp-ih-fQd"/>
                         <outlet property="_labelDesc" destination="Les-M6-Q8h" id="co7-8r-ILw"/>
                         <outlet property="_labelPrice" destination="kdj-5H-FZj" id="NXk-c2-qTP"/>
+                        <outlet property="_labelYuan" destination="LQS-pJ-S5y" id="lEy-bn-fHB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df2-ei-z47" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1001,6 +1003,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_image_default.png" width="512" height="512"/>
         <image name="bg.png" width="720" height="495"/>
         <image name="cemara.jpg" width="512" height="512"/>
         <image name="defult_portraiture.png" width="166" height="166"/>

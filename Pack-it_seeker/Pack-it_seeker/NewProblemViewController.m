@@ -17,8 +17,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -26,9 +24,34 @@
     [self initHud];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self verifyLogin];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Verify Login
+
+- (void)verifyLogin {
+    if (![PXNetworkManager sharedStore].credential) {
+        [self showUnlogginAlert];
+    }
+}
+
+- (void)showUnlogginAlert {
+    _alertView = [[UIAlertView alloc] initWithTitle:@"用户未登录，请先登录" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+    [_alertView show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        NSLog(@"跳转到登录界面");
+        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        [self presentViewController:loginViewController animated:YES completion:nil];
+    }
 }
 
 #pragma mark - Progress Hub
@@ -175,7 +198,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
 - (void)onPostNewProblemResult:(NSError *)error {
     if (error) {
-        [self showHubWithText:error.description];
+        if (error.code) {
+            [self showHubWithText:[NSString stringWithFormat:@"Error: %lu", error.code]];
+        } else {
+            [self showHubWithText:@"Error: no login"];
+        }
+        
     } else {
         [self showHubWithText:@"Success"];
         

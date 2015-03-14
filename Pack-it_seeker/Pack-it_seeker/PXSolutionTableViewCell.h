@@ -14,6 +14,7 @@
     __weak IBOutlet UILabel *_labelShop;
     __weak IBOutlet UILabel *_labelAddress;
     __weak IBOutlet UILabel *_labelPrice;
+    __weak IBOutlet UILabel *_labelYuan;
     
 }
 @property (weak, nonatomic) IBOutlet UIImageView *imageView_customed;

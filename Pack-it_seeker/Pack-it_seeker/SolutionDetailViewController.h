@@ -17,6 +17,7 @@
     __weak IBOutlet UIImageView *_imageView;
     __weak IBOutlet UILabel *_labelPrice;
     __weak IBOutlet UILabel *_labelDesc;
+    __weak IBOutlet UILabel *_labelYuan;
 }
 
 @property (strong,nonatomic) PXSolution *solution;

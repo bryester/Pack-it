@@ -330,6 +330,10 @@
           }
       }];
         
+    } else {
+        if ([self.delegate respondsToSelector:@selector(onPostNewProblemResult:)]) {
+            [self.delegate onPostNewProblemResult:[NSError new]];
+        }
     }
     
 //    [NXOAuth2Request performMethod:@"POST"

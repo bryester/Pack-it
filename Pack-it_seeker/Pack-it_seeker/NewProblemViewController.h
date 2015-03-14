@@ -9,14 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import "PXNetworkManager.h"
+#import "LoginViewController.h"
 
-@interface NewProblemViewController : UIViewController <PXNetworkProtocol, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface NewProblemViewController : UIViewController <PXNetworkProtocol, UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate> {
     
     __weak IBOutlet UIButton *_imageButton;
     
     NSData *_imgData;
     
     MBProgressHUD *_hud;
+    
+    UIAlertView *_alertView;
 }
 
 @end

@@ -37,7 +37,14 @@
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
             [_imageView setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
         }
-        _labelPrice.text = [NSString stringWithFormat:@"%@", solution.price];
+        if (solution.price && ![solution.price isKindOfClass:[NSNull class]]) {
+            _labelPrice.text = [NSString stringWithFormat:@"%@", solution.price];
+            _labelYuan.hidden = NO;
+        } else {
+            _labelPrice.text = @"-";
+            _labelYuan.hidden = YES;
+        }
+        
         _labelDesc.text = solution.desc;
         
     }
