@@ -15,6 +15,7 @@
 #import "AFNetworking.h"
 #import "AFOAuth2Manager.h"
 #import "AFHTTPRequestSerializer+OAuth2.h"
+#import "PXTagHolder.h"
 
 @protocol PXNetworkProtocol;
 
@@ -130,7 +131,7 @@
 
 /*
  *获得所有tag。
- *异步函数，返回结果在onGetAllTags
+ *异步函数，返回结果在onGetAllTagsResult
  */
 - (void)getAllTags;
 
@@ -167,5 +168,6 @@
  */
 - (void)onDeleteProblemResult:(NSError *)error;
 
+- (void)onGetAllTagsResult:(NSArray *)tags error:(NSError *)error;
 
 @end

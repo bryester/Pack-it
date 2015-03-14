@@ -20,6 +20,7 @@
 		B41783031AA9A066009E8437 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B41783021AA9A066009E8437 /* mapapi.bundle */; };
 		B41783051AA9A0AA009E8437 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41783041AA9A0AA009E8437 /* MessageUI.framework */; };
 		B41783081AA9A362009E8437 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41783071AA9A362009E8437 /* UIImage+Rotate.m */; };
+		B44A393D1AB3D0B30027249F /* PXTagHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B44A393C1AB3D0B30027249F /* PXTagHolder.m */; };
 		B44FBCB11A9C6C5800AFB3AC /* PXAccountHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */; };
 		B44FBCB31A9C6D6D00AFB3AC /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = B44FBCB21A9C6D6D00AFB3AC /* bg.png */; };
 		B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */ = {isa = PBXBuildFile; fileRef = B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */; };
@@ -202,6 +203,8 @@
 		B41783041AA9A0AA009E8437 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B41783061AA9A362009E8437 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		B41783071AA9A362009E8437 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		B44A393B1AB3D0B30027249F /* PXTagHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXTagHolder.h; sourceTree = "<group>"; };
+		B44A393C1AB3D0B30027249F /* PXTagHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXTagHolder.m; sourceTree = "<group>"; };
 		B44FBCAF1A9C6C5800AFB3AC /* PXAccountHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAccountHolder.h; sourceTree = "<group>"; };
 		B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAccountHolder.m; sourceTree = "<group>"; };
 		B44FBCB21A9C6D6D00AFB3AC /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
@@ -652,6 +655,8 @@
 				B4D77D6D1A961E6E00C4ACA5 /* PXNetworkManager.m */,
 				B453CDB71AA1C37600854D2A /* UIViewController+Alert.h */,
 				B453CDB81AA1C37600854D2A /* UIViewController+Alert.m */,
+				B44A393B1AB3D0B30027249F /* PXTagHolder.h */,
+				B44A393C1AB3D0B30027249F /* PXTagHolder.m */,
 			);
 			name = Utility;
 			sourceTree = "<group>";
@@ -916,6 +921,7 @@
 				B44FBD431A9C771B00AFB3AC /* SetPasswordViewController.m in Sources */,
 				B4D77D3B1A96144000C4ACA5 /* PXSolution.m in Sources */,
 				B4CC9D7C1AA4A11C00135B29 /* AFHTTPRequestOperationManager.m in Sources */,
+				B44A393D1AB3D0B30027249F /* PXTagHolder.m in Sources */,
 				B41783081AA9A362009E8437 /* UIImage+Rotate.m in Sources */,
 				B4D77D681A9618A000C4ACA5 /* JSONKeyMapper.m in Sources */,
 				B4CC9D831AA4A11C00135B29 /* AFURLRequestSerialization.m in Sources */,

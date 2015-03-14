@@ -621,11 +621,13 @@
                             <outlet property="delegate" destination="BMf-Le-0ux" id="25r-dp-R3g"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Solutions" id="jGU-DC-KUc"/>
+                    <navigationItem key="navigationItem" title="Solutions" id="jGU-DC-KUc">
+                        <barButtonItem key="rightBarButtonItem" title="Wrong?" style="plain" id="IKv-zR-jLS"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BxC-Se-VMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2493" y="-352"/>
+            <point key="canvasLocation" x="2757" y="-357"/>
         </scene>
         <!--Detail-->
         <scene sceneID="2tW-RV-0XP">
@@ -871,7 +873,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="df2-ei-z47" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3259.5" y="-352"/>
+            <point key="canvasLocation" x="3661.5" y="-357"/>
         </scene>
         <!--Map-->
         <scene sceneID="pGt-8u-Zs6">
@@ -950,7 +952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6YO-7y-qX2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397" y="-832"/>
+            <point key="canvasLocation" x="4608" y="-352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nx1-8B-AWg">

@@ -12,6 +12,7 @@
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "Config.h"
 #import "SolutionDetailViewController.h"
+#import "PXTagHolder.h"
 
 @interface SolutionsTableViewController : UITableViewController {
     SolutionDetailViewController *_solutionDetailViewController;

@@ -92,6 +92,9 @@
                                                    if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
                                                        [self.delegate onLoginResult:error];
                                                    }
+                                                   
+                                                   //Automatically download tags after successful login.
+                                                   [self getAllTags];
 
                                                }
                                                failure:^(NSError *error) {
@@ -296,7 +299,36 @@
  *异步函数，返回结果在onGetAllTags
  */
 - (void)getAllTags {
-    
+    if (_operationManager) {
+        
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        
+        [_operationManager GET:ON_RESOURCE_URL_TO_GET_TAGS
+                    parameters:nil
+                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           
+                           NSArray *tags = [self parseTagsFromResponseObject:responseObject];
+                           
+                           if (tags && tags.count > 0) {
+                               [[PXTagHolder sharedInstance] setTags:tags];
+                           }
+                           
+                           
+                           if ([self.delegate respondsToSelector:@selector(onGetAllTagsResult:error:)]) {
+                               
+                               [self.delegate onGetAllTagsResult:tags error:nil];
+                               
+                           }
+                       }
+                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           
+                           NSLog(@"onGetAllTagsResult Error: %@", error);
+                           
+                           if ([self.delegate respondsToSelector:@selector(onGetAllTagsResult:error:)]) {
+                               [self.delegate onGetAllTagsResult:nil error:error];
+                           }
+                       }];
+    }
 }
 
 #pragma mark - Parse Result
@@ -316,6 +348,23 @@
     }
     return problems;
 }
+
+- (NSArray *)parseTagsFromResponseObject:(id)responseObject {
+    NSArray *result = [self getArrayFromResponseObject:responseObject];
+    
+    if (!result) {
+        return nil;
+    }
+    
+    NSMutableArray *tags = [NSMutableArray new];
+    NSError* err = nil;
+    for (NSDictionary *dic in result) {
+        PXTag *tag = [[PXTag alloc] initWithDictionary:dic error:&err];
+        [tags addObject:tag];
+    }
+    return tags;
+}
+
 
 #pragma mark - Common Methods
 /*
