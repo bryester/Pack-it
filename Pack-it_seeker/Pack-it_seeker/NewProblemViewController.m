@@ -102,6 +102,21 @@
     //[_imageButton setImage:chosedImage forState:UIControlStateNormal];
 }
 
+- (IBAction)addImageFromLibrary:(id)sender {
+    //拍照或者选择的图片
+    UIImagePickerController *pickerImage = [[UIImagePickerController alloc] init];
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]){
+        pickerImage.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        pickerImage.mediaTypes = [UIImagePickerController
+                                  availableMediaTypesForSourceType:pickerImage.sourceType];
+    }
+    
+    pickerImage.delegate = self;
+    [self presentViewController:pickerImage animated:YES completion:nil];
+    
+}
+
+
 - (IBAction)confirm:(id)sender {
     if (_imgData) {
         [self showHub];

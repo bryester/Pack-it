@@ -11,7 +11,7 @@
 #import "BMapKit.h"
 #import "Config.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate, BMKLocationServiceDelegate> {
+@interface AppDelegate : UIResponder <UIApplicationDelegate, BMKGeneralDelegate, BMKLocationServiceDelegate, UIAlertViewDelegate> {
     
     
     //Outdoor

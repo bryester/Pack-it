@@ -169,6 +169,23 @@
     
 }
 
+/**
+ *上传当前设备token，用作发送推送。每次启动应用时调用。
+ *异步函数，返回结果在NetworkProtocol的onUploadDeviceTokenResult通知
+ */
+- (void)uploadDeviceTokenOfClientType:(NSString *)clientType {
+    
+    NSString *token = [PXAccountHolder sharedInstance].token;
+    NSLog(@"upload device token");
+    if (!token) {
+        //token = @"45009af0875cb0b09f47b425d56642070a4e2f9985566a668f2a2675ec01c4b9";
+        NSLog(@"upload device token error");
+        return;
+    }
+    NSLog(@"upload token:%@", token);
+    
+}
+
 
 
 #pragma mark - Functional Methods

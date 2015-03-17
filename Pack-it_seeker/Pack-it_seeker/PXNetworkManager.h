@@ -93,6 +93,14 @@
 - (void)setNewPassword:(NSString *)pswd;
 
 
+/**
+ *上传当前设备token，用作发送推送。每次启动应用时调用。
+ *异步函数，返回结果在NetworkProtocol的onUploadDeviceTokenResult通知
+ */
+- (void)uploadDeviceTokenOfClientType:(NSString *)clientType;
+
+
+
 #pragma mark - Functional Methods
 
 #pragma mark Problem
@@ -162,6 +170,14 @@
  *@param error nil表示成功
  */
 - (void)onLoginResult:(NSError *)error;
+
+/**
+ *异步回调，返回上传设备token的结果
+ *@param error  nil表示成功
+ */
+- (void)onUploadDeviceTokenResult:(NSError *)error;
+
+
 
 #pragma mark - Functional Methods
 
