@@ -45,6 +45,7 @@
 
 #define ON_RESOURCE_URL_TO_GET_TAGS             BASE_URL@"/tags"
 
+#define ON_RESOURCE_URL_TO_PUT_TOKEN             BASE_URL@"/profiles/notification_profile"
 
 #pragma mark - BaiduMap
 

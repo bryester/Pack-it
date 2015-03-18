@@ -239,6 +239,10 @@
     }];
 }
 
+/**
+ * Confirm to update.
+ *
+ */
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 100) {
         if (buttonIndex == 1) {

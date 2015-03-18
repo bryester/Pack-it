@@ -96,8 +96,9 @@
 /**
  *上传当前设备token，用作发送推送。每次启动应用时调用。
  *异步函数，返回结果在NetworkProtocol的onUploadDeviceTokenResult通知
+ *@param clientType YES for seeker, NO for solver
  */
-- (void)uploadDeviceTokenOfClientType:(NSString *)clientType;
+- (void)uploadDeviceTokenOfClientType:(BOOL)clientType;
 
 
 
