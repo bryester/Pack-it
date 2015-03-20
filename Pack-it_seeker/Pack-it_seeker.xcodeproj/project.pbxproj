@@ -19,6 +19,7 @@
 		B41783031AA9A066009E8437 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B41783021AA9A066009E8437 /* mapapi.bundle */; };
 		B41783051AA9A0AA009E8437 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B41783041AA9A0AA009E8437 /* MessageUI.framework */; };
 		B41783081AA9A362009E8437 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = B41783071AA9A362009E8437 /* UIImage+Rotate.m */; };
+		B43A8C4F1ABB2F2900DD123F /* camera_overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = B43A8C4E1ABB2F2900DD123F /* camera_overlay.png */; };
 		B44A393D1AB3D0B30027249F /* PXTagHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B44A393C1AB3D0B30027249F /* PXTagHolder.m */; };
 		B44A39401AB3DC680027249F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B44A39421AB3DC680027249F /* Localizable.strings */; };
 		B44FBCB11A9C6C5800AFB3AC /* PXAccountHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = B44FBCB01A9C6C5800AFB3AC /* PXAccountHolder.m */; };
@@ -202,6 +203,7 @@
 		B41783041AA9A0AA009E8437 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		B41783061AA9A362009E8437 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
 		B41783071AA9A362009E8437 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		B43A8C4E1ABB2F2900DD123F /* camera_overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_overlay.png; sourceTree = "<group>"; };
 		B44A393B1AB3D0B30027249F /* PXTagHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXTagHolder.h; sourceTree = "<group>"; };
 		B44A393C1AB3D0B30027249F /* PXTagHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXTagHolder.m; sourceTree = "<group>"; };
 		B44A39411AB3DC680027249F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -763,6 +765,7 @@
 		B4D77D821A96420900C4ACA5 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B43A8C4E1ABB2F2900DD123F /* camera_overlay.png */,
 				B41248511AAECB94005BAD2C /* cemara.jpg */,
 				B4BCCC291AAEA9EF0022FF9B /* add_image_default.png */,
 				B44FBCB41A9C6DC700AFB3AC /* defult_portraiture.png */,
@@ -893,6 +896,7 @@
 				B41248521AAECB94005BAD2C /* cemara.jpg in Resources */,
 				B44FBCB51A9C6DC700AFB3AC /* defult_portraiture.png in Resources */,
 				B4BCCC2A1AAEA9EF0022FF9B /* add_image_default.png in Resources */,
+				B43A8C4F1ABB2F2900DD123F /* camera_overlay.png in Resources */,
 				B44A39401AB3DC680027249F /* Localizable.strings in Resources */,
 				B41248771AAF0035005BAD2C /* SetPasswordViewController.xib in Resources */,
 				B4D77D791A9625ED00C4ACA5 /* PXSolutionTableViewCell.xib in Resources */,

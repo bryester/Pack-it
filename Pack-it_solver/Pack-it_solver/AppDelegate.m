@@ -82,7 +82,7 @@
 #pragma mark - Firim Update
 
 - (void)checkUpdate {
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://fir.im/api/v2/app/version/55029e3ddce07c680b000162"]] queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://fir.im/api/v2/app/version/550c1727739b450d1a00020f"]] queue:[NSOperationQueue currentQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
         
         if (data) {
             @try {
@@ -139,7 +139,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 100) {
         if (buttonIndex == 1) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://fir.im/aaw6"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://fir.im/k9ke"]];
         }
     }
 }
