@@ -84,6 +84,13 @@
  */
 - (void)setNewPassword:(NSString *)pswd;
 
+/**
+ *上传当前设备token，用作发送推送。每次启动应用时调用。
+ *异步函数，返回结果在NetworkProtocol的onUploadDeviceTokenResult通知
+ *@param clientType YES for seeker, NO for solver
+ */
+- (void)uploadDeviceTokenOfClientType:(BOOL)clientType;
+
 
 #pragma mark - Functional Methods
 
@@ -168,6 +175,13 @@
  */
 - (void)onLoginResult:(NSError *)error;
 
+
+/**
+ *异步回调，返回上传设备token的结果
+ *@param error  nil表示成功
+ */
+- (void)onUploadDeviceTokenResult:(NSError *)error;
+
 #pragma mark - Functional Methods
 
 /**
@@ -199,6 +213,7 @@
  *异步回调，返回删除Problem的结果
  */
 - (void)onDeleteSolutionResult:(NSError *)error;
+
 
 
 @end

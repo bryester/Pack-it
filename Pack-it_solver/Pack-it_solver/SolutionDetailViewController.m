@@ -104,6 +104,8 @@
     if (_imgData && _textPrice.text && ![_textPrice.text  isEqual: @""] && _solution) {
         [self showHub];
         [[PXNetworkManager sharedStore] postNewSolutionByImage:_imgData desc:@"" price:@([_textPrice.text floatValue]) forSolution:_solution.solutionID];
+    } else {
+        [self showHubWithText:@"输入不可为空"];
     }
 }
 

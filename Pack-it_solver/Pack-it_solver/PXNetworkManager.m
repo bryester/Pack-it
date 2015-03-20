@@ -60,6 +60,8 @@
                                                    if ([self.delegate respondsToSelector:@selector(onLoginResult:)]) {
                                                        [self.delegate onLoginResult:error];
                                                    }
+                                                   
+                                                   [self uploadDeviceTokenOfClientType:NO];
 
                                                }
                                                failure:^(NSError *error) {
@@ -133,6 +135,63 @@
 - (void)setNewPassword:(NSString *)pswd {
     
 }
+
+/**
+ *上传当前设备token，用作发送推送。每次启动应用时调用。
+ *异步函数，返回结果在NetworkProtocol的onUploadDeviceTokenResult通知
+ */
+- (void)uploadDeviceTokenOfClientType:(BOOL)clientType {
+    
+    NSString *token = [PXAccountHolder sharedInstance].token;
+    
+    if (_operationManager && token) {
+        
+        NSLog(@"upload token:%@", token);
+        
+        NSMutableDictionary *profile = [NSMutableDictionary dictionary];
+        
+        if (clientType) {       //seeker client
+            [profile setObject:token forKey:@"seeker_token"];
+            [profile setObject:@"ios" forKey:@"seeker_type"];
+        } else {                //solver client
+            [profile setObject:token forKey:@"solver_token"];
+            [profile setObject:@"ios" forKey:@"solver_type"];
+        }
+        
+        NSMutableDictionary *finalDictionary = [NSMutableDictionary dictionary];
+        [finalDictionary setObject:profile forKey:@"profile"];
+        
+        [_operationManager.requestSerializer setValue:@"v1" forHTTPHeaderField:@"API-VERSION"];
+        
+        [_operationManager PUT:ON_RESOURCE_URL_TO_PUT_TOKEN
+                    parameters:finalDictionary
+                       success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                           
+                           NSLog(@"onUploadDeviceTokenResult Success: %@", operation);
+                           
+                           if ([self.delegate respondsToSelector:@selector(onUploadDeviceTokenResult:)]) {
+                               [self.delegate onUploadDeviceTokenResult:nil];
+                           }
+                           
+                       } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                           NSLog(@"onUploadDeviceTokenResult Error: %@", error);
+                           if ([self.delegate respondsToSelector:@selector(onUploadDeviceTokenResult:)]) {
+                               [self.delegate onUploadDeviceTokenResult:error];
+                               
+                               //If fail to upload token, then reupload for every 10 seconds.
+                               [NSThread sleepForTimeInterval:10];
+                               [self uploadDeviceTokenOfClientType:YES];
+                           }
+                           
+                       }];
+    } else {
+        if ([self.delegate respondsToSelector:@selector(onUploadDeviceTokenResult:)]) {
+            [self.delegate onUploadDeviceTokenResult:[NSError new]];
+        }
+    }
+    
+}
+
 
 
 

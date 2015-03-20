@@ -44,6 +44,9 @@
 #define ON_RESOURCE_URL_TO_GET_SOLUTIONS                    BASE_URL@"/solutions"
 #define ON_RESOURCE_URL_TO_POST_SOLUTION_FOR_PROBLEM        BASE_URL@"/solutions/%@"
 
+#define ON_RESOURCE_URL_TO_PUT_TOKEN             BASE_URL@"/profiles/notification_profile"
+
+
 #pragma mark - BaiduMap
 
 #define BaiduMap_Key    @"Zq1APR1rIS7k94yOFNh5Nt57"
