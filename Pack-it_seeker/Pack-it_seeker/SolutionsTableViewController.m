@@ -80,15 +80,18 @@
     if (_problem.solutions.count > 0) {
         PXSolution *solution = [_problem.solutions objectAtIndex:indexPath.row];
         
-        cell.shop = solution.desc;
+        cell.shop = solution.shop_profile.name;
         if (solution.price && ![solution.price isKindOfClass:[NSNull class]]) {
             cell.price = [NSString stringWithFormat:@"%@", solution.price];
+            cell.labelYuan.hidden = NO;
         } else {
             cell.price = @"－";
+            cell.labelYuan.hidden = YES;
         }
         
         cell.imageURL = solution.pictureURL;
-        cell.address = [NSString stringWithFormat:@"%@ - %@",solution.shop_profile.name, solution.shop_profile.address] ;
+//        cell.address = [NSString stringWithFormat:@"%@ - %@",solution.shop_profile.name, solution.shop_profile.address] ;
+        cell.address = solution.shop_profile.address;
         if (solution.pictureURL) {
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
             [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
