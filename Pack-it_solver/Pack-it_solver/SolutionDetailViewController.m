@@ -101,7 +101,7 @@
 #pragma mark - Button Methods
 
 - (IBAction)confirm:(id)sender {
-    if (_imgData && _textPrice.text && ![_textPrice.text  isEqual: @""] && _solution) {
+    if (_textPrice.text && ![_textPrice.text  isEqual: @""] && _solution) {
         [self showHub];
         [[PXNetworkManager sharedStore] postNewSolutionByImage:_imgData desc:@"" price:@([_textPrice.text floatValue]) forSolution:_solution.solutionID];
     } else {

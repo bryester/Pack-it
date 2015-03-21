@@ -343,7 +343,7 @@
  */
 - (void)postNewSolutionByImage:(NSData *)imgData desc:(NSString *)desc price:(NSNumber *)price forSolution:(NSString *)solutionID {
     
-    if (!imgData || !solutionID) {
+    if (!solutionID) {
         return;
     }
     
@@ -374,12 +374,15 @@
                                         URLString:URLString
                                         parameters:finalDictionary
                                         constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
+                                            if (imgData) {
+                                                [formData appendPartWithFileData:imgData name:@"solution[picture]" fileName:@"iim.png" mimeType:@"image/jpeg"];
+                                            }
+            
         }
                                         error:nil];
         
         // 'PUT' and 'POST' convenience methods auto-run, but HTTPRequestOperationWithRequest just
-        // sets up the request. you're responsible for firing it.
+        // sets up the request. you're respondsible for firing it.
         AFHTTPRequestOperation *requestOperation = [_operationManager HTTPRequestOperationWithRequest:request success:^(AFHTTPRequestOperation *operation, id responseObject) {
             
             NSLog(@"postNewSolutionByImage responseHandler:%@", responseObject);
