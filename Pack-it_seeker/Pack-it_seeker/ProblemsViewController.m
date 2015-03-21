@@ -93,7 +93,10 @@
     if (_problems.count > 0) {
         PXProblem *problem = [_problems objectAtIndex:indexPath.row];
         
-        cell.status = problem.status;
+        if (problem.status_CHN) {
+            cell.status = problem.status_CHN;
+        }
+        //cell.status = problem.status;
         cell.duration = problem.duration;
         cell.imageURL = problem.pictureURL;
         cell.desc = problem.desc;

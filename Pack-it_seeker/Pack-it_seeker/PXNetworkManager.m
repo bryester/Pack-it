@@ -479,6 +479,15 @@
     NSError* err = nil;
     for (NSDictionary *dic in result) {
         PXProblem *p = [[PXProblem alloc] initWithDictionary:dic error:&err];
+        if (p && p.status) {
+            if ([p.status isEqualToString:@"waiting"]) {
+                p.status_CHN = @"待解决";
+            } else if ([p.status isEqualToString:@"solved"]) {
+                p.status_CHN = @"已解决";
+            } else if ([p.status isEqualToString:@"failed"]) {
+                p.status_CHN = @"已过期";
+            }
+        }
         [problems addObject:p];
     }
     return problems;
@@ -492,6 +501,15 @@
     }
     
     PXProblem *problem = [[PXProblem alloc] initWithDictionary:result error:nil];
+    if (problem && problem.status) {
+        if ([problem.status isEqualToString:@"waiting"]) {
+            problem.status_CHN = @"待解决";
+        } else if ([problem.status isEqualToString:@"solved"]) {
+            problem.status_CHN = @"已解决";
+        } else if ([problem.status isEqualToString:@"failed"]) {
+            problem.status_CHN = @"已过期";
+        }
+    }
     return problem;
 }
 
