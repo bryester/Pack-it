@@ -50,9 +50,13 @@
     
     NSLog(@"%@",userName.text);
     NSLog(@"%@",userPass.text);
+    
+    if (userName.text && userPass.text) {
+        [[PXNetworkManager sharedStore] loginByUsername:userName.text password:userPass.text];
+        [self startIndicator];
+    } 
 
-    [[PXNetworkManager sharedStore] loginByUsername:userName.text password:userPass.text];
-    [self startIndicator];
+    
 
 }
 - (IBAction)registerByEmailClick:(UIButton *)sender {

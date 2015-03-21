@@ -165,6 +165,11 @@
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
+                                <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="Lcr-4U-1Qs" kind="relationship" relationship="viewControllers" id="MBj-xp-1sK"/>
@@ -178,7 +183,7 @@
         <!--新问题-->
         <scene sceneID="6fZ-w5-1OK">
             <objects>
-                <viewController id="WB0-zu-yn3" customClass="NewProblemViewController" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="WB0-zu-yn3" customClass="NewProblemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YMM-3q-2Iy"/>
                         <viewControllerLayoutGuide type="bottom" id="IIN-eX-aKA"/>
@@ -297,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y2p-sV-N7T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="-995"/>
+            <point key="canvasLocation" x="1642.5" y="-1044"/>
         </scene>
         <!--问题列表-->
         <scene sceneID="8jG-q3-DWi">
@@ -1010,10 +1015,10 @@
                             <constraint firstItem="un7-rS-JL5" firstAttribute="top" secondItem="FH2-II-9yr" secondAttribute="bottom" constant="8" id="BwX-zB-VEd"/>
                             <constraint firstItem="FH2-II-9yr" firstAttribute="trailing" secondItem="Hjo-aB-YOG" secondAttribute="trailing" id="EUl-HU-uN9"/>
                             <constraint firstItem="Awa-0I-syw" firstAttribute="top" secondItem="un7-rS-JL5" secondAttribute="bottom" constant="46" id="GG9-Ke-CLt">
-                                <variation key="widthClass=compact" constant="80"/>
+                                <variation key="widthClass=compact" constant="70"/>
                             </constraint>
                             <constraint firstItem="lgE-9m-ALg" firstAttribute="top" secondItem="Awa-0I-syw" secondAttribute="bottom" constant="16" id="GlB-Ip-MVh">
-                                <variation key="widthClass=compact" constant="10"/>
+                                <variation key="widthClass=compact" constant="5"/>
                             </constraint>
                             <constraint firstItem="KOd-bx-1iZ" firstAttribute="trailing" secondItem="8MG-2d-y7c" secondAttribute="trailingMargin" id="HQS-Y5-bOt"/>
                             <constraint firstItem="KOd-bx-1iZ" firstAttribute="top" secondItem="tbX-N1-8J8" secondAttribute="bottom" constant="8" id="Jiq-Ic-kyn">
@@ -1211,13 +1216,7 @@
         <scene sceneID="nx1-8B-AWg">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lcr-4U-1Qs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="首页" image="home.png" id="eX3-x3-te1">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
-                                <color key="value" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="首页" image="home.png" id="eX3-x3-te1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VsF-sX-Yxe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1236,13 +1235,7 @@
         <scene sceneID="zFk-WY-ImH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fM1-bY-Cfg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="设置" image="settings.png" id="cPa-gy-q4n">
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="selectedImageTintColor">
-                                <color key="value" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="设置" image="settings.png" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="e2T-mk-OSJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
