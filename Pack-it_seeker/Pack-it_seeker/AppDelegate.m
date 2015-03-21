@@ -48,6 +48,8 @@
         
     }
     
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
+    
     return YES;
 }
 

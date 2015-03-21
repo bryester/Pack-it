@@ -282,19 +282,15 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="新问题" id="me7-4h-HPg">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="AWe-9c-uYK">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" id="eJs-nS-8f5">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="本地图片"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="本地图片" style="plain" id="sfq-M8-IhY">
                             <connections>
-                                <action selector="addImageFromLibrary:" destination="WB0-zu-yn3" id="ib7-UH-eE7"/>
+                                <action selector="addImageFromLibrary:" destination="WB0-zu-yn3" id="Bmh-8a-pzq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="_imageButton" destination="LhL-xj-8tN" id="dFa-tc-AKj"/>
                     </connections>

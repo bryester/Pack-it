@@ -59,7 +59,7 @@
     _mapView.delegate = self; // 此处记得不用的时候需要置nil，否则影响内存的释放
     _routeSearch.delegate = self;
     
-    [self addDestShopAnnotation];
+    //[self addDestShopAnnotation];
     [self showDrivingRoute];
     [self initMap];
 }
@@ -76,7 +76,7 @@
 
 - (void)initMap {
     
-    _mapView.frame = CGRectMake(0, self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height - self.tabBarController.tabBar.frame.size.height - self.navigationController.navigationBar.frame.size.height);
+    _mapView.frame = CGRectMake(0, self.navigationController.navigationBar.frame.size.height, [[UIScreen mainScreen]bounds].size.width, [[UIScreen mainScreen]bounds].size.height - self.navigationController.navigationBar.frame.size.height);
     
     [_mapView setUserInteractionEnabled:YES];
     
@@ -276,6 +276,7 @@
     
     NSLog(@"drive route end %f - %f", end.pt.latitude, end.pt.longitude);
     
+    //[_mapView showAnnotations:[start, end] animated:YES];
     
     BMKDrivingRoutePlanOption *drivingRouteSearchOption = [[BMKDrivingRoutePlanOption alloc]init];
     drivingRouteSearchOption.from = start;
