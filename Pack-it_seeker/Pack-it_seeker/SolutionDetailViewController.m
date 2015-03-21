@@ -35,17 +35,21 @@
     if (solution) {
         if (solution.pictureURL) {
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
-            [_imageView setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
+            [_imageView setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"default.jpg"]];
         }
         if (solution.price && ![solution.price isKindOfClass:[NSNull class]]) {
             _labelPrice.text = [NSString stringWithFormat:@"%@", solution.price];
             _labelYuan.hidden = NO;
         } else {
-            _labelPrice.text = @"-";
+            _labelPrice.text = @"";
             _labelYuan.hidden = YES;
         }
         
         _labelDesc.text = solution.desc;
+        
+        _labelShop.text = solution.shop_profile.name;
+        
+        _labelAddress.text = solution.shop_profile.address;
         
     }
 }
@@ -99,11 +103,11 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    if ([segue.identifier isEqualToString:@"toMap"]) {
+    //if ([segue.identifier isEqualToString:@"toMap"]) {
         
         [PXNetworkManager sharedStore].currentSolution = _solution;
         
-    }
+    //}
 }
 
 @end

@@ -22,16 +22,30 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [PXNetworkManager sharedStore].delegate = self;
-    if (!(_problems && _problems.count > 0)) {
-        //[self getProblems];
-        [_refreshControl beginRefreshing];
-        [self getProblems];
-    }
+    //[self getProblems];
+    
+    [self initNoLoginLabel];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [_refreshControl beginRefreshing];
+    [self getProblems];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)initNoLoginLabel {
+    _noLoginLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    _noLoginLabel.text = @"用户未登录";
+    _noLoginLabel.textColor = [UIColor blackColor];
+    _noLoginLabel.numberOfLines = 0;
+    _noLoginLabel.textAlignment = NSTextAlignmentCenter;
+//    _noLoginLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+    [_noLoginLabel sizeToFit];
 }
 
 #pragma mark - UIActivityIndicatorView
@@ -57,7 +71,14 @@
     //NSLog(@"refreshTableView");
     //[AuthenticationManager sharedStore].delegate = self;
     //refreshFlag = 0;
-    [self getProblems];
+    
+    if ([PXNetworkManager sharedStore].credential) {
+        //Login
+        [self getProblems];
+    } else {
+        [self stopRefreshing];
+    }
+    
 }
 
 
@@ -75,6 +96,11 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_problems) {
         return _problems.count;
+    } else {
+        if (_noLoginLabel) {
+            tableView.backgroundView = _noLoginLabel;
+        }
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return 0;
 }
@@ -120,7 +146,7 @@
 //                cell.profilePicture.image = [self imageByScalingAndCroppingForSize:CGSizeMake(cell.profilePicture.frame.size.width, cell.profilePicture.frame.size.height) image:image];
 //            } failure:nil];
 //            
-            [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
+            [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"default.jpg"]];
         }
     }
     
@@ -160,7 +186,10 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"showSolutions"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//        UINavigationController *naviController = [segue destinationViewController];
+//        _solutionsTableViewController = [naviController.viewControllers objectAtIndex:0];
         _solutionsTableViewController = [segue destinationViewController];
+        
         //_solutionsTableViewController.solutions = [[_problems objectAtIndex:indexPath.row] solutions];
         _solutionsTableViewController.problem = [_problems objectAtIndex:indexPath.row];
         

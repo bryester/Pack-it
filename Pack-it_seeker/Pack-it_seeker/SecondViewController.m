@@ -43,9 +43,12 @@
 - (void)showUser {
     if (_isLogin) {
         _userLabel.text =[PXAccountHolder sharedInstance].username;
-
+        _userLabel.hidden = NO;
+        _userAvatar.hidden = NO;
     } else {
         _userLabel.text = @"未登录";
+        _userLabel.hidden = YES;
+        _userAvatar.hidden = YES;
     }
 }
 
@@ -85,7 +88,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     if (_isLogin) {
-        return 4;
+        return 1;
     } else {
         return 1;
     }
@@ -122,7 +125,7 @@
             //            break;
         case 0:
             if (_isLogin) {
-                cell.textLabel.text = @"修改密码";
+                cell.textLabel.text = @"注销";
                 cell.detailTextLabel.text = @"";
             } else {
                 cell.textLabel.text = @"用户未登录";
@@ -159,10 +162,13 @@
                 [self presentViewController:_loginViewController animated:YES completion:nil];
                 [tableView deselectRowAtIndexPath:indexPath animated:NO];
             } else {
-                NSLog(@"修改密码");
-                _registerViewController = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
-                _registerViewController.registerType = NO;
-                [self presentViewController:_registerViewController animated:YES completion:nil];
+                NSLog(@"注销");
+//                _registerViewController = [[RegisterViewController alloc] initWithNibName:@"RegisterViewController" bundle:nil];
+//                _registerViewController.registerType = NO;
+//                [self presentViewController:_registerViewController animated:YES completion:nil];
+//                [tableView deselectRowAtIndexPath:indexPath animated:NO];
+                
+                [self showLogoutAlertView];
                 [tableView deselectRowAtIndexPath:indexPath animated:NO];
             }
             break;
@@ -175,8 +181,6 @@
             break;
     }
 }
-
-
 
 
 

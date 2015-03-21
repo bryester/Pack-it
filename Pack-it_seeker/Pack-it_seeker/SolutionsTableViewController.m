@@ -124,7 +124,7 @@
             cell.price = [NSString stringWithFormat:@"%@", solution.price];
             cell.labelYuan.hidden = NO;
         } else {
-            cell.price = @"－";
+            cell.price = @"";
             cell.labelYuan.hidden = YES;
         }
         
@@ -133,12 +133,16 @@
         cell.address = solution.shop_profile.address;
         if (solution.pictureURL) {
             NSString *url = [NSString stringWithFormat:@"%@%@", BASE_URL, solution.pictureURL];
-            [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"defult_portraiture.png"]];
+            [cell.imageView_customed setImageWithURL:[NSURL URLWithString: url] placeholderImage:[UIImage imageNamed:@"default.jpg"]];
         }
         
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 /*

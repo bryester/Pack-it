@@ -24,6 +24,8 @@
     
     //下拉刷新
     UIRefreshControl *_refreshControl;
+    
+    UILabel *_noLoginLabel;
 }
 
 

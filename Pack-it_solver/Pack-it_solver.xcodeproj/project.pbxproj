@@ -64,7 +64,10 @@
 		B483C1251AAB1E5100A742A6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B483C1241AAB1E5100A742A6 /* SystemConfiguration.framework */; };
 		B483C1291AAB1EE800A742A6 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B483C1281AAB1EE800A742A6 /* ImageIO.framework */; };
 		B483C12B1AAB211900A742A6 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B483C12A1AAB211900A742A6 /* SDWebImage.framework */; };
+		B4B89FD11ABE02D8002EA3B5 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = B4B89FCF1ABE02D8002EA3B5 /* home.png */; };
+		B4B89FD21ABE02D8002EA3B5 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = B4B89FD01ABE02D8002EA3B5 /* settings.png */; };
 		B4BCCC2C1AAEB01B0022FF9B /* add_image_default.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */; };
+		B4D9C8321ABDEF34007CCA23 /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B4D9C8311ABDEF34007CCA23 /* default.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,7 +192,10 @@
 		B483C1241AAB1E5100A742A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B483C1281AAB1EE800A742A6 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		B483C12A1AAB211900A742A6 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		B4B89FCF1ABE02D8002EA3B5 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = Images.xcassets/home.png; sourceTree = "<group>"; };
+		B4B89FD01ABE02D8002EA3B5 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = Images.xcassets/settings.png; sourceTree = "<group>"; };
 		B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_image_default.png; sourceTree = "<group>"; };
+		B4D9C8311ABDEF34007CCA23 /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,12 +248,12 @@
 		B47C3DD31A94531900F41A9D /* Pack-it_solver */ = {
 			isa = PBXGroup;
 			children = (
+				B483C03C1AAB17C200A742A6 /* Resources */,
 				B483C0C91AAB1A4B00A742A6 /* Model */,
 				B483C0901AAB192900A742A6 /* Controller */,
 				B483C0B61AAB1A2E00A742A6 /* View */,
 				B483C0B51AAB1A1300A742A6 /* Utlity */,
 				B483C1181AAB1AE400A742A6 /* Configuration */,
-				B483C03C1AAB17C200A742A6 /* Resources */,
 				B47C3DD81A94531900F41A9D /* AppDelegate.h */,
 				B47C3DD91A94531900F41A9D /* AppDelegate.m */,
 				B47C3DE11A94531900F41A9D /* Main.storyboard */,
@@ -295,6 +301,9 @@
 		B483C03D1AAB180100A742A6 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B4B89FCF1ABE02D8002EA3B5 /* home.png */,
+				B4B89FD01ABE02D8002EA3B5 /* settings.png */,
+				B4D9C8311ABDEF34007CCA23 /* default.jpg */,
 				B41248551AAECBDF005BAD2C /* cemara.jpg */,
 				B4BCCC2B1AAEB01B0022FF9B /* add_image_default.png */,
 				B483C03F1AAB186100A742A6 /* defult_portraiture.png */,
@@ -604,10 +613,13 @@
 				B47C3DE31A94531900F41A9D /* Main.storyboard in Resources */,
 				B483C0441AAB186100A742A6 /* defult_portraiture.png in Resources */,
 				B47C3DE81A94531900F41A9D /* LaunchScreen.xib in Resources */,
+				B4D9C8321ABDEF34007CCA23 /* default.jpg in Resources */,
 				B412487E1AAF12AD005BAD2C /* LoginViewController.xib in Resources */,
 				B47C3DE51A94531900F41A9D /* Images.xcassets in Resources */,
 				B41248881AAF12CD005BAD2C /* RegisterViewController.xib in Resources */,
+				B4B89FD11ABE02D8002EA3B5 /* home.png in Resources */,
 				B4BCCC2C1AAEB01B0022FF9B /* add_image_default.png in Resources */,
+				B4B89FD21ABE02D8002EA3B5 /* settings.png in Resources */,
 				B41248561AAECBDF005BAD2C /* cemara.jpg in Resources */,
 				B41248831AAF12C1005BAD2C /* SetPasswordViewController.xib in Resources */,
 			);

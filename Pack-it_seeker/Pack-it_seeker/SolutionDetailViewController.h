@@ -18,6 +18,8 @@
     __weak IBOutlet UILabel *_labelPrice;
     __weak IBOutlet UILabel *_labelDesc;
     __weak IBOutlet UILabel *_labelYuan;
+    __weak IBOutlet UILabel *_labelShop;
+    __weak IBOutlet UILabel *_labelAddress;
 }
 
 @property (strong,nonatomic) PXSolution *solution;
