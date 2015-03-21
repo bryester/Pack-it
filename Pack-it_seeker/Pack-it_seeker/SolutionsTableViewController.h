@@ -23,6 +23,11 @@
     
     
     __weak IBOutlet UINavigationItem *_naviItem;
+    
+    UILabel *_noDataLabel;
+    
+    //下拉刷新
+    UIRefreshControl *_refreshControl;
 }
 
 //@property (strong, nonatomic) NSArray *solutions;

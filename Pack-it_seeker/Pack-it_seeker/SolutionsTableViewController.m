@@ -25,12 +25,16 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [PXNetworkManager sharedStore].delegate = self;
     [self prepareTags];
     [self showTitle];
+    
+    [self initNoDataLabel];
+    [self initRefreshControl];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +55,35 @@
     _naviItem.title = _problem.tag.name;
 }
 
+- (void)initNoDataLabel {
+    _noDataLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    
+    _noDataLabel.text = @"店家正快马加鞭赶来。\r客官请稍候。。。";
+    _noDataLabel.textColor = [UIColor blackColor];
+    _noDataLabel.numberOfLines = 0;
+    _noDataLabel.textAlignment = NSTextAlignmentCenter;
+    _noDataLabel.font = [UIFont fontWithName:@"Palatino-Italic" size:20];
+    [_noDataLabel sizeToFit];
+}
+
+#pragma mark - TableView Refresh
+- (void)initRefreshControl {
+    _refreshControl = [UIRefreshControl new];
+    [_refreshControl addTarget:self action:@selector(refreshTable:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:_refreshControl];
+}
+
+- (void)refreshTable:(UIRefreshControl *)refreshControl {
+    //NSLog(@"refreshTableView");
+    //[AuthenticationManager sharedStore].delegate = self;
+    //refreshFlag = 0;
+    [self refreshContent];
+}
+
+- (void)stopRefreshing {
+    [_refreshControl endRefreshing];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -59,8 +92,14 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (_problem && _problem.solutions) {
+    if (_problem && _problem.solutions && _problem.solutions.count > 0) {
+        tableView.backgroundView = nil;
         return _problem.solutions.count;
+    } else {
+        if (_noDataLabel) {
+            tableView.backgroundView = _noDataLabel;
+        }
+        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return 0;
 }
@@ -206,6 +245,9 @@
 }
 
 - (void)onGetProblemByIDResult:(PXProblem *)problem error:(NSError *)error {
+    
+    [self stopRefreshing];
+    
     if (!error) {
         if ([_problem.problemID isEqualToString:problem.problemID]) {
             _problem.tag = problem.tag;
