@@ -249,25 +249,31 @@
 //    
 //    CLLocation *destL;
 //    
-//    if (_destShop && _destShop.location) {
+//    if (c && _destShop.location) {
 //        destL = [[CLLocation alloc] initWithLatitude:[[_destShop.location objectAtIndex:1] floatValue] longitude:[[_destShop.location objectAtIndex:0] floatValue]];
 //    } else {
 //        destL = [[CLLocation alloc] initWithLatitude:39.797798 longitude:116.404161];
 //    }
-//    
-    [_mapView showAnnotations:@[[[CLLocation alloc] initWithLatitude:40.002538 longitude:116.32838], [[CLLocation alloc] initWithLatitude:39.797798 longitude:116.404161]] animated:YES];
+//
+    [_mapView showAnnotations:@[[PXNetworkManager sharedStore].currentLocation, [[CLLocation alloc] initWithLatitude:39.797798 longitude:116.404161]] animated:YES];
+    
+    //[_mapView showAnnotations:@[[[CLLocation alloc] initWithLatitude:40.002538 longitude:116.32838], [[CLLocation alloc] initWithLatitude:39.797798 longitude:116.404161]] animated:YES];
     
     BMKPlanNode* start = [BMKPlanNode new];
-    //start.pt = [PXNetworkManager sharedStore].currentLocation.coordinate;
-    start.pt = CLLocationCoordinate2DMake(40.002538, 116.32838);
+    start.pt = [PXNetworkManager sharedStore].currentLocation.coordinate;
+    //start.pt = CLLocationCoordinate2DMake(40.002538, 116.32838);
     //start.pt = startL.coordinate;
     //start.name = @"百度大厦";
     //start.cityName = @"北京市";
     
     BMKPlanNode* end = [BMKPlanNode new];
     //end.pt = CLLocationCoordinate2DMake([[_destShop.location objectAtIndex:1] floatValue], [[_destShop.location objectAtIndex:0] floatValue]);
+    if (_destShop && _destShop.location && _destShop.location.count > 0) {
+        end.pt = CLLocationCoordinate2DMake([[_destShop.location objectAtIndex:1] floatValue], [[_destShop.location objectAtIndex:0] floatValue]);
+    } else {
+        end.pt = CLLocationCoordinate2DMake(39.797798, 116.404161);
+    }
     
-    end.pt = CLLocationCoordinate2DMake(39.797798, 116.404161);
     //end.pt = destL.coordinate;
     //end.name = @"清华大学";
     //end.cityName = @"北京市";

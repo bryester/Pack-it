@@ -95,6 +95,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_problems) {
+        //tableView.backgroundView = _noLoginLabel;
         return _problems.count;
     } else {
         if (_noLoginLabel) {
@@ -156,19 +157,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
+
 #pragma mark - Network Methods
 
 - (void)getProblems {
     if ([PXNetworkManager sharedStore].credential) {
         //[self startIndicator];
         [[PXNetworkManager sharedStore] getAllProblems];
+        _noLoginLabel.text = @"";
     } else {
         [self stopRefreshing];
+        _noLoginLabel.text = @"用户未登录";
     }
-    
 }
 
 #pragma mark - PXNetworkProtocol Delegate
+
+- (void)onLoginResult:(NSError *)error {
+    if (!error) {
+        [self getProblems];
+    }
+}
 
 - (void)onGetAllProblemsResult:(NSArray *)problems error:(NSError *)error {
     [self stopRefreshing];

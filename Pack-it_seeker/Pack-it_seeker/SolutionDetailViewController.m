@@ -105,7 +105,7 @@
     
     //if ([segue.identifier isEqualToString:@"toMap"]) {
         
-        [PXNetworkManager sharedStore].currentSolution = _solution;
+    [PXNetworkManager sharedStore].currentSolution = _solution;
         
     //}
 }

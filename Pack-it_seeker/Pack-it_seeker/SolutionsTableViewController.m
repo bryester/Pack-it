@@ -52,7 +52,13 @@
 }
 
 - (void)showTitle {
-    _naviItem.title = _problem.tag.name;
+    if (_problem.tag.name && _problem.tag.name != @"" && ![_problem.tag.name isKindOfClass:[NSNull class]]) {
+        _naviItem.title = _problem.tag.name;
+        _changeTagBtn.title = @"判断有误？";
+    } else {
+        _changeTagBtn.title = @"";
+    }
+    
 }
 
 - (void)initNoDataLabel {
@@ -94,6 +100,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (_problem && _problem.solutions && _problem.solutions.count > 0) {
         tableView.backgroundView = nil;
+        
         return _problem.solutions.count;
     } else {
         if (_noDataLabel) {

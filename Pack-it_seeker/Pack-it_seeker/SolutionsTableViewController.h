@@ -28,6 +28,9 @@
     
     //下拉刷新
     UIRefreshControl *_refreshControl;
+    
+    __weak IBOutlet UIBarButtonItem *_changeTagBtn;
+    
 }
 
 //@property (strong, nonatomic) NSArray *solutions;

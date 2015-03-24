@@ -51,10 +51,12 @@
     NSLog(@"%@",userName.text);
     NSLog(@"%@",userPass.text);
     
-    if (userName.text && userPass.text) {
+    if (userName.text && userPass.text && ![userName.text isEqualToString:@""] && ![userPass.text isEqualToString:@""]) {
         [[PXNetworkManager sharedStore] loginByUsername:userName.text password:userPass.text];
         [self startIndicator];
-    } 
+    } else {
+        [self showAlertByMSG:@"输入不可为空"];
+    }
 
     
 
@@ -91,6 +93,19 @@
         alert.delegate = self;
         [alert setTitle:@"登录错误"];
         [alert setMessage:[NSString stringWithFormat:@"%@", error]];
+        [alert addButtonWithTitle:@"确定"];
+        [alert show];
+    }
+    
+}
+
+- (void)showAlertByMSG:(NSString *)msg
+{
+    if(!alert.isVisible){
+        alert = [UIAlertView new];
+        alert.delegate = self;
+        [alert setTitle:msg];
+        //[alert setMessage:msg];
         [alert addButtonWithTitle:@"确定"];
         [alert show];
     }
@@ -151,7 +166,7 @@
     [self stopIndicator];
     NSLog(@"onLoginResult");
     if (error) {
-        [self showAlertview:error];
+        [self showAlertByMSG:@"登录失败，请检查账号或网络"];
         //[self showConfirmAlertViewWithMessage:@"登录失败，请检查账号或网络"];
     } else {
         //[self showConfirmAlertViewWithMessage:@"登录成功"];

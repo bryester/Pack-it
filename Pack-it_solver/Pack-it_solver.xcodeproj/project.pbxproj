@@ -843,7 +843,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "956b21aa-408a-4312-ba11-01df871c70ae";
+				PROVISIONING_PROFILE = "c11abb49-b4f6-462f-befd-f35e7035e662";
 			};
 			name = Debug;
 		};
@@ -862,7 +862,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "956b21aa-408a-4312-ba11-01df871c70ae";
+				PROVISIONING_PROFILE = "c11abb49-b4f6-462f-befd-f35e7035e662";
 			};
 			name = Release;
 		};
